@@ -65,7 +65,8 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
         case "exponential":
           return Math.pow(normalizedDistance, 2)
         case "gaussian":
-          return Math.exp(-Math.pow(distance / (radius / 2), 2) / 2)
+          // Making the gaussian effect stronger for better visibility
+          return Math.exp(-Math.pow(distance / (radius / 1.5), 2) / 2)
         case "linear":
         default:
           return normalizedDistance
@@ -78,11 +79,6 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
       const containerRect = containerRef.current.getBoundingClientRect()
       const mouseX = mousePositionRef.current.x
       const mouseY = mousePositionRef.current.y
-      
-      // Log the mouse position for debugging
-      if (Math.random() < 0.01) { // Only log occasionally to avoid flooding console
-        console.log("Mouse position in animation frame:", { mouseX, mouseY })
-      }
 
       letterRefs.current.forEach((letterRef, index) => {
         if (!letterRef) return
@@ -102,24 +98,6 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
         letterProximities.current[index].set(proximity)
       })
     })
-
-    useEffect(() => {
-      const logMousePosition = (e: MouseEvent) => {
-        if (containerRef.current) {
-          const rect = containerRef.current.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          console.log("Mouse moved relative to container:", { x, y });
-        }
-      };
-      
-      // Add a global mouse move event listener for debugging
-      document.addEventListener("mousemove", logMousePosition);
-      
-      return () => {
-        document.removeEventListener("mousemove", logMousePosition);
-      };
-    }, [containerRef]);
 
     const words = label.split(" ")
     let letterIndex = 0
@@ -149,7 +127,7 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
                   ref={(el: HTMLSpanElement | null) => {
                     letterRefs.current[currentLetterIndex] = el
                   }}
-                  className="inline-block"
+                  className="inline-block transition-all duration-200" // Added transition for smoother effect
                   aria-hidden="true"
                   style={transformedStyles}
                 >

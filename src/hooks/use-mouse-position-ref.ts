@@ -20,11 +20,19 @@ export function useMousePositionRef(containerRef: React.RefObject<HTMLElement>) 
       }
     };
 
-    // Add the event listener to the document instead of window
+    // Track mouse movement on the entire document
     document.addEventListener("mousemove", updateMousePosition);
+    
+    // Also track mouse over for better responsiveness
+    if (containerRef.current) {
+      containerRef.current.addEventListener("mouseover", updateMousePosition);
+    }
     
     return () => {
       document.removeEventListener("mousemove", updateMousePosition);
+      if (containerRef.current) {
+        containerRef.current.removeEventListener("mouseover", updateMousePosition);
+      }
     };
   }, [containerRef]);
 
