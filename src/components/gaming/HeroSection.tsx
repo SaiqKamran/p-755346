@@ -7,6 +7,7 @@ import { Header } from "./Header";
 export const HeroSection: React.FC = () => {
   return (
     <section className="flex flex-col self-stretch relative min-h-[917px] w-full items-stretch pt-14 max-md:max-w-full">
+      {/* Background image with lowest z-index */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
@@ -14,6 +15,8 @@ export const HeroSection: React.FC = () => {
           alt="Hero background" 
         />
       </div>
+      
+      {/* Content with higher z-index */}
       <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-10">
         <Header />
 
