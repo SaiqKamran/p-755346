@@ -1,4 +1,3 @@
-
 "use client";
 import { useEffect, useRef } from "react";
 
@@ -74,8 +73,9 @@ function SplashCursor({
         preserveDrawingBuffer: false,
       };
       
-      // First try to get WebGL2, then fall back to WebGL
-      let gl = canvas.getContext("webgl2", params) as WebGL2RenderingContext | null;
+      // First try WebGL2, then fall back to WebGL1
+      let gl: WebGLRenderingContext | WebGL2RenderingContext | null = 
+        canvas.getContext("webgl2", params) as WebGL2RenderingContext | null;
       const isWebGL2 = !!gl;
       
       if (!isWebGL2) {
@@ -90,11 +90,11 @@ function SplashCursor({
       let supportLinearFiltering: any;
       
       if (isWebGL2) {
-        gl.getExtension("EXT_color_buffer_float");
-        supportLinearFiltering = gl.getExtension("OES_texture_float_linear");
+        (gl as WebGL2RenderingContext).getExtension("EXT_color_buffer_float");
+        supportLinearFiltering = (gl as WebGL2RenderingContext).getExtension("OES_texture_float_linear");
       } else {
-        halfFloat = gl.getExtension("OES_texture_half_float");
-        supportLinearFiltering = gl.getExtension("OES_texture_half_float_linear");
+        halfFloat = (gl as WebGLRenderingContext).getExtension("OES_texture_half_float");
+        supportLinearFiltering = (gl as WebGLRenderingContext).getExtension("OES_texture_half_float_linear");
       }
       
       gl.clearColor(0.0, 0.0, 0.0, 1.0);
@@ -110,17 +110,18 @@ function SplashCursor({
       if (isWebGL2) {
         const gl2 = gl as WebGL2RenderingContext;
         formatRGBA = getSupportedFormat(
-          gl,
+          gl2,
           gl2.RGBA16F,
-          gl.RGBA,
+          gl2.RGBA,
           halfFloatTexType
         );
-        formatRG = getSupportedFormat(gl, gl2.RG16F, gl2.RG, halfFloatTexType);
-        formatR = getSupportedFormat(gl, gl2.R16F, gl2.RED, halfFloatTexType);
+        formatRG = getSupportedFormat(gl2, gl2.RG16F, gl2.RG, halfFloatTexType);
+        formatR = getSupportedFormat(gl2, gl2.R16F, gl2.RED, halfFloatTexType);
       } else {
-        formatRGBA = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
-        formatRG = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
-        formatR = getSupportedFormat(gl, gl.RGBA, gl.RGBA, halfFloatTexType);
+        const gl1 = gl as WebGLRenderingContext;
+        formatRGBA = getSupportedFormat(gl1, gl1.RGBA, gl1.RGBA, halfFloatTexType);
+        formatRG = getSupportedFormat(gl1, gl1.RGBA, gl1.RGBA, halfFloatTexType);
+        formatR = getSupportedFormat(gl1, gl1.RGBA, gl1.RGBA, halfFloatTexType);
       }
 
       return {
@@ -185,7 +186,6 @@ function SplashCursor({
       return status === gl.FRAMEBUFFER_COMPLETE;
     }
 
-    // Define TypeScript interfaces for the classes
     interface IMaterial {
       vertexShader: WebGLShader;
       fragmentShaderSource: string;
@@ -202,7 +202,6 @@ function SplashCursor({
       bind(): void;
     }
 
-    // Class definitions with proper TypeScript typing
     class Material implements IMaterial {
       vertexShader: WebGLShader;
       fragmentShaderSource: string;
@@ -627,7 +626,6 @@ function SplashCursor({
       };
     })();
 
-    // Define FBO interfaces for TypeScript
     interface FBO {
       texture: WebGLTexture;
       fbo: WebGLFramebuffer;
