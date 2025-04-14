@@ -1,49 +1,40 @@
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
-import { Carousel } from "@/components/ui/carousel";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const mediaSlides = [
-    {
-      title: "Animation Studio",
-      button: "View Studio",
-      src: "/lovable-uploads/0335d652-9f31-4a64-9bd3-fac5bad28c6c.png"
-    },
-    {
-      title: "Digital Arts Lab",
-      button: "View Lab",
-      src: "/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png"
-    },
-    {
-      title: "VFX Studio",
-      button: "View VFX",
-      src: "/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png"
-    }
-  ];
-
-  return <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
+  
+  return (
+    <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
       <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
         <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
           <div className="w-full md:w-[50%] max-md:w-full">
-            <div className="p-4 border-2 border-yellow-400 rounded-lg">
-              <Carousel slides={mediaSlides} />
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e5e55e5416882388ed16d5453ac50b1437907ac?placeholderIfAbsent=true"
+              className="object-cover w-full rounded-lg"
+              alt="Arena Animation Facility"
+            />
           </div>
           <div className="w-full md:w-[50%] max-md:w-full">
             <div className="flex flex-col h-full justify-center max-md:mt-10">
-              <TextCursorProximity label="Why Arena Animation Chandigarh Sector - 9" styles={{
-              transform: {
-                from: "scale(1)",
-                to: "scale(1.3)"
-              },
-              color: {
-                from: "#FFFFFF",
-                to: "#FFD700"
-              }
-            }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.24px] uppercase max-md:text-3xl" />
+              <TextCursorProximity 
+                label="Why Arena Animation Chandigarh Sector - 9"
+                styles={{
+                  transform: {
+                    from: "scale(1)",
+                    to: "scale(1.3)"
+                  },
+                  color: {
+                    from: "#FFFFFF",
+                    to: "#FFD700"
+                  }
+                }} 
+                falloff="gaussian" 
+                radius={200} 
+                containerRef={sectionRef} 
+                className="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.24px] uppercase max-md:text-3xl"
+              />
               <p className="text-white text-base font-normal leading-[30px] tracking-[0.64px] mt-6 max-md:max-w-full">
                 Arena Animation Chandigarh Sector 9 is the leading animation institute in Chandigarh, equipped with the latest and state-of-the-art infrastructure such as large 3D labs equipped with 27-inch curved screen monitors for visualization and animation, special hardware for game development and separate rooms for visualization, sketching and VFx.
               </p>
@@ -59,16 +50,23 @@ export const FeatureSection: React.FC = () => {
       </div>
 
       <div className="w-full max-w-[1240px] mt-20">
-        <TextCursorProximity label="The Industry" styles={{
-        transform: {
-          from: "scale(1)",
-          to: "scale(1.3)"
-        },
-        color: {
-          from: "#FFFFFF",
-          to: "#FFD700"
-        }
-      }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" />
+        <TextCursorProximity 
+          label="The Industry"
+          styles={{
+            transform: {
+              from: "scale(1)",
+              to: "scale(1.3)"
+            },
+            color: {
+              from: "#FFFFFF",
+              to: "#FFD700"
+            }
+          }} 
+          falloff="gaussian" 
+          radius={200} 
+          containerRef={sectionRef} 
+          className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" 
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
             <div className="text-3xl font-bold text-white mb-2">FOUNDED</div>
@@ -85,5 +83,6 @@ export const FeatureSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
