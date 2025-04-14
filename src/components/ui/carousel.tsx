@@ -98,29 +98,29 @@ const Carousel = React.forwardRef<
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
           
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-50">
+          <div className="absolute -bottom-20 left-0 right-0 flex justify-center items-center gap-8 z-50">
             {[
               { name: "Overview", index: 0 },
               { name: "Sign Up for Courses", index: 1 },
               { name: "Digital Arts Summer Camp", index: 2 }
             ].map(({ name, index }) => (
-              <div key={index} className="flex flex-col items-center">
+              <div key={index} className="flex flex-col items-center gap-3">
                 <button
                   className={cn(
-                    "w-4 h-4 rounded-full transition-all mb-2",
+                    "h-1 transition-all duration-300 rounded-full",
                     current === index 
-                      ? "bg-white w-8" 
-                      : "bg-white/50 hover:bg-white/75"
+                      ? "bg-yellow-400 w-16" 
+                      : "bg-white/30 w-16 hover:bg-yellow-400/50"
                   )}
                   onClick={() => api?.scrollTo(index)}
                   aria-label={`Go to ${name} slide`}
                 />
                 <span 
                   className={cn(
-                    "text-xs font-medium transition-colors",
+                    "text-sm font-medium tracking-wide transition-colors duration-300",
                     current === index 
-                      ? "text-white" 
-                      : "text-white/50"
+                      ? "text-yellow-400" 
+                      : "text-white/70 hover:text-white"
                   )}
                 >
                   {name}
