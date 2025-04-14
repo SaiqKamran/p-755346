@@ -1,9 +1,10 @@
 
 import React, { useRef } from "react";
-import { Button } from "./Button";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
+import { motion } from "framer-motion";
+import { HeroContent } from "./HeroContent";
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -25,39 +26,23 @@ export const HeroSection: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
           <div className="w-full md:w-1/2">
-            <TextCursorProximity
-              label="Arena Animation Chandigarh Sector 9"
-              className="block text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
-              styles={{
-                transform: {
-                  from: "scale(1)",
-                  to: "scale(1.05)",
-                },
-                color: { 
-                  from: "#FFFFFF", 
-                  to: "#FF4444"
-                },
-              }}
-              falloff="gaussian"
-              radius={100}
-              containerRef={heroRef}
+            <HeroContent
+              title="Arena Animation Chandigarh Sector 9"
+              description="The city's leading institute for Animation and Visual Effects (VFx) education and training. Offering career courses in Animation, Multimedia, VFx, Digital Marketing, and more."
             />
-            <p className="text-white text-lg md:text-[19px] font-normal leading-[35px] tracking-[0.75px] max-w-[602px] mt-4 max-md:max-w-full">
-              The city's leading institute for Animation and Visual Effects (VFx) education and training. Offering career courses in Animation, Multimedia, VFx, Digital Marketing, and more.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-stretch text-xl font-extrabold uppercase tracking-[0.8px] leading-none mt-8 gap-4">
-              <Button variant="primary">Get Course Info</Button>
-              <Button variant="secondary">Contact Us</Button>
-            </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-8 md:gap-[31px] mt-16 md:mt-[66px] max-md:max-w-full justify-center z-10 mb-[90px] px-[49px] py-0 rounded-none">
+        <motion.div 
+          className="flex flex-wrap gap-8 md:gap-[31px] mt-16 md:mt-[66px] max-md:max-w-full justify-center z-10 mb-[90px] px-[49px] py-0 rounded-none"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <StatItem count="1996" label="FOUNDED" />
           <StatItem count="450,000+" label="STUDENTS" highlighted />
           <StatItem count="20+" label="COUNTRIES" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
