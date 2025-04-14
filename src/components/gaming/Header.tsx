@@ -2,12 +2,13 @@
 import React from "react";
 import { Home, FileText, User, Mail } from "lucide-react";
 import { NavBar } from "../ui/tubelight-navbar";
+import { Link } from "react-router-dom";
 
 export const Header: React.FC = () => {
   const navItems = [
-    { name: "Home", url: "#", icon: Home },
+    { name: "Home", url: "/", icon: Home },
     { name: "Admission", url: "#", icon: FileText },
-    { name: "Placements", url: "#", icon: FileText },
+    { name: "Placements", url: "/placements", icon: FileText },
     { name: "FAQ", url: "#", icon: FileText },
     { name: "Degree", url: "/degree", icon: User },
     { name: "Contact Us", url: "#", icon: Mail },
@@ -17,11 +18,13 @@ export const Header: React.FC = () => {
     <header className="self-stretch flex w-full max-w-[1239px] flex-col max-md:max-w-full">
       <nav className="self-stretch flex items-center text-white leading-none flex-wrap justify-between max-md:max-w-full px-4">
         <div className="self-stretch flex items-center gap-[7px] whitespace-nowrap">
-          <img 
-            src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
-            alt="Arena Animation Chandigarh Sector 9" 
-            className="h-16 w-auto object-contain" 
-          />
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
+              alt="Arena Animation Chandigarh Sector 9" 
+              className="h-16 w-auto object-contain" 
+            />
+          </Link>
         </div>
         
         <NavBar items={navItems} className="hidden md:block" />
