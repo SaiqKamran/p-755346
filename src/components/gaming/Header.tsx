@@ -1,6 +1,6 @@
 
 import React from "react";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 export const Header: React.FC = () => {
@@ -28,21 +28,12 @@ export const Header: React.FC = () => {
               <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">FAQ</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white hover:text-primary-foreground data-[state=open]:text-black">Degree</NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white text-black">
-                <ul className="grid w-[200px] gap-3 p-4">
-                  <li>
-                    <NavigationMenuLink asChild>
-                      <a 
-                        href="#" 
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none text-black">VFX/Gaming</div>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
+              <NavigationMenuLink 
+                href="/degree" 
+                className="text-white hover:text-primary-foreground active:bg-white active:text-black focus:bg-white focus:text-black"
+              >
+                Degree
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">Contact Us</NavigationMenuLink>
