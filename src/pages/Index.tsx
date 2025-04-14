@@ -9,7 +9,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const Index = () => {
   return (
-    <div className="flex flex-col overflow-hidden items-center relative">
+    <div className="bg-[rgba(45,30,107,1)] flex flex-col overflow-hidden items-center rounded-[10px] relative">
       {/* Position the splash cursor with a high z-index to ensure it's above everything */}
       <SplashCursor 
         BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}

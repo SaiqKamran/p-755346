@@ -8,10 +8,10 @@ export const HeroSection: React.FC = () => {
   return (
     <section className="flex flex-col self-stretch relative min-h-[917px] w-full items-stretch pt-0 max-md:max-w-full">
       {/* Background image with lowest z-index, moved to top with no gap */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 top-0">
         <img 
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
-          className="h-full w-full object-cover object-top absolute top-0 left-0" 
+          className="h-full w-full object-cover object-top" 
           alt="Hero background" 
         />
       </div>
