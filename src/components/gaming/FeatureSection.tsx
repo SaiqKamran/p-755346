@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
+import { ImageCarousel } from "./ImageCarousel";
+
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   return <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
       <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
         <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
           <div className="w-full md:w-[50%] max-md:w-full">
-            
+            <ImageCarousel />
           </div>
           <div className="w-full md:w-[50%] max-md:w-full">
             <div className="flex flex-col h-full justify-center max-md:mt-10">
