@@ -59,7 +59,7 @@ export const LocationSection: React.FC = () => {
         
         <div className="h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.042790285922!2d76.7782288748614!3d30.743333483301897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed92baaaaea9%3A0x63bb5f1a3d27dfb9!2sArena%20Animation%20Sector%209%20Chandigarh!5e0!3m2!1sen!2sin!4v1713243026608!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6858.3547183840265!2d76.7907761!3d30.7415192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feddaf470031b%3A0x72d6ed21e686107f!2sArena%20Animation%20Sector%209%20Chandigarh!5e0!3m2!1sen!2sin!4v1744673963271!5m2!1sen!2sin"
             width="100%" 
             height="100%" 
             style={{ border: 0, minHeight: "400px" }}
