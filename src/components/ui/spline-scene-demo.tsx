@@ -11,15 +11,16 @@ export function SplineSceneDemo() {
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       
       <div className="flex h-full flex-col md:flex-row">
-        {/* Center content - full width on mobile, right side on desktop */}
-        <div className="w-full md:w-1/2 mx-auto md:ml-auto relative">
-          {/* Blackish overlay effect */}
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm z-10 rounded-lg pointer-events-none"></div>
-          
-          {/* 3D model */}
+        {/* Left content */}
+        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+          {/* You can add text or content here if needed */}
+        </div>
+
+        {/* Right content */}
+        <div className="flex-1 relative">
           <SplineScene 
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" 
-            className="w-full h-full relative" 
+            className="w-full h-full" 
           />
         </div>
       </div>
