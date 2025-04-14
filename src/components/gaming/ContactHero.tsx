@@ -1,10 +1,15 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 export const ContactHero = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="relative h-[40vh] flex items-center justify-center bg-gradient-to-b from-indigo-900/50 to-[#1b1240]">
+    <div 
+      className="relative h-[40vh] flex items-center justify-center bg-gradient-to-b from-indigo-900/50 to-[#1b1240]"
+      ref={heroRef}
+    >
       <TextCursorProximity 
         label="Contact Us"
         styles={{
@@ -18,7 +23,8 @@ export const ContactHero = () => {
           }
         }} 
         falloff="gaussian" 
-        radius={200} 
+        radius={200}
+        containerRef={heroRef}
         className="text-white text-5xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase" 
       />
     </div>
