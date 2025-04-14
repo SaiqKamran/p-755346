@@ -9,11 +9,11 @@ export const FeatureSection: React.FC = () => {
 
   return (
     <section className="relative" ref={sectionRef}>
-      {/* Enhanced gradient transition - taller and extends further down */}
-      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#1A1F2C] via-[rgba(26,31,44,0.7)] to-[#0006] z-0" />
+      {/* Updated gradient transition with new purple shade */}
+      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#300049] via-[rgba(48,0,73,0.7)] to-[#30004900] z-0" />
       
-      {/* Purplish-black background section */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#1A1F2C] z-0" />
+      {/* Purplish background section with new color */}
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#300049] z-0" />
       
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
         {/* Meteors with increased number and customized appearance */}
