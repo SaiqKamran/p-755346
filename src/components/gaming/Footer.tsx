@@ -1,22 +1,11 @@
-
 import React from "react";
-
 export const Footer: React.FC = () => {
-  return (
-    <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]">
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/682f814612d1b649dbf855547e93b854fef6cc24?placeholderIfAbsent=true"
-        className="absolute h-full w-full object-cover inset-0"
-        alt="Footer background"
-      />
+  return <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/682f814612d1b649dbf855547e93b854fef6cc24?placeholderIfAbsent=true" className="absolute h-full w-full object-cover inset-0" alt="Footer background" />
       <div className="relative flex flex-col md:flex-row max-w-[1200px] mx-auto w-full gap-10 justify-between">
         <div className="flex flex-col max-w-md">
           <div className="flex items-center gap-4">
-            <img
-              src="/lovable-uploads/0335d652-9f31-4a64-9bd3-fac5bad28c6c.png"
-              className="h-20 object-contain"
-              alt="Arena Animation Logo"
-            />
+            
             <div className="text-3xl font-extrabold tracking-wide">
               <span className="block text-white">CHANDIGARH 9</span>
             </div>
@@ -96,16 +85,11 @@ export const Footer: React.FC = () => {
 
       <div className="relative flex flex-wrap items-center justify-between gap-4 text-sm font-normal tracking-[0.91px] leading-6 mt-16 max-w-[1200px] mx-auto w-full border-t border-white/20 pt-6">
         <div>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4eceb5dbc302db944dca672230a16542574486d?placeholderIfAbsent=true"
-            className="aspect-[5.29] object-contain h-8"
-            alt="Security badges"
-          />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4eceb5dbc302db944dca672230a16542574486d?placeholderIfAbsent=true" className="aspect-[5.29] object-contain h-8" alt="Security badges" />
         </div>
         <div>
           © Copyright 2025, All Rights Reserved by Arena Animation Chandigarh 9
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
