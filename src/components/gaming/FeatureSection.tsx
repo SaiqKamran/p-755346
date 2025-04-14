@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
@@ -9,13 +10,22 @@ export const FeatureSection: React.FC = () => {
 
   return (
     <section className="relative" ref={sectionRef}>
-      {/* Gradient transition */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[rgba(45,30,107,1)] to-black z-0" />
+      {/* Enhanced gradient transition - taller and more prominent */}
+      <div className="absolute top-[-100px] left-0 right-0 h-[200px] bg-gradient-to-b from-[rgba(45,30,107,1)] via-[rgba(45,30,107,0.5)] to-transparent z-10" />
       
-      <div className="flex flex-col items-center px-4 py-20 bg-black relative overflow-hidden">
-        <Meteors number={20} />
+      {/* Black background section start */}
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black z-0" />
+      
+      <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
+        {/* Meteors with increased number and customized appearance */}
+        <div className="absolute inset-0 z-5">
+          <Meteors 
+            number={40} 
+            className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" 
+          />
+        </div>
         
-        <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
+        <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5 relative z-10">
           <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
             <div className="w-full md:w-[50%] max-md:w-full">
               <ImageCarousel />
@@ -46,7 +56,7 @@ export const FeatureSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-[1240px] mt-20">
+        <div className="w-full max-w-[1240px] mt-20 relative z-10">
           <TextCursorProximity label="The Industry" styles={{
           transform: {
             from: "scale(1)",
