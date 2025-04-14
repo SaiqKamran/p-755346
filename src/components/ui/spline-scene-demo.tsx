@@ -9,10 +9,7 @@ export function SplineSceneDemo() {
       
       <div className="flex h-full flex-col md:flex-row">
         {/* Left content */}
-        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
-          
-          
-        </div>
+        
 
         {/* Right content */}
         <div className="flex-1 relative">
