@@ -43,7 +43,8 @@ export const ContactForm = () => {
   }
 
   return (
-    <div className="py-12 px-4 bg-indigo-900/50">
+    <div className="w-full">
+      <h2 className="text-white text-4xl font-bold mb-8 text-center">Contact Us</h2>
       <div className="max-w-[600px] mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
