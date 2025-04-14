@@ -19,7 +19,15 @@ export const HeroSection: React.FC = () => {
   
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
-      <Carousel className="w-full">
+      <Carousel 
+        className="w-full"
+        opts={{
+          align: "start",
+          loop: true,
+          autoplay: true,
+          interval: 5000, // 5 seconds
+        }}
+      >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
