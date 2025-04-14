@@ -21,7 +21,6 @@ export const HeroSection: React.FC = () => {
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
       <Carousel className="w-full">
         <CarouselContent>
-          {/* Slide 1: Original Content */}
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <img 
@@ -55,7 +54,6 @@ export const HeroSection: React.FC = () => {
             </div>
           </CarouselItem>
 
-          {/* Slide 2: Sign Up for Courses */}
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80" />
@@ -109,7 +107,6 @@ export const HeroSection: React.FC = () => {
             </div>
           </CarouselItem>
 
-          {/* Slide 3: Digital Arts Summer Camp */}
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
