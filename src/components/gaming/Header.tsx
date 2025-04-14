@@ -1,4 +1,3 @@
-
 import React from "react";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -11,7 +10,7 @@ export const Header: React.FC = () => {
           <img 
             src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
             alt="Arena Animation Chandigarh Sector 9" 
-            className="h-10 w-auto object-contain"
+            className="h-16 w-auto object-contain" 
           />
         </div>
         
@@ -56,4 +55,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-
