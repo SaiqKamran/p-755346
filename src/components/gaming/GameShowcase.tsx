@@ -1,15 +1,18 @@
+
 import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { SplineSceneDemo } from "@/components/ui/spline-scene-demo";
 import { FloatingPaths } from "@/components/ui/background-paths";
 import { Courses } from "@/components/ui/courses";
+import { MeteorDemo } from "@/components/ui/meteor-demo";
 
 export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
   return (
     <section className="flex flex-col items-center px-4 relative" ref={showcaseRef}>
-      {/* Background Paths */}
+      {/* Background Effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
+        <MeteorDemo />
         <div className="absolute inset-0">
           <FloatingPaths position={1} />
           <FloatingPaths position={-1} />
