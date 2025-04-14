@@ -9,9 +9,9 @@ import { MeteorDemo } from "@/components/ui/meteor-demo";
 export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
   return (
-    <section className="flex flex-col items-center px-4 relative" ref={showcaseRef}>
+    <section className="flex flex-col items-center px-4 relative bg-[#1A1F2C]" ref={showcaseRef}>
       {/* Background Effects */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#1A1F2C]">
         <MeteorDemo />
         <div className="absolute inset-0">
           <FloatingPaths position={1} />
@@ -54,3 +54,4 @@ export const GameShowcase: React.FC = () => {
     </section>
   );
 };
+
