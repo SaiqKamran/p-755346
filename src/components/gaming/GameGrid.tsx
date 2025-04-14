@@ -1,56 +1,57 @@
+
 import React from "react";
 import { GameCard } from "./GameCard";
 
 export const GameGrid: React.FC = () => {
-  const games = [
+  const services = [
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/0c627bb62faa552ac1854be6f5bac849a6c25c9d?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/5b6ccbf4303cbff0f7fd1ced65945529ad0126e4?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/176d1eb74dcd43ede9f1b4acf5b2ebb701f60bfb?placeholderIfAbsent=true",
-      name: "Cameron Williamson",
-      company: "Gillette",
+      name: "Console Gaming",
+      company: "PS5, Xbox Series X",
     },
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/38d110e8cba0faf8e3efa420b955bc8e5ea30f56?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/56cafe3d0d110bb513bdeb7a043ad3295cb087d3?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/939bffb4880923fe8edaeb0d127abb0eda6d3739?placeholderIfAbsent=true",
-      name: "Dianne Russell",
-      company: "Louis Vuitton",
+      name: "PC Gaming",
+      company: "High-end PCs",
     },
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ae8c85744fc9c0a5f9b00ff6cb2fad8e6b427c2e?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/2ff5cde61560bb13b77bc31233686d6769168119?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/2a8b545bca4f159ff7ef90bf991cda1c1c885baf?placeholderIfAbsent=true",
-      name: "Jane Cooper",
-      company: "MasterCard",
+      name: "VR Experience",
+      company: "Immersive VR",
     },
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/463a9c15c89049389c3c5a7ae03a0bbfd0d61436?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/c9fd85bd405504cbde9327867d50eb14dcb9e0c2?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ad406ef5dd4d41d20862255d732b881b98ff5f1b?placeholderIfAbsent=true",
-      name: "Cody Fisher",
-      company: "The Walt Disney Company",
+      name: "Birthday Parties",
+      company: "Themed Celebrations",
     },
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/7ccbda418e14bf5abf9552ae5d8338173952a2e5?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ee85cf9635c9b752445fd2dd63c46dbf89f0ad0d?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/a6b3678ccfdf8ba2847e3485d474f8c51ef12a74?placeholderIfAbsent=true",
-      name: "Wade Warren",
-      company: "Gillette",
+      name: "Corporate Events",
+      company: "Team Building",
     },
     {
       imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/33018cc5612ea0c2b75f7e707a246ed2c1a99cf1?placeholderIfAbsent=true",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/885468ab784ec66c46b6ee06a0ac09f546fc4dbd?placeholderIfAbsent=true",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/cfbdb174c290add698b6814112869eff9a8c2ea9?placeholderIfAbsent=true",
-      name: "Robert Fox",
-      company: "L'Oréal",
+      name: "Private Events",
+      company: "Customized Experiences",
     },
   ];
 
   return (
     <section className="flex flex-col items-center">
       <h2 className="text-white text-[66px] font-extrabold leading-[77px] tracking-[2.64px] text-center uppercase w-[718px] mt-[111px] max-md:max-w-full max-md:text-[40px] max-md:leading-[52px] max-md:mt-10">
-        Welcome to the top games
+        Services We Offer
       </h2>
 
       <img
@@ -61,9 +62,9 @@ export const GameGrid: React.FC = () => {
 
       <div className="w-full max-w-[1245px] mt-[77px] max-md:max-w-full max-md:mt-10">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-          {games.slice(0, 3).map((game, index) => (
+          {services.slice(0, 3).map((service, index) => (
             <div key={index} className="w-[33%] max-md:w-full max-md:ml-0">
-              <GameCard {...game} />
+              <GameCard {...service} />
             </div>
           ))}
         </div>
@@ -71,31 +72,31 @@ export const GameGrid: React.FC = () => {
 
       <div className="w-full max-w-[1245px] mt-10 max-md:max-w-full">
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-          {games.slice(3).map((game, index) => (
+          {services.slice(3).map((service, index) => (
             <div key={index} className="w-[33%] max-md:w-full max-md:ml-0">
-              <GameCard {...game} />
+              <GameCard {...service} />
             </div>
           ))}
         </div>
       </div>
 
       <div className="self-stretch flex min-h-11 w-full gap-[40px_63px] text-[37px] text-white font-extrabold uppercase tracking-[1.48px] leading-none mt-[108px] max-md:max-w-full max-md:mt-10">
-        <div className="w-[424px] py-0.5">Gaming spaning</div>
+        <div className="w-[424px] py-0.5">Our Specialties</div>
         <div className="flex min-w-60 items-stretch gap-[22px] w-[429px] max-md:max-w-full">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/feb683a9289200194cfdae039c5549a9610ca774?placeholderIfAbsent=true"
             className="aspect-[1] object-contain w-11 shrink-0"
             alt="Action icon"
           />
-          <div className="basis-auto grow shrink">Action - packed</div>
+          <div className="basis-auto grow shrink">Premier Venue</div>
         </div>
         <div className="flex min-w-60 items-stretch gap-[22px] w-[396px]">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/e56ad857ba581d54a5b3fddd48e85f7cb50d2c9a?placeholderIfAbsent=true"
             className="aspect-[1.02] object-contain w-[45px] shrink-0"
-            alt="Mind icon"
+            alt="Professional icon"
           />
-          <div className="basis-auto grow shrink">mind - bending</div>
+          <div className="basis-auto grow shrink">Professional Staff</div>
         </div>
         <div className="flex min-w-60 items-stretch gap-[23px] w-[553px]">
           <img
@@ -103,7 +104,7 @@ export const GameGrid: React.FC = () => {
             className="aspect-[1] object-contain w-11 shrink-0"
             alt="Collection icon"
           />
-          <div className="basis-auto">collection og games</div>
+          <div className="basis-auto">Customized Packages</div>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export const Footer: React.FC = () => {
@@ -14,14 +15,12 @@ export const Footer: React.FC = () => {
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c199ff2b2fcbd3a3eb57d851dfc9c2187921bbc?placeholderIfAbsent=true"
               className="aspect-[1.31] object-contain w-[59px] shrink-0"
-              alt="Board logo"
+              alt="Arena logo"
             />
-            <div className="basis-auto">board</div>
+            <div className="basis-auto">Arena Chandigarh</div>
           </div>
           <div className="text-base font-normal leading-[30px] tracking-[0.64px] self-stretch mt-[33px]">
-            A well-designed gaming header often incorporates elements such as
-            game characters, iconic symbols, vibrant colors, and dynamic
-            visuals.
+            Arena Chandigarh offers premium gaming experiences, party venues, and event spaces in Chandigarh. Visit us for the ultimate entertainment destination.
           </div>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/444b0182269a02fd53e1e0192448ab0ad3c99003?placeholderIfAbsent=true"
@@ -33,11 +32,11 @@ export const Footer: React.FC = () => {
         <nav className="text-lg font-normal tracking-[0.72px] leading-none mt-1">
           <div className="flex w-full flex-col pl-[33px] max-md:pl-5">
             <div className="gap-10 font-extrabold whitespace-nowrap uppercase">
-              company
+              Quick Links
             </div>
-            <div className="self-center mt-[26px]">products</div>
-            <div className="mt-8">apps & games</div>
-            <div className="self-center mt-8">features</div>
+            <div className="self-center mt-[26px]">Home</div>
+            <div className="mt-8">About Us</div>
+            <div className="self-center mt-8">Services</div>
           </div>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/45d1e82e7334afae701363ef715c0f7df2cbe8c9?placeholderIfAbsent=true"
@@ -48,20 +47,20 @@ export const Footer: React.FC = () => {
 
         <nav className="flex flex-col text-lg font-normal tracking-[0.72px] leading-none mt-1">
           <div className="gap-10 font-extrabold whitespace-nowrap uppercase">
-            help
+            Services
           </div>
-          <div className="mt-[26px]">support</div>
-          <div className="mt-8">about</div>
-          <div className="self-stretch mt-8">contact us</div>
+          <div className="mt-[26px]">Gaming Zone</div>
+          <div className="mt-8">Party Venue</div>
+          <div className="self-stretch mt-8">Corporate Events</div>
         </nav>
 
         <nav className="flex flex-col text-lg font-normal tracking-[0.72px] leading-none mt-1">
           <div className="gap-10 font-extrabold whitespace-nowrap uppercase">
-            resources
+            Contact Us
           </div>
-          <div className="mt-[26px]">youtube playlist</div>
-          <div className="mt-8">how to - blog</div>
-          <div className="self-stretch mt-8">terms & conditions</div>
+          <div className="mt-[26px]">arenachandigarh9@gmail.com</div>
+          <div className="mt-8">+91-9876543210</div>
+          <div className="self-stretch mt-8">Chandigarh, India</div>
         </nav>
       </div>
 
@@ -72,7 +71,7 @@ export const Footer: React.FC = () => {
           alt="Security badges"
         />
         <div className="basis-auto grow shrink">
-          © Copyright 2023, All Rights Reserved by board
+          © Copyright 2023, All Rights Reserved by Arena Chandigarh
         </div>
       </div>
     </footer>

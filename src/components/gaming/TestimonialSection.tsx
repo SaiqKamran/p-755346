@@ -1,3 +1,4 @@
+
 import React from "react";
 import { TestimonialCard } from "./TestimonialCard";
 
@@ -5,18 +6,18 @@ export const TestimonialSection: React.FC = () => {
   const testimonials = [
     {
       content:
-        "One of the standout features of this gaming website is its extensive library of game guides and tutorials. It has helped me level up my skills, conquer challenging quests, and discover hidden secrets within games. The guides are comprehensive, easy to follow, and have undoubtedly elevated my gaming performance.",
+        "Arena Chandigarh provided an amazing experience for my son's birthday party. The gaming setup was fantastic, and the staff was incredibly helpful in organizing everything. All the kids had a blast, and the party room was perfect for the celebration. We'll definitely be returning for future events!",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/93fbd035a360d965855e9df06d5d3fd0e05961b2?placeholderIfAbsent=true",
-      name: "Arlene McCoy",
-      company: "McDonald's",
+      name: "Rajan Sharma",
+      company: "Birthday Party",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1f9d61f26074169e407c578bd796c521853b89a5?placeholderIfAbsent=true",
     },
     {
       content:
-        "Another aspect that sets this website apart is its vibrant and passionate community. The forum section provides a platform for gamers from all walks of life to connect, share their experiences, and discuss their favorite titles. I've made valuable friendships and found like-minded individuals who share my enthusiasm for gaming.",
+        "We hosted our company's team-building event at Arena Chandigarh and it was a huge success. The staff was professional and accommodating, the facilities were excellent, and everyone enjoyed the gaming competitions. The venue has a great ambiance and the catering options were delicious. Highly recommended for corporate events!",
       avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/dafa45290ac6eca1324bf83a757ab9e8ad835e7e?placeholderIfAbsent=true",
-      name: "Kathryn Murphy",
-      company: "General Electric",
+      name: "Priya Kapoor",
+      company: "Corporate Event",
       backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/e5089c3ff035d5dbc53b0b36cfd66e482b308a88?placeholderIfAbsent=true",
     },
   ];

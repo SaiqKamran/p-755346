@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "./Button";
 
@@ -5,11 +6,10 @@ export const GameShowcase: React.FC = () => {
   return (
     <section className="flex flex-col items-center">
       <h2 className="text-white text-[66px] font-extrabold leading-[77px] tracking-[2.64px] text-center uppercase w-[718px] mt-[137px] max-md:max-w-full max-md:text-[40px] max-md:leading-[52px] max-md:mt-10">
-        choose your favorite games
+        Our Premium Services
       </h2>
       <p className="text-white text-base font-normal leading-[30px] tracking-[0.64px] text-center w-[518px] mt-3 max-md:max-w-full">
-        Offer sneak peeks and previews of upcoming games, including trailers,
-        screenshots, and information about release.
+        Explore our range of premium services designed to make your events memorable. From gaming experiences to party venues, we have it all.
       </p>
 
       <div className="self-stretch w-full mt-10 max-md:max-w-full">
@@ -18,7 +18,7 @@ export const GameShowcase: React.FC = () => {
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/1744c72ca772157c962a3112b75db403d46d0bd2?placeholderIfAbsent=true"
               className="aspect-[0.91] object-contain w-[335px] shrink-0 max-w-full mt-[89px] max-md:mt-10"
-              alt="Game preview 1"
+              alt="Gaming events"
             />
           </div>
           <div className="w-[51%] ml-5 max-md:w-full max-md:ml-0">
@@ -26,15 +26,15 @@ export const GameShowcase: React.FC = () => {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/c2bf206ef3ee8753846571b223408242ea5d863d?placeholderIfAbsent=true"
                 className="absolute h-full w-full object-cover inset-0"
-                alt="Featured game background"
+                alt="Featured service background"
               />
               <div className="relative flex w-[211px] max-w-full flex-col items-stretch">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/d54a13d93402dea45c161d6667534328cb111679?placeholderIfAbsent=true"
                   className="aspect-[1.32] object-contain w-[33px] self-center"
-                  alt="Game icon"
+                  alt="Service icon"
                 />
-                <div className="mt-[404px] max-md:mt-10">sneak peeks</div>
+                <div className="mt-[404px] max-md:mt-10">Gaming Arena</div>
               </div>
             </div>
           </div>
@@ -42,15 +42,15 @@ export const GameShowcase: React.FC = () => {
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2fdee0289f533a723ea5ea9a86979b1adc10b43?placeholderIfAbsent=true"
               className="aspect-[0.92] object-contain w-[336px] shrink-0 max-w-full mt-[89px] max-md:mt-10"
-              alt="Game preview 2"
+              alt="Party events"
             />
           </div>
         </div>
       </div>
 
       <div className="flex w-[464px] max-w-full items-stretch mt-[72px] max-md:mt-10">
-        <Button variant="primary">View All</Button>
-        <Button variant="secondary">Play now</Button>
+        <Button variant="primary">View All Services</Button>
+        <Button variant="secondary">Book Now</Button>
       </div>
     </section>
   );
