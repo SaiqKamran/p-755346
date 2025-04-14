@@ -10,10 +10,10 @@ export const FeatureSection: React.FC = () => {
 
   return (
     <section className="relative" ref={sectionRef}>
-      {/* Enhanced gradient transition - taller and more prominent */}
-      <div className="absolute top-[-100px] left-0 right-0 h-[200px] bg-gradient-to-b from-[rgba(45,30,107,1)] via-[rgba(45,30,107,0.5)] to-transparent z-10" />
+      {/* Enhanced gradient transition - taller and extends further down */}
+      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[rgba(45,30,107,1)] via-[rgba(45,30,107,0.3)] to-black z-0" />
       
-      {/* Black background section start */}
+      {/* Black background section */}
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-black z-0" />
       
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
