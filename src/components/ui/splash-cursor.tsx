@@ -1295,7 +1295,16 @@ function SplashCursor({
     });
 
     updateFrame();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initFramebuffers();
+    });
+
   }, [
     SIM_RESOLUTION,
     DYE_RESOLUTION,
@@ -1314,8 +1323,8 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none">
-      <canvas ref={canvasRef} id="fluid" className="w-screen h-screen" />
+    <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-auto">
+      <canvas ref={canvasRef} id="fluid" className="w-full h-full" />
     </div>
   );
 }
