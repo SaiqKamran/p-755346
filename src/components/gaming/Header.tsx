@@ -1,18 +1,11 @@
-
 import React from "react";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-
 export const Header: React.FC = () => {
-  return (
-    <header className="self-stretch flex w-full max-w-[1239px] flex-col max-md:max-w-full">
+  return <header className="self-stretch flex w-full max-w-[1239px] flex-col max-md:max-w-full">
       <nav className="self-stretch flex items-center text-white leading-none flex-wrap justify-between max-md:max-w-full px-4">
         <div className="self-stretch flex items-center gap-[7px] whitespace-nowrap">
-          <img
-            src="/lovable-uploads/0335d652-9f31-4a64-9bd3-fac5bad28c6c.png"
-            className="h-16 object-contain"
-            alt="Arena Animation Chandigarh 9 Logo"
-          />
+          
           <div className="text-2xl font-extrabold tracking-wide">
             <span className="block text-white">CHANDIGARH 9</span>
           </div>
@@ -62,6 +55,5 @@ export const Header: React.FC = () => {
           </button>
         </div>
       </nav>
-    </header>
-  );
+    </header>;
 };
