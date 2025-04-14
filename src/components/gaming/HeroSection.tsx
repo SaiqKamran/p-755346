@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
