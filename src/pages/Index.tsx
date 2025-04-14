@@ -9,8 +9,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const Index = () => {
   return (
-    <div className="flex flex-col overflow-hidden items-center relative w-full">
-      {/* Position the splash cursor with a high z-index to ensure it's above everything */}
+    <div className="bg-black flex flex-col overflow-hidden items-center rounded-[10px] relative">
       <SplashCursor 
         BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}
         CURL={20}
@@ -18,7 +17,7 @@ const Index = () => {
         SPLAT_RADIUS={0.3}
         SPLAT_FORCE={6000}
       />
-      <div className="w-full">
+      <div className="relative w-full">
         <HeroSection />
         <GameShowcase />
         <FeatureSection />
