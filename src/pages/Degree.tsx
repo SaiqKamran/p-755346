@@ -17,10 +17,10 @@ const Degree = () => {
       </div>
       <DegreeHero />
       <DegreeInfo />
-      <DegreePrograms />
       <Objectives />
       <CareerOptions />
       <RequestBrochure />
+      <DegreePrograms />
       <Footer />
     </div>
   );
