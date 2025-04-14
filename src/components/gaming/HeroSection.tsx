@@ -57,62 +57,9 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80" />
-              <video 
-                autoPlay 
-                loop 
-                muted 
-                playsInline 
-                className="w-full h-full object-cover"
-              >
-                <source src="https://cdn.lovable.dev/assets/vfx-reel.mp4" type="video/mp4" />
-              </video>
-            </div>
-            
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
-              <motion.h2 
-                className="text-4xl md:text-6xl font-bold mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Sign Up for Courses
-              </motion.h2>
-              <motion.div 
-                className="max-w-3xl mx-auto space-y-4 mb-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <p className="text-2xl font-semibold text-yellow-400">
-                  Registration for 2025 Spring is now open
-                </p>
-                <p className="text-xl">
-                  Sign up for our on-campus and online courses now
-                </p>
-                <p className="text-lg text-gray-300">
-                  The 2025 Spring term begins on April 7th, 2025
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <Button 
-                  className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
-                >
-                  Browse Courses <ChevronRight className="ml-2" />
-                </Button>
-              </motion.div>
-            </div>
-          </CarouselItem>
-
-          <CarouselItem className="relative min-h-screen">
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
               <img 
-                src="https://cdn.lovable.dev/assets/digital-arts-camp.jpg" 
-                alt="Digital Arts Summer Camp"
+                src="https://cdn.lovable.dev/assets/gaming-vfx-1.jpg" 
+                alt="Gaming VFX"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -124,7 +71,7 @@ export const HeroSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                Digital Arts Summer Camp
+                Professional VFX Training
               </motion.h2>
               <motion.div 
                 className="max-w-3xl mx-auto space-y-4 mb-8"
@@ -133,11 +80,10 @@ export const HeroSection: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <p className="text-2xl font-semibold text-yellow-400">
-                  June 16th–20th, 2025
+                  Learn Industry-Standard VFX Tools
                 </p>
-                <p className="text-xl max-w-2xl mx-auto">
-                  Discover 3D art with hands-on projects, expert instruction, and industry insights 
-                  in a one-week camp—exclusively for high school students.
+                <p className="text-xl">
+                  Master the art of visual effects with our comprehensive courses
                 </p>
               </motion.div>
               <motion.div
@@ -148,7 +94,53 @@ export const HeroSection: React.FC = () => {
                 <Button 
                   className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
                 >
-                  Apply Now <ChevronRight className="ml-2" />
+                  Explore VFX Courses <ChevronRight className="ml-2" />
+                </Button>
+              </motion.div>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="relative min-h-screen">
+            <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
+              <img 
+                src="https://cdn.lovable.dev/assets/gaming-development.jpg" 
+                alt="Game Development"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+              <motion.h2 
+                className="text-4xl md:text-6xl font-bold mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Game Development & Design
+              </motion.h2>
+              <motion.div 
+                className="max-w-3xl mx-auto space-y-4 mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <p className="text-2xl font-semibold text-yellow-400">
+                  Create Immersive Gaming Experiences
+                </p>
+                <p className="text-xl">
+                  From concept to creation, learn game development with cutting-edge tools
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Button 
+                  className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
+                >
+                  Discover Gaming Courses <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
             </div>
