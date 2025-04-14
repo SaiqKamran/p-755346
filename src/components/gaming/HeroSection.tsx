@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+
+import React, { useRef, useEffect } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -24,9 +27,13 @@ export const HeroSection: React.FC = () => {
         opts={{
           align: "start",
           loop: true,
-          autoplay: true,
-          interval: 5000, // 5 seconds
         }}
+        plugins={[
+          Autoplay({
+            delay: 5000, // 5 seconds
+            stopOnInteraction: false, // continues to autoplay after user interaction
+          })
+        ]}
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
