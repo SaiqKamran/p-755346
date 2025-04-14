@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { ImageCarousel } from "./ImageCarousel";
-
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   return <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
@@ -22,7 +21,7 @@ export const FeatureSection: React.FC = () => {
                 from: "#FFFFFF",
                 to: "#FFD700"
               }
-            }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.24px] uppercase max-md:text-3xl" />
+            }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl md:text-5xl font-extrabold leading-tight tracking-[-0.24px] uppercase max-md:text-3xl mx-[3px] px-0 py-[8px]" />
               <p className="text-white text-base font-normal leading-[30px] tracking-[0.64px] mt-6 max-md:max-w-full">
                 Arena Animation Chandigarh Sector 9 is the leading animation institute in Chandigarh, equipped with the latest and state-of-the-art infrastructure such as large 3D labs equipped with 27-inch curved screen monitors for visualization and animation, special hardware for game development and separate rooms for visualization, sketching and VFx.
               </p>
