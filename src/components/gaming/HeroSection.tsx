@@ -1,17 +1,10 @@
-
 import React from "react";
 import { Button } from "./Button";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
-
 export const HeroSection: React.FC = () => {
-  return (
-    <section className="flex flex-col self-stretch relative min-h-[917px] w-full items-stretch pt-14 max-md:max-w-full">
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true"
-        className="absolute h-full w-full object-cover inset-0"
-        alt="Hero background"
-      />
+  return <section className="flex flex-col self-stretch relative min-h-[917px] w-full items-stretch pt-14 max-md:max-w-full">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" className="absolute h-full w-full object-cover inset-0" alt="Hero background" />
       <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full">
         <Header />
 
@@ -34,11 +27,6 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/78455bffd8994934382ff0bc3226d9656fecce17?placeholderIfAbsent=true"
-        className="aspect-[9.9] object-contain w-full z-10 mb-[-51px] mt-[19px] max-md:max-w-full max-md:mb-2.5"
-        alt="Decorative element"
-      />
-    </section>
-  );
+      
+    </section>;
 };
