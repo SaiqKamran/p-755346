@@ -1,9 +1,11 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { Meteors } from "@/components/ui/meteors";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 export const PlacementHero = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -13,10 +15,11 @@ export const PlacementHero = () => {
         />
       </div>
       
-      <div className="max-w-[1200px] mx-auto px-4 relative z-10">
+      <div ref={containerRef} className="max-w-[1200px] mx-auto px-4 relative z-10">
         <div className="text-center">
           <TextCursorProximity 
             label="Placement & Recruitment Assistance"
+            containerRef={containerRef}
             styles={{
               transform: {
                 from: "scale(1)",
