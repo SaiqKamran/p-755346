@@ -11,9 +11,9 @@ import { TextCursorProximityDemo } from "@/components/ui/text-cursor-proximity-d
 const Index = () => {
   return (
     <div className="bg-[rgba(45,30,107,1)] flex flex-col overflow-hidden items-center rounded-[10px] relative">
-      {/* Black gradient overlay moved to back */}
+      {/* Black gradient overlay for top 2 inches */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-black to-transparent z-0"
+        className="absolute top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-black to-transparent z-10"
       />
       
       <SplashCursor 
