@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "./Button";
 import { StatItem } from "./StatItem";
@@ -26,7 +27,7 @@ export const HeroSection: React.FC = () => {
           
         </div>
 
-        <div className="flex flex-wrap gap-8 md:gap-[31px] mt-16 md:mt-[66px] max-md:max-w-full justify-center my-[90px] px-[49px] py-0 rounded-none">
+        <div className="flex flex-wrap gap-8 md:gap-[31px] mt-16 md:mt-[66px] max-md:max-w-full justify-center z-10 mb-[90px] px-[49px] py-0 rounded-none">
           <StatItem count="1996" label="FOUNDED" />
           <StatItem count="450,000+" label="STUDENTS" highlighted />
           <StatItem count="20+" label="COUNTRIES" />
