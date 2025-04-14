@@ -27,7 +27,7 @@ export function CarouselDemo() {
   ];
 
   return (
-    <div className="relative overflow-hidden w-full h-full py-20">
+    <div className="relative overflow-hidden w-full h-[70vmin]">
       <Carousel slides={slideData} />
     </div>
   );
