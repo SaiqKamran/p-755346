@@ -44,7 +44,10 @@ export const GameShowcase: React.FC = () => {
           <SplineSceneDemo />
         </div>
 
-        <Courses />
+        <Courses 
+          title="Our Course Offerings" 
+          description="Transform your creative passion into a successful career with our industry-focused animation and VFX courses"
+        />
       </div>
     </section>
   );

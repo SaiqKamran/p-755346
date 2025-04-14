@@ -5,8 +5,27 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Check, GraduationCap, Star } from "lucide-react";
-import Link from "next/link";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { Link } from "react-router-dom"; // Changed from next/link to react-router-dom
+import { useState, useEffect } from "react"; // We'll create our own useMediaQuery hook
+
+// Create a simple useMediaQuery hook
+const useMediaQuery = (query: string): boolean => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+};
 
 interface Course {
   name: string;
@@ -19,7 +38,7 @@ interface Course {
 }
 
 interface CoursesProps {
-  courses: Course[];
+  courses?: Course[];
   title?: string;
   description?: string;
 }
@@ -79,6 +98,15 @@ export function Courses({
 
   return (
     <div className="w-full max-w-[1200px] mt-16 mx-auto">
+      <div className="text-center space-y-4 mb-12">
+        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          {title}
+        </h2>
+        <p className="text-white/80 text-lg max-w-2xl mx-auto">
+          {description}
+        </p>
+      </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {courses.map((course, index) => (
           <motion.div
@@ -143,7 +171,7 @@ export function Courses({
 
               <div className="mt-auto">
                 <Link
-                  href={course.href}
+                  to={course.href} // Changed from href to to for React Router
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "w-full bg-white/5 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
