@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { CSSProperties, forwardRef, useRef } from "react"
+import React, { CSSProperties, forwardRef, useRef, useEffect } from "react"
 import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion"
 import { useMousePositionRef } from "@/hooks/use-mouse-position-ref"
 
@@ -74,14 +74,15 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
 
     useAnimationFrame(() => {
       if (!containerRef.current) return
-      const containerRect = containerRef.current.getBoundingClientRect()
-
+      
       letterRefs.current.forEach((letterRef, index) => {
         if (!letterRef) return
 
-        const rect = letterRef.getBoundingClientRect()
-        const letterCenterX = rect.left + rect.width / 2 - containerRect.left
-        const letterCenterY = rect.top + rect.height / 2 - containerRect.top
+        const letterRect = letterRef.getBoundingClientRect()
+        const containerRect = containerRef.current!.getBoundingClientRect()
+        
+        const letterCenterX = letterRect.left + letterRect.width / 2 - containerRect.left
+        const letterCenterY = letterRect.top + letterRect.height / 2 - containerRect.top
 
         const distance = calculateDistance(
           mousePositionRef.current.x,
@@ -94,6 +95,26 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
         letterProximities.current[index].set(proximity)
       })
     })
+
+    // Add debug console to help troubleshoot
+    useEffect(() => {
+      const handleMouseMove = () => {
+        if (containerRef.current) {
+          console.log("Mouse position:", mousePositionRef.current);
+        }
+      };
+      
+      const currentContainer = containerRef.current;
+      if (currentContainer) {
+        currentContainer.addEventListener("mousemove", handleMouseMove);
+      }
+      
+      return () => {
+        if (currentContainer) {
+          currentContainer.removeEventListener("mousemove", handleMouseMove);
+        }
+      };
+    }, [containerRef, mousePositionRef]);
 
     const words = label.split(" ")
     let letterIndex = 0

@@ -20,9 +20,16 @@ export function useMousePositionRef(containerRef: React.RefObject<HTMLElement>) 
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Add event listener to the container element itself rather than window
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      currentContainer.addEventListener("mousemove", handleMouseMove);
+    }
+
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (currentContainer) {
+        currentContainer.removeEventListener("mousemove", handleMouseMove);
+      }
     };
   }, [containerRef]);
 

@@ -13,7 +13,6 @@ export function TextCursorProximityDemo() {
   return (
     <div
       className="w-full h-full flex flex-col items-center justify-center p-6 sm:p-12 md:p-16 lg:p-24"
-      ref={containerRef}
     >
       <div 
         className="relative w-full cursor-pointer overflow-hidden justify-start items-start flex text-white"
@@ -22,6 +21,7 @@ export function TextCursorProximityDemo() {
           minHeight: "400px",
           height: "100%"
         }}
+        ref={containerRef} // Move the ref to this container
       >
         <div className="flex flex-col justify-center uppercase leading-none pt-4 pl-6">
           <TextCursorProximity
