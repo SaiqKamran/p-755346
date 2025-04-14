@@ -6,14 +6,13 @@ import { Header } from "./Header";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full overflow-hidden" style={{ minHeight: "917px" }}>
-      {/* Background image positioned absolutely to cover the entire section */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+    <section className="relative min-h-screen w-full overflow-hidden">
+      {/* Absolutely positioned background image that covers entire section */}
+      <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=5760&q=100"
-          className="absolute top-0 left-0 w-full h-full object-cover object-top"
-          alt="Hero background"
-          style={{ objectPosition: "top center" }}
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
+          className="absolute top-0 left-0 w-full h-full object-cover object-top" 
+          alt="Hero background" 
         />
       </div>
       
