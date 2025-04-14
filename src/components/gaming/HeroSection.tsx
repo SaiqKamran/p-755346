@@ -26,12 +26,14 @@ export const HeroSection: React.FC = () => {
         className="w-full"
         opts={{
           align: "start",
-          loop: true,
+          loop: false,
         }}
         plugins={[
           Autoplay({
-            delay: 5000, // 5 seconds
-            stopOnInteraction: false, // continues to autoplay after user interaction
+            delay: 8000, // 8 seconds
+            stopOnInteraction: true, // stops after user interaction
+            playOnInit: true, // starts playing on init
+            stopOnLastSnap: true, // stops on last slide
           })
         ]}
       >
