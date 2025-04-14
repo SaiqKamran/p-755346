@@ -17,11 +17,13 @@ const Index = () => {
         SPLAT_RADIUS={0.3}
         SPLAT_FORCE={6000}
       />
-      <HeroSection />
-      <GameShowcase />
-      <FeatureSection />
-      <LocationSection />
-      <Footer />
+      <div className="relative z-10 w-full">
+        <HeroSection />
+        <GameShowcase />
+        <FeatureSection />
+        <LocationSection />
+        <Footer />
+      </div>
     </div>
   );
 };

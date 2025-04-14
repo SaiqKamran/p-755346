@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef } from "react";
 
@@ -1323,7 +1324,7 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-auto">
+    <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
       <canvas ref={canvasRef} id="fluid" className="w-full h-full" />
     </div>
   );
