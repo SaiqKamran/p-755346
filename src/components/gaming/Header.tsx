@@ -1,8 +1,18 @@
+
 import React from "react";
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { Home, FileText, User, Mail } from "lucide-react";
+import { NavBar } from "../ui/tubelight-navbar";
 
 export const Header: React.FC = () => {
+  const navItems = [
+    { name: "Home", url: "#", icon: Home },
+    { name: "Admission", url: "#", icon: FileText },
+    { name: "Placements", url: "#", icon: FileText },
+    { name: "FAQ", url: "#", icon: FileText },
+    { name: "Degree", url: "/degree", icon: User },
+    { name: "Contact Us", url: "#", icon: Mail },
+  ];
+
   return (
     <header className="self-stretch flex w-full max-w-[1239px] flex-col max-md:max-w-full">
       <nav className="self-stretch flex items-center text-white leading-none flex-wrap justify-between max-md:max-w-full px-4">
@@ -14,33 +24,7 @@ export const Header: React.FC = () => {
           />
         </div>
         
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList className="flex gap-6 text-lg font-normal uppercase tracking-[0.72px]">
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="font-extrabold text-white hover:text-primary-foreground">Home</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">Admission</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">Placements</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">FAQ</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink 
-                href="/degree" 
-                className="text-white hover:text-primary-foreground active:bg-white active:text-black focus:bg-white focus:text-black"
-              >
-                Degree
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="#" className="text-white hover:text-primary-foreground">Contact Us</NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <NavBar items={navItems} className="hidden md:block" />
 
         <div className="md:hidden">
           <button className="p-2 text-white">
