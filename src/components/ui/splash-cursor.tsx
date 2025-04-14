@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef } from "react";
 
@@ -73,7 +74,7 @@ function SplashCursor({
         preserveDrawingBuffer: false,
       };
       
-      // Explicitly type as WebGL2RenderingContext and WebGLRenderingContext
+      // First try to get WebGL2, then fall back to WebGL
       let gl = canvas.getContext("webgl2", params) as WebGL2RenderingContext | null;
       const isWebGL2 = !!gl;
       
