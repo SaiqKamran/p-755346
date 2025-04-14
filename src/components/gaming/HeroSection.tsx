@@ -22,6 +22,11 @@ export const HeroSection: React.FC = () => {
   
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
+      {/* Fixed Header Navigation */}
+      <div className="absolute top-0 left-0 right-0 z-50 w-full max-w-[1239px] mx-auto px-4 pt-14">
+        <Header />
+      </div>
+
       <Carousel 
         className="w-full"
         opts={{
@@ -30,10 +35,10 @@ export const HeroSection: React.FC = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 8000, // 8 seconds
-            stopOnInteraction: true, // stops after user interaction
-            playOnInit: true, // starts playing on init
-            stopOnLastSnap: true, // stops on last slide
+            delay: 8000,
+            stopOnInteraction: true,
+            playOnInit: true,
+            stopOnLastSnap: true,
           })
         ]}
       >
@@ -47,9 +52,8 @@ export const HeroSection: React.FC = () => {
               />
             </div>
             
-            <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-10 pt-14">
-              <Header />
-              <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
+            <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-10">
+              <div className="flex flex-col md:flex-row justify-between items-start mt-32 md:mt-36 px-4">
                 <div className="w-full md:w-1/2">
                   <HeroContent
                     title="Arena Animation Chandigarh Sector 9"
@@ -80,7 +84,7 @@ export const HeroSection: React.FC = () => {
               />
             </div>
             
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white mt-32">
               <motion.h2 
                 className="text-4xl md:text-6xl font-bold mb-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -125,7 +129,7 @@ export const HeroSection: React.FC = () => {
               />
             </div>
             
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white mt-32">
               <motion.h2 
                 className="text-4xl md:text-6xl font-bold mb-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -168,3 +172,4 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+
