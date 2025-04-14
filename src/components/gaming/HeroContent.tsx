@@ -21,15 +21,15 @@ export function HeroContent({ title, description }: HeroContentProps) {
         styles={{
           transform: {
             from: "scale(1)",
-            to: "scale(1.15)"  // Increased scale effect
+            to: "scale(1.3)"  // Increased scale effect dramatically
           },
           color: {
             from: "#FFFFFF",
-            to: "#FFD700"  // Keeping the gold color
+            to: "#FFD700"  // Gold color with more visibility
           }
         }}
         falloff="gaussian"
-        radius={150}  // Increased radius to detect cursor from further away
+        radius={200}  // Increased radius for broader interaction
         containerRef={containerRef}
         className="text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
       />
