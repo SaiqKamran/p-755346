@@ -49,7 +49,7 @@ const courses = [
 
 export const CourseList = () => {
   return (
-    <section className="py-24 px-4">
+    <section className="py-12 px-4">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-white text-center mb-16">Our Courses</h2>
         
@@ -60,7 +60,7 @@ export const CourseList = () => {
                 <course.icon className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
                 <p className="text-purple-300 mb-4">{course.type}</p>
-                <Button variant="secondary" className="w-full">Learn More</Button>
+                <Button variant="secondary" className="w-full">Enroll Now</Button>
               </CardContent>
             </Card>
           ))}
