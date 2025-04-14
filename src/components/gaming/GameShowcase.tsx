@@ -5,7 +5,6 @@ import { SplineSceneDemo } from "@/components/ui/spline-scene-demo";
 import { FloatingPaths } from "@/components/ui/background-paths";
 import { Courses } from "@/components/ui/courses";
 import { MeteorDemo } from "@/components/ui/meteor-demo";
-import { CarouselDemo } from "@/components/ui/carousel-demo";
 
 export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
@@ -44,7 +43,7 @@ export const GameShowcase: React.FC = () => {
         </p>
 
         <div className="w-full max-w-[1200px] mt-8 mb-16 mx-auto">
-          <CarouselDemo />
+          <SplineSceneDemo />
         </div>
 
         <Courses 
