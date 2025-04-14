@@ -98,26 +98,44 @@ const Carousel = React.forwardRef<
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
           
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-50">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center gap-8 z-50">
             {[
               { name: "Overview", index: 0 },
               { name: "Sign Up for Courses", index: 1 },
               { name: "Digital Arts Summer Camp", index: 2 }
             ].map(({ name, index }) => (
-              <div key={index} className="flex flex-col items-center">
-                <button
-                  className={cn(
-                    "w-4 h-4 rounded-full transition-all mb-2",
-                    current === index 
-                      ? "bg-white w-8" 
-                      : "bg-white/50 hover:bg-white/75"
-                  )}
-                  onClick={() => api?.scrollTo(index)}
-                  aria-label={`Go to ${name} slide`}
-                />
+              <div key={index} className="flex flex-col items-center space-y-2">
+                <div className="flex items-center space-x-2">
+                  <div 
+                    className={cn(
+                      "h-1 w-8 transition-all",
+                      current === index 
+                        ? "bg-yellow-400" 
+                        : "bg-white/30"
+                    )}
+                  />
+                  <button
+                    className={cn(
+                      "w-4 h-4 rounded-full transition-all",
+                      current === index 
+                        ? "bg-yellow-400 scale-125" 
+                        : "bg-white/50 hover:bg-white/75"
+                    )}
+                    onClick={() => api?.scrollTo(index)}
+                    aria-label={`Go to ${name} slide`}
+                  />
+                  <div 
+                    className={cn(
+                      "h-1 w-8 transition-all",
+                      current === index 
+                        ? "bg-yellow-400" 
+                        : "bg-white/30"
+                    )}
+                  />
+                </div>
                 <span 
                   className={cn(
-                    "text-xs font-medium transition-colors",
+                    "text-sm font-medium transition-colors text-center",
                     current === index 
                       ? "text-white" 
                       : "text-white/50"
