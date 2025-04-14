@@ -17,8 +17,8 @@ const Degree = () => {
       </div>
       <DegreeHero />
       <DegreeInfo />
-      <Objectives />
       <DegreePrograms />
+      <Objectives />
       <CareerOptions />
       <RequestBrochure />
       <Footer />
