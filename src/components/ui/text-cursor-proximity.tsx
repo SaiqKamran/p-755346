@@ -74,7 +74,15 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
 
     useAnimationFrame(() => {
       if (!containerRef.current) return
+      
       const containerRect = containerRef.current.getBoundingClientRect()
+      const mouseX = mousePositionRef.current.x
+      const mouseY = mousePositionRef.current.y
+      
+      // Log the mouse position for debugging
+      if (Math.random() < 0.01) { // Only log occasionally to avoid flooding console
+        console.log("Mouse position in animation frame:", { mouseX, mouseY })
+      }
 
       letterRefs.current.forEach((letterRef, index) => {
         if (!letterRef) return
@@ -84,8 +92,8 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
         const letterCenterY = rect.top + rect.height / 2 - containerRect.top
 
         const distance = calculateDistance(
-          mousePositionRef.current.x,
-          mousePositionRef.current.y,
+          mouseX,
+          mouseY,
           letterCenterX,
           letterCenterY
         )
@@ -96,26 +104,20 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
     })
 
     useEffect(() => {
-      const handleMouseMove = (e: MouseEvent) => {
+      const logMousePosition = (e: MouseEvent) => {
         if (containerRef.current) {
           const rect = containerRef.current.getBoundingClientRect();
-          console.log("Mouse moved relative to container:", {
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
-            container: rect,
-          });
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          console.log("Mouse moved relative to container:", { x, y });
         }
       };
       
-      const currentContainer = containerRef.current;
-      if (currentContainer) {
-        currentContainer.addEventListener("mousemove", handleMouseMove);
-      }
+      // Add a global mouse move event listener for debugging
+      document.addEventListener("mousemove", logMousePosition);
       
       return () => {
-        if (currentContainer) {
-          currentContainer.removeEventListener("mousemove", handleMouseMove);
-        }
+        document.removeEventListener("mousemove", logMousePosition);
       };
     }, [containerRef]);
 

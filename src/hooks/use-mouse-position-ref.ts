@@ -20,10 +20,11 @@ export function useMousePositionRef(containerRef: React.RefObject<HTMLElement>) 
       }
     };
 
-    window.addEventListener("mousemove", updateMousePosition);
+    // Add the event listener to the document instead of window
+    document.addEventListener("mousemove", updateMousePosition);
     
     return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
+      document.removeEventListener("mousemove", updateMousePosition);
     };
   }, [containerRef]);
 
