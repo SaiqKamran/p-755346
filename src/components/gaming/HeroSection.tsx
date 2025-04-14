@@ -23,11 +23,10 @@ export const HeroSection: React.FC = () => {
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80" />
               <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000" 
-                className="absolute top-0 left-0 w-full h-full object-cover object-center"
-                alt="VFX and Animation Background"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
+                className="absolute top-0 left-0 w-full h-full object-cover object-top" 
+                alt="Hero background" 
               />
             </div>
             
@@ -58,13 +57,15 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80" />
-              <div className="absolute inset-0 flex">
-                <img 
-                  src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000" 
-                  className="w-full h-full object-cover"
-                  alt="Digital Animation Production"
-                />
-              </div>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover"
+              >
+                <source src="https://cdn.lovable.dev/assets/vfx-reel.mp4" type="video/mp4" />
+              </video>
             </div>
             
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
@@ -110,9 +111,9 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
               <img 
-                src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2000"
+                src="https://cdn.lovable.dev/assets/digital-arts-camp.jpg" 
+                alt="Digital Arts Summer Camp"
                 className="w-full h-full object-cover"
-                alt="Digital Arts Workshop"
               />
             </div>
             
