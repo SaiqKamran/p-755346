@@ -7,13 +7,18 @@ import { Header } from "./Header";
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
-      {/* Absolutely positioned background image that covers entire section */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
-          className="absolute top-0 left-0 w-full h-full object-cover object-top" 
-          alt="Hero background" 
-        />
+      {/* Black background at the top */}
+      <div className="absolute inset-0 bg-black z-0">
+        {/* High-resolution background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=2000&q=80" 
+            className="absolute top-0 left-0 w-full h-full object-cover object-top" 
+            alt="Hero background" 
+          />
+          {/* Semi-transparent overlay for better text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
       </div>
       
       {/* Content with higher z-index */}
