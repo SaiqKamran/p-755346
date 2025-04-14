@@ -6,10 +6,8 @@ export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   return (
-    <section className="flex flex-col items-center px-4 py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(45,30,107,0.7)] via-[rgba(45,30,107,0.9)] to-[rgba(45,30,107,0.8)]" />
-      
-      <div className="relative z-10 w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
+    <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
+      <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
         <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
           <div className="w-full md:w-[50%] max-md:w-full">
             <img
