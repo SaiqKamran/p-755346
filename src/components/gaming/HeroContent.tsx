@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { useRef } from "react";
+import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -11,16 +12,27 @@ interface HeroContentProps {
 }
 
 export function HeroContent({ title, description }: HeroContentProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex flex-col space-y-4">
-      <motion.h1
+    <div className="flex flex-col space-y-4" ref={containerRef}>
+      <TextCursorProximity
+        label={title}
+        styles={{
+          transform: {
+            from: "scale(1)",
+            to: "scale(1.05)"
+          },
+          color: {
+            from: "#FFFFFF",
+            to: "#FFD700" // Using yellow to match the theme
+          }
+        }}
+        falloff="gaussian"
+        radius={100}
+        containerRef={containerRef}
         className="text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.5, ease }}
-      >
-        {title}
-      </motion.h1>
+      />
       <motion.p
         className="text-white text-lg md:text-[19px] font-normal leading-[35px] tracking-[0.75px] max-w-[602px] mt-4 max-md:max-w-full"
         initial={{ opacity: 0, y: 50 }}
