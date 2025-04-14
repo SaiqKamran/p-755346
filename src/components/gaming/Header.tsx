@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const Header: React.FC = () => {
   const navItems = [
     { name: "Home", url: "/", icon: Home },
-    { name: "Admission", url: "#", icon: FileText },
+    { name: "Admission", url: "/admission", icon: FileText },
     { name: "Placements", url: "/placements", icon: FileText },
     { name: "FAQ", url: "#", icon: FileText },
     { name: "Degree", url: "/degree", icon: User },

@@ -8,6 +8,7 @@ import Placements from "./pages/Placements";
 import Degree from "./pages/Degree";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
+import Admission from "./pages/Admission";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
           <Route path="/placements" element={<Placements />} />
           <Route path="/degree" element={<Degree />} />
           <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/admission" element={<Admission />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
