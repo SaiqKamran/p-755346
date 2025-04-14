@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { SplineSceneDemo } from "@/components/ui/spline-scene-demo";
@@ -24,15 +23,15 @@ export const GameShowcase: React.FC = () => {
           styles={{
             transform: {
               from: "scale(1)",
-              to: "scale(1.05)"
+              to: "scale(1.3)"
             },
             color: {
               from: "#FFFFFF",
-              to: "#FF4444"
+              to: "#FFD700"
             }
           }} 
           falloff="gaussian" 
-          radius={100} 
+          radius={200} 
           containerRef={showcaseRef} 
           className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mt-20 md:mt-[137px] max-md:max-w-full mx-auto px-[41px] my-[21px]" 
         />

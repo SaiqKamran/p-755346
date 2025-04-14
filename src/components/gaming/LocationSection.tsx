@@ -1,13 +1,29 @@
-
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "./Button";
+import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 export const LocationSection: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section className="flex flex-col items-center px-4 py-20 bg-indigo-900/50">
-      <h2 className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mb-12">
-        Location and Parking
-      </h2>
+    <section className="flex flex-col items-center px-4 py-20 bg-indigo-900/50" ref={sectionRef}>
+      <TextCursorProximity 
+        label="Location and Parking"
+        styles={{
+          transform: {
+            from: "scale(1)",
+            to: "scale(1.3)"
+          },
+          color: {
+            from: "#FFFFFF",
+            to: "#FFD700"
+          }
+        }} 
+        falloff="gaussian" 
+        radius={200} 
+        containerRef={sectionRef} 
+        className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mb-12" 
+      />
 
       <div className="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
@@ -55,7 +71,23 @@ export const LocationSection: React.FC = () => {
       </div>
 
       <div className="w-full max-w-[1200px] mt-16">
-        <h3 className="text-white text-3xl font-bold text-center mb-10">Take the Next Step</h3>
+        <TextCursorProximity 
+          label="Take the Next Step"
+          styles={{
+            transform: {
+              from: "scale(1)",
+              to: "scale(1.3)"
+            },
+            color: {
+              from: "#FFFFFF",
+              to: "#FFD700"
+            }
+          }} 
+          falloff="gaussian" 
+          radius={200} 
+          containerRef={sectionRef} 
+          className="text-white text-3xl font-bold text-center mb-10" 
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
             <h4 className="text-white text-xl font-bold mb-4">CONTACT THE COUNSELLOR</h4>
