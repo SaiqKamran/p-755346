@@ -1,12 +1,15 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "./Button";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
+import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 export const HeroSection: React.FC = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
       {/* Absolutely positioned background image that covers entire section */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -22,9 +25,23 @@ export const HeroSection: React.FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
           <div className="w-full md:w-1/2">
-            <h1 className="text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight">
-              Arena Animation Chandigarh Sector 9
-            </h1>
+            <TextCursorProximity
+              label="Arena Animation Chandigarh Sector 9"
+              className="block text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
+              styles={{
+                transform: {
+                  from: "scale(1)",
+                  to: "scale(1.05)",
+                },
+                color: { 
+                  from: "#FFFFFF", 
+                  to: "#FF4444"
+                },
+              }}
+              falloff="gaussian"
+              radius={100}
+              containerRef={heroRef}
+            />
             <p className="text-white text-lg md:text-[19px] font-normal leading-[35px] tracking-[0.75px] max-w-[602px] mt-4 max-md:max-w-full">
               The city's leading institute for Animation and Visual Effects (VFx) education and training. Offering career courses in Animation, Multimedia, VFx, Digital Marketing, and more.
             </p>
