@@ -28,11 +28,13 @@ export const DegreeHero = () => {
             }}
             falloff="gaussian"
             radius={300}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-10" // Increased bottom margin
           />
-          <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            UGC (The University Grants Commission) has bestowed BVoc the same status as any other conventional Degree under Section 22(3) of UGC Act, 1956
-          </p>
+          <div className="mt-8"> {/* Added container with top margin */}
+            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              UGC (The University Grants Commission) has bestowed BVoc the same status as any other conventional Degree under Section 22(3) of UGC Act, 1956
+            </p>
+          </div>
           <div className="flex gap-4 justify-center">
             <Button variant="primary">Get Started</Button>
             <Button variant="secondary">Speak With An Advisor</Button>
