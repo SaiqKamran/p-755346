@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
             <NavigationMenuItem>
               <NavigationMenuLink 
                 href="/degree" 
-                className="text-white hover:text-primary-foreground active:bg-white active:text-black focus:bg-white focus:text-black"
+                className="px-2 py-1 hover:bg-white hover:text-black active:bg-white active:text-black focus:bg-white focus:text-black"
               >
                 Degree
               </NavigationMenuLink>
