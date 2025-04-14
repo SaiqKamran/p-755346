@@ -14,7 +14,7 @@ export const GameShowcase: React.FC = () => {
         from: "#FFFFFF",
         to: "#FF4444"
       }
-    }} falloff="gaussian" radius={100} containerRef={showcaseRef} className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mt-20 md:mt-[137px] max-md:max-w-full mx-[16px] my-[51px] py-[3px] px-[53px]" />
+    }} falloff="gaussian" radius={100} containerRef={showcaseRef} className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mt-20 md:mt-[137px] max-md:max-w-full mx-[16px] py-0 px-[41px] my-[21px]" />
       <p className="text-white text-base font-normal leading-[30px] tracking-[0.64px] text-center max-w-[718px] mt-6 max-md:max-w-full">
         Arena Animation Chandigarh Sector 9 is the city's leading institute for Animation and Visual Effects (VFx) education and training. It is part of the Arena Animation brand, which was established in 1996 and through which over 4 lakh students have been trained in Animation and VFx in more than 20 countries.
       </p>
