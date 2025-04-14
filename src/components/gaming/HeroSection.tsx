@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -57,10 +56,9 @@ export const HeroSection: React.FC = () => {
 
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80" />
               <img 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-                alt="Gaming VFX"
+                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                alt="Gaming Setup"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -103,10 +101,9 @@ export const HeroSection: React.FC = () => {
 
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
               <img 
-                src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" 
-                alt="Game Development"
+                src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                alt="Gaming Character"
                 className="w-full h-full object-cover"
               />
             </div>
