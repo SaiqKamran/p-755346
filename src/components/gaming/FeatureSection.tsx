@@ -1,13 +1,36 @@
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
+import { Carousel } from "@/components/ui/carousel";
+
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const mediaSlides = [
+    {
+      title: "Animation Studio",
+      button: "View Studio",
+      src: "/lovable-uploads/0335d652-9f31-4a64-9bd3-fac5bad28c6c.png"
+    },
+    {
+      title: "Digital Arts Lab",
+      button: "View Lab",
+      src: "/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png"
+    },
+    {
+      title: "VFX Studio",
+      button: "View VFX",
+      src: "/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png"
+    }
+  ];
+
   return <section className="flex flex-col items-center px-4 py-20" ref={sectionRef}>
       <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5">
         <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
           <div className="w-full md:w-[50%] max-md:w-full">
-            
+            <div className="p-4 border-2 border-yellow-400 rounded-lg">
+              <Carousel slides={mediaSlides} />
+            </div>
           </div>
           <div className="w-full md:w-[50%] max-md:w-full">
             <div className="flex flex-col h-full justify-center max-md:mt-10">
