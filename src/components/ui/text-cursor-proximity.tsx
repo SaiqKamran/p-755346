@@ -74,15 +74,14 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
 
     useAnimationFrame(() => {
       if (!containerRef.current) return
-      
+      const containerRect = containerRef.current.getBoundingClientRect()
+
       letterRefs.current.forEach((letterRef, index) => {
         if (!letterRef) return
 
-        const letterRect = letterRef.getBoundingClientRect()
-        const containerRect = containerRef.current!.getBoundingClientRect()
-        
-        const letterCenterX = letterRect.left + letterRect.width / 2 - containerRect.left
-        const letterCenterY = letterRect.top + letterRect.height / 2 - containerRect.top
+        const rect = letterRef.getBoundingClientRect()
+        const letterCenterX = rect.left + rect.width / 2 - containerRect.left
+        const letterCenterY = rect.top + rect.height / 2 - containerRect.top
 
         const distance = calculateDistance(
           mousePositionRef.current.x,
@@ -96,11 +95,15 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
       })
     })
 
-    // Add debug console to help troubleshoot
     useEffect(() => {
-      const handleMouseMove = () => {
+      const handleMouseMove = (e: MouseEvent) => {
         if (containerRef.current) {
-          console.log("Mouse position:", mousePositionRef.current);
+          const rect = containerRef.current.getBoundingClientRect();
+          console.log("Mouse moved relative to container:", {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top,
+            container: rect,
+          });
         }
       };
       
@@ -114,7 +117,7 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
           currentContainer.removeEventListener("mousemove", handleMouseMove);
         }
       };
-    }, [containerRef, mousePositionRef]);
+    }, [containerRef]);
 
     const words = label.split(" ")
     let letterIndex = 0

@@ -10,7 +10,7 @@ export function useMousePositionRef(containerRef: React.RefObject<HTMLElement>) 
   const mousePosition = useRef<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const updateMousePosition = (e: MouseEvent) => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
         mousePosition.current = {
@@ -20,16 +20,10 @@ export function useMousePositionRef(containerRef: React.RefObject<HTMLElement>) 
       }
     };
 
-    // Add event listener to the container element itself rather than window
-    const currentContainer = containerRef.current;
-    if (currentContainer) {
-      currentContainer.addEventListener("mousemove", handleMouseMove);
-    }
-
+    window.addEventListener("mousemove", updateMousePosition);
+    
     return () => {
-      if (currentContainer) {
-        currentContainer.removeEventListener("mousemove", handleMouseMove);
-      }
+      window.removeEventListener("mousemove", updateMousePosition);
     };
   }, [containerRef]);
 
