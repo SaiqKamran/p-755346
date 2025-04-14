@@ -1,3 +1,4 @@
+
 import React from "react";
 
 export const Footer: React.FC = () => {
@@ -9,7 +10,7 @@ export const Footer: React.FC = () => {
             <img 
               src="/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png" 
               alt="Arena Animation Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-24 w-auto object-contain" // Increased from h-16 to h-24
             />
           </div>
           <div className="text-base font-normal leading-[30px] tracking-[0.64px] mt-6">
