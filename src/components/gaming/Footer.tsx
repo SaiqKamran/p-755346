@@ -1,14 +1,16 @@
 import React from "react";
+
 export const Footer: React.FC = () => {
   return <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/682f814612d1b649dbf855547e93b854fef6cc24?placeholderIfAbsent=true" className="absolute h-full w-full object-cover inset-0" alt="Footer background" />
       <div className="relative flex flex-col md:flex-row max-w-[1200px] mx-auto w-full gap-10 justify-between">
         <div className="flex flex-col max-w-md">
           <div className="flex items-center gap-4">
-            
-            <div className="text-3xl font-extrabold tracking-wide">
-              <span className="block text-white">CHANDIGARH 9</span>
-            </div>
+            <img 
+              src="/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png" 
+              alt="Arena Animation Logo" 
+              className="h-16 w-auto object-contain"
+            />
           </div>
           <div className="text-base font-normal leading-[30px] tracking-[0.64px] mt-6">
             Arena Animation Chandigarh Sector 9 is the city's leading institute for Animation and Visual Effects (VFx) education and training. The best animation institute in Chandigarh.
