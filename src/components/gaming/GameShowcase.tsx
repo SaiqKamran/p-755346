@@ -1,31 +1,20 @@
-
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { SplineSceneDemo } from "@/components/ui/spline-scene-demo";
-
 export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <section className="flex flex-col items-center px-4" ref={showcaseRef}>
-      <TextCursorProximity
-        label="Arena Animation Chandigarh Sector 9"
-        className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mt-20 md:mt-[137px] max-md:max-w-full"
-        styles={{
-          transform: {
-            from: "scale(1)",
-            to: "scale(1.05)",
-          },
-          color: { 
-            from: "#FFFFFF", 
-            to: "#FF4444"
-          },
-        }}
-        falloff="gaussian"
-        radius={100}
-        containerRef={showcaseRef}
-      />
+  return <section className="flex flex-col items-center px-4" ref={showcaseRef}>
+      <TextCursorProximity label="Arena Animation Chandigarh Sector 9" styles={{
+      transform: {
+        from: "scale(1)",
+        to: "scale(1.05)"
+      },
+      color: {
+        from: "#FFFFFF",
+        to: "#FF4444"
+      }
+    }} falloff="gaussian" radius={100} containerRef={showcaseRef} className="text-white text-4xl md:text-[66px] font-extrabold leading-tight tracking-[2.64px] text-center uppercase max-w-[718px] mt-20 md:mt-[137px] max-md:max-w-full mx-[16px] my-[60px] py-0 px-[57px]" />
       <p className="text-white text-base font-normal leading-[30px] tracking-[0.64px] text-center max-w-[718px] mt-6 max-md:max-w-full">
         Arena Animation Chandigarh Sector 9 is the city's leading institute for Animation and Visual Effects (VFx) education and training. It is part of the Arena Animation brand, which was established in 1996 and through which over 4 lakh students have been trained in Animation and VFx in more than 20 countries.
       </p>
@@ -83,6 +72,5 @@ export const GameShowcase: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
