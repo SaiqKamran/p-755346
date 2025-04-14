@@ -1,11 +1,12 @@
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
+  type EmblaCarouselType,
 } from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 type CarouselApi = UseEmblaCarouselType[1]
@@ -57,11 +58,18 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
-    const [api, setLocalApi] = useState<CarouselApi>()
-    const [current, setCurrent] = useState(0)
-    const [count, setCount] = useState(0)
+    const [carouselRef, api] = useEmblaCarousel(
+      {
+        ...opts,
+        axis: orientation === "horizontal" ? "x" : "y",
+      },
+      plugins
+    )
+    const [current, setCurrent] = React.useState(0)
+    const [count, setCount] = React.useState(0)
 
-    useEffect(() => {
+    // When the carousel api changes, update our state
+    React.useEffect(() => {
       if (!api) return
 
       setCount(api.scrollSnapList().length)
@@ -72,32 +80,23 @@ const Carousel = React.forwardRef<
       })
     }, [api])
 
-    const carouselRef = useRef<HTMLDivElement>(null)
-    const [_api] = useEmblaCarousel(
-      {
-        ...opts,
-        axis: orientation === "horizontal" ? "x" : "y",
-      },
-      plugins
-    )
-
-    useEffect(() => {
-      if (!_api) return
-      setLocalApi(_api)
-      if (setApi) setApi(_api)
-    }, [_api, setApi])
+    // When the carousel api changes, call the provided setApi function
+    React.useEffect(() => {
+      if (!api) return
+      if (setApi) setApi(api)
+    }, [api, setApi])
 
     return (
       <CarouselContext.Provider
         value={{
           carouselRef,
-          api: _api,
+          api,
           opts,
           orientation: orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
-          scrollPrev: () => _api?.scrollPrev(),
-          scrollNext: () => _api?.scrollNext(),
-          canScrollPrev: !!_api?.canScrollPrev(),
-          canScrollNext: !!_api?.canScrollNext(),
+          scrollPrev: () => api?.scrollPrev(),
+          scrollNext: () => api?.scrollNext(),
+          canScrollPrev: !!api?.canScrollPrev(),
+          canScrollNext: !!api?.canScrollNext(),
         }}
       >
         <div ref={ref} className={cn("relative", className)} {...props}>
@@ -113,7 +112,7 @@ const Carousel = React.forwardRef<
                     ? "bg-white w-6" 
                     : "bg-white/50 hover:bg-white/75"
                 )}
-                onClick={() => _api?.scrollTo(index)}
+                onClick={() => api?.scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
