@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "./Button";
-import { TextCursorProximity } from "../ui/text-cursor-proximity";
+import TextCursorProximity from "../ui/text-cursor-proximity";
 
 export const DegreeHero = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
