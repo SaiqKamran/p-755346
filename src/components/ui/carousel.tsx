@@ -1,8 +1,6 @@
-
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
-  type EmblaCarouselType,
 } from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
@@ -68,7 +66,6 @@ const Carousel = React.forwardRef<
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
 
-    // When the carousel api changes, update our state
     React.useEffect(() => {
       if (!api) return
 
@@ -80,7 +77,6 @@ const Carousel = React.forwardRef<
       })
     }, [api])
 
-    // When the carousel api changes, call the provided setApi function
     React.useEffect(() => {
       if (!api) return
       if (setApi) setApi(api)
@@ -102,19 +98,34 @@ const Carousel = React.forwardRef<
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
           
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-50">
-            {Array.from({ length: count }).map((_, index) => (
-              <button
-                key={index}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all",
-                  current === index 
-                    ? "bg-white w-6" 
-                    : "bg-white/50 hover:bg-white/75"
-                )}
-                onClick={() => api?.scrollTo(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-4 z-50">
+            {[
+              { name: "Overview", index: 0 },
+              { name: "Sign Up for Courses", index: 1 },
+              { name: "Digital Arts Summer Camp", index: 2 }
+            ].map(({ name, index }) => (
+              <div key={index} className="flex flex-col items-center">
+                <button
+                  className={cn(
+                    "w-4 h-4 rounded-full transition-all mb-2",
+                    current === index 
+                      ? "bg-white w-8" 
+                      : "bg-white/50 hover:bg-white/75"
+                  )}
+                  onClick={() => api?.scrollTo(index)}
+                  aria-label={`Go to ${name} slide`}
+                />
+                <span 
+                  className={cn(
+                    "text-xs font-medium transition-colors",
+                    current === index 
+                      ? "text-white" 
+                      : "text-white/50"
+                  )}
+                >
+                  {name}
+                </span>
+              </div>
             ))}
           </div>
         </div>
