@@ -1,14 +1,11 @@
-
 'use client';
 
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button } from "@/components/gaming/Button";
-
 export function SplineSceneDemo() {
-  return (
-    <Card className="w-full h-[500px] bg-transparent relative overflow-hidden">
+  return <Card className="w-full h-[500px] bg-transparent relative overflow-hidden">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       
       <div className="flex h-full flex-col md:flex-row">
@@ -27,12 +24,12 @@ export function SplineSceneDemo() {
             </Button>
             
             <div className="mt-6 border-t border-white/20 pt-4">
-              <p className="text-sm italic text-white/70">
+              <p className="text-sm italic text-slate-50">
                 *Percentage reflects the placement rate for Arena Animation Chandigarh Sector 9 graduates 
                 in accordance with the national training standards recognized by the Golden Peacock Award 
                 for excellence in animation education.
               </p>
-              <p className="text-xs mt-2 text-white/60">
+              <p className="text-xs mt-2 text-slate-50">
                 From Forbes. ©2023 Forbes. All rights reserved. Used under license.
               </p>
             </div>
@@ -41,12 +38,8 @@ export function SplineSceneDemo() {
 
         {/* Right content */}
         <div className="flex-1 relative">
-          <SplineScene 
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" 
-            className="w-full h-full" 
-          />
+          <SplineScene scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" className="w-full h-full" />
         </div>
       </div>
-    </Card>
-  );
+    </Card>;
 }
