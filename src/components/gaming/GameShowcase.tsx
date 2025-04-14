@@ -10,9 +10,6 @@ export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
   return (
     <section className="flex flex-col items-center px-4 relative bg-[#1A1F2C]" ref={showcaseRef}>
-      {/* Gradient transition at the top */}
-      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[rgba(26,31,44,0)] via-[#1A1F2C] to-[#1A1F2C] z-0" />
-      
       {/* Background Effects */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-[#1A1F2C]">
         <MeteorDemo />
