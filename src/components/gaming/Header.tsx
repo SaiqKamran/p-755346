@@ -5,7 +5,7 @@ export const Header: React.FC = () => {
   return <header className="self-stretch flex w-full max-w-[1239px] flex-col max-md:max-w-full">
       <nav className="self-stretch flex items-center text-white leading-none flex-wrap justify-between max-md:max-w-full px-4">
         <div className="self-stretch flex items-center gap-[7px] whitespace-nowrap">
-          <img src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" alt="Arena Animation Chandigarh Sector 9" className="h-20w-auto object-contain" />
+          <img src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" alt="Arena Animation Chandigarh Sector 9" className="h-15w-auto object-contain" />
         </div>
         
         <NavigationMenu className="hidden md:flex">
