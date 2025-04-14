@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { LucideIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 interface NavItem {
   name: string
@@ -33,13 +32,8 @@ export function NavBar({ items, className }: NavBarProps) {
   }, [])
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
-        className,
-      )}
-    >
-      <div className="flex items-center gap-3 bg-background/5 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+    <div className={className}>
+      <div className="flex items-center gap-3 bg-black/20 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
