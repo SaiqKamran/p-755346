@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface StatItemProps {
@@ -12,11 +13,11 @@ export const StatItem: React.FC<StatItemProps> = ({
   highlighted = false,
 }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
       <div
         className={`text-3xl font-extrabold leading-none tracking-[1.2px] uppercase ${
           highlighted
-            ? "bg-clip-text bg-[url(<path-to-image>)_lightgray_50%_/_cover_no-repeat]"
+            ? "text-yellow-400"
             : "text-white"
         }`}
       >

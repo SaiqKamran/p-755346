@@ -3,8 +3,7 @@ import React from "react";
 import { HeroSection } from "@/components/gaming/HeroSection";
 import { GameShowcase } from "@/components/gaming/GameShowcase";
 import { FeatureSection } from "@/components/gaming/FeatureSection";
-import { GameGrid } from "@/components/gaming/GameGrid";
-import { TestimonialSection } from "@/components/gaming/TestimonialSection";
+import { LocationSection } from "@/components/gaming/LocationSection";
 import { Footer } from "@/components/gaming/Footer";
 
 const Index = () => {
@@ -13,8 +12,7 @@ const Index = () => {
       <HeroSection />
       <GameShowcase />
       <FeatureSection />
-      <GameGrid />
-      <TestimonialSection />
+      <LocationSection />
       <Footer />
     </div>
   );
