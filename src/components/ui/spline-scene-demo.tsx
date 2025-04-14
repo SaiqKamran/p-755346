@@ -10,9 +10,9 @@ export function SplineSceneDemo() {
     <Card className="w-full h-[500px] bg-transparent relative overflow-hidden">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       
-      <div className="flex h-full flex-col md:flex-row">
-        {/* Center content - full width on mobile, right side on desktop */}
-        <div className="w-full md:w-1/2 mx-auto md:ml-auto relative">
+      <div className="flex h-full items-center justify-center">
+        {/* Center content */}
+        <div className="w-full max-w-[800px] mx-auto relative">
           {/* Blackish overlay effect */}
           <div className="absolute inset-0 bg-black/30 backdrop-blur-sm z-10 rounded-lg pointer-events-none"></div>
           
