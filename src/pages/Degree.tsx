@@ -3,7 +3,7 @@ import React from "react";
 import { Header } from "@/components/gaming/Header";
 import { Footer } from "@/components/gaming/Footer";
 import { DegreeHero } from "@/components/gaming/DegreeHero";
-import { DegreePrograms } from "@/components/gaming/DegreePrograms";
+import { CourseCatalog } from "@/components/gaming/CourseCatalog";
 import { RequestBrochure } from "@/components/gaming/RequestBrochure";
 import { CareerOptions } from "@/components/gaming/CareerOptions";
 import { Objectives } from "@/components/gaming/Objectives";
@@ -25,7 +25,7 @@ const Degree = () => {
       </div>
       <DegreeHero />
       <DegreeInfo />
-      <DegreePrograms />
+      <CourseCatalog />
       <Objectives />
       <CareerOptions />
       <RequestBrochure />
