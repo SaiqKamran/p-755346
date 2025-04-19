@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
     { name: "Placements", url: "/placements", icon: FileText },
     { name: "Courses", url: "/degree", icon: User },
     { name: "Fees", url: "/fees", icon: DollarSign },
-    { name: "News & Events", url: "/news", icon: Newspaper },
+    { name: "News&Events", url: "/news", icon: Newspaper },
     { name: "Contact", url: "/contact", icon: Mail },
     { name: "FAQ", url: "/faq", icon: FileText },
   ];
