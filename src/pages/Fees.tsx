@@ -1,10 +1,11 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, FileText, Phone } from "lucide-react";
 import { Header } from "@/components/gaming/Header";
 import { Footer } from "@/components/gaming/Footer";
 import { MeteorDemo } from "@/components/ui/meteor-demo";
+import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { 
   Card, 
   CardContent, 
@@ -73,15 +74,25 @@ const courses = [
 ];
 
 const Fees = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="min-h-screen bg-[rgba(45,30,107,1)] relative">
+    <div className="min-h-screen bg-[rgba(45,30,107,1)] relative" ref={containerRef}>
       <Header />
       <MeteorDemo />
       
       <div className="py-20 px-4 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">Fee Details & Plans</h1>
+            <TextCursorProximity
+              label="Fee Details & Plans"
+              containerRef={containerRef}
+              styles={{
+                fontSize: { from: "3rem", to: "3.25rem" },
+                color: { from: "white", to: "#8B5CF6" }
+              }}
+              className="text-4xl font-bold text-white mb-4 animate-fade-in"
+            />
             <p className="text-white/80 text-lg animate-fade-in delay-100">
               Get detailed information about our course fees and flexible payment plans
             </p>
