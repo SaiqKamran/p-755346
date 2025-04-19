@@ -98,7 +98,7 @@ const Carousel = React.forwardRef<
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
           
-          <div className="absolute bottom-36 left-0 right-0 flex justify-center items-center gap-8 z-50">
+          <div className="absolute bottom-16 left-0 right-0 flex justify-center items-center gap-8 z-50">
             {[
               { name: "Overview", index: 0 },
               { name: "Sign Up for Courses", index: 1 },
