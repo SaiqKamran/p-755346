@@ -9,13 +9,13 @@ export const DegreeHero = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative overflow-hidden py-24 md:py-32 px-4"
+      className="relative overflow-hidden py-24 md:py-32 px-4 bg-gradient-to-r from-purple-900/30 to-blue-900/30 backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           <TextCursorProximity
             containerRef={containerRef}
-            label="B.Voc. Degree Program"
+            label="Bachelor of Vocational Studies"
             styles={{
               transform: {
                 from: "translateY(20px) scale(0.95)",
@@ -28,20 +28,21 @@ export const DegreeHero = () => {
             }}
             falloff="gaussian"
             radius={300}
-            className="text-4xl md:text-6xl font-bold mb-10" // Increased bottom margin
+            className="text-4xl md:text-6xl font-bold mb-6"
           />
-          <div className="mt-8"> {/* Added container with top margin */}
-            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              UGC (The University Grants Commission) has bestowed BVoc the same status as any other conventional Degree under Section 22(3) of UGC Act, 1956
+          <div className="mt-4 mb-8">
+            <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Start your journey towards a successful career in the creative industry with our B.Voc program, 
+              recognized by UGC under Section 22(3) of UGC Act, 1956. Equivalent to any conventional degree 
+              and eligible for government positions.
             </p>
           </div>
           <div className="flex gap-4 justify-center">
-            <Button variant="primary">Get Started</Button>
-            <Button variant="secondary">Speak With An Advisor</Button>
+            <Button variant="primary">Begin Application</Button>
+            <Button variant="secondary">Schedule Consultation</Button>
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-blue-900/50" />
     </div>
   );
 };

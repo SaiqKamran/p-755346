@@ -7,7 +7,6 @@ import { CourseCatalog } from "@/components/gaming/CourseCatalog";
 import { RequestBrochure } from "@/components/gaming/RequestBrochure";
 import { CareerOptions } from "@/components/gaming/CareerOptions";
 import { Objectives } from "@/components/gaming/Objectives";
-import { DegreeInfo } from "@/components/gaming/DegreeInfo";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const Degree = () => {
@@ -24,7 +23,6 @@ const Degree = () => {
         <Header />
       </div>
       <DegreeHero />
-      <DegreeInfo />
       <CourseCatalog />
       <Objectives />
       <CareerOptions />
