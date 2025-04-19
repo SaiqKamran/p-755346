@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import Admission from "./pages/Admission";
 import FAQ from "./pages/FAQ";
+import Fees from "./pages/Fees";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/fees" element={<Fees />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -35,4 +37,3 @@ const App = () => (
 );
 
 export default App;
-
