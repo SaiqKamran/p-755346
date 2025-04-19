@@ -2,6 +2,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, FileText, Phone } from "lucide-react";
+import { Header } from "@/components/gaming/Header";
+import { Footer } from "@/components/gaming/Footer";
+import { MeteorDemo } from "@/components/ui/meteor-demo";
 import { 
   Card, 
   CardContent, 
@@ -14,18 +17,53 @@ import {
 const courses = [
   {
     title: "AAIPP",
-    description: "Arena Animation International Premier Program",
+    description: "Arena Animation International Premier Program - Transform creative talent into skilled animation professionals using Unreal Engine",
     whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20AAIPP%20course%20fee%20details"
   },
   {
     title: "Advanced VFX",
-    description: "Advanced Program in Visual Effects",
+    description: "Master stunning visual effects creation for film, television, and digital media",
     whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Advanced%20VFX%20course%20fee%20details"
   },
   {
     title: "ArchViz",
-    description: "Advanced Program in Architectural Visualization and Interior Design",
+    description: "Transform architectural concepts into stunning visual presentations with cutting-edge tools",
     whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20ArchViz%20course%20fee%20details"
+  },
+  {
+    title: "Broadcast Design",
+    description: "Create dynamic visual content for television, film, and digital media platforms",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Broadcast%20Design%20course%20fee%20details"
+  },
+  {
+    title: "Digital Content Creation",
+    description: "Master all aspects of digital content creation, from visual design to UI/UX and motion graphics",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20DCC%20course%20fee%20details"
+  },
+  {
+    title: "Next-Gen Graphic Design & Web",
+    description: "Learn graphic design principles and web development for engaging digital experiences",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Web%20Design%20course%20fee%20details"
+  },
+  {
+    title: "Advanced UI/UX Design",
+    description: "Master user interface and user experience design principles and practices",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20UI/UX%20course%20fee%20details"
+  },
+  {
+    title: "Digital Marketing with Gen AI",
+    description: "Learn cutting-edge digital marketing enhanced with artificial intelligence tools",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Digital%20Marketing%20course%20fee%20details"
+  },
+  {
+    title: "Visual Design & Motion Graphics",
+    description: "Create dynamic visual content through motion graphics and animation",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Motion%20Graphics%20course%20fee%20details"
+  },
+  {
+    title: "Gaming & Interactive Design",
+    description: "Master game development including AR/VR/XR technologies",
+    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Gaming%20course%20fee%20details"
   },
   {
     title: "Custom Course",
@@ -36,52 +74,65 @@ const courses = [
 
 const Fees = () => {
   return (
-    <div className="min-h-screen bg-[rgba(45,30,107,1)] py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Fee Details & Plans</h1>
-          <p className="text-white/80 text-lg">Get detailed information about our course fees and flexible payment plans</p>
-        </div>
+    <div className="min-h-screen bg-[rgba(45,30,107,1)] relative">
+      <Header />
+      <MeteorDemo />
+      
+      <div className="py-20 px-4 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">Fee Details & Plans</h1>
+            <p className="text-white/80 text-lg animate-fade-in delay-100">
+              Get detailed information about our course fees and flexible payment plans
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {courses.map((course) => (
-            <Card key={course.title} className="bg-white/5 backdrop-blur-sm border border-white/10">
-              <CardHeader>
-                <CardTitle className="text-white">{course.title}</CardTitle>
-                <CardDescription className="text-white/70">{course.description}</CardDescription>
-              </CardHeader>
-              <CardFooter className="flex flex-col gap-3">
-                <Button 
-                  className="w-full bg-green-600 hover:bg-green-700"
-                  onClick={() => window.open(course.whatsappLink, '_blank')}
-                >
-                  <MessageCircle className="mr-2 h-4 w-4" />
-                  Get Fee Details on WhatsApp
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-white/20 text-white hover:bg-white/10"
-                  onClick={() => window.location.href = "/contact"}
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call for Enquiry
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courses.map((course, index) => (
+              <Card 
+                key={course.title} 
+                className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 transition-all duration-300 animate-fade-in cursor-pointer"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader>
+                  <CardTitle className="text-white">{course.title}</CardTitle>
+                  <CardDescription className="text-white/70">{course.description}</CardDescription>
+                </CardHeader>
+                <CardFooter className="flex flex-col gap-3">
+                  <Button 
+                    className="w-full bg-green-600 hover:bg-green-700"
+                    onClick={() => window.open(course.whatsappLink, '_blank')}
+                  >
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    Get Fee Details on WhatsApp
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-white/20 text-black bg-white hover:bg-white/90"
+                    onClick={() => window.location.href = "/contact"}
+                  >
+                    <Phone className="mr-2 h-4 w-4" />
+                    Call for Enquiry
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
 
-        <div className="mt-12 text-center">
-          <Button 
-            size="lg"
-            className="bg-yellow-400 text-black hover:bg-yellow-500"
-            onClick={() => window.open("/contact")}
-          >
-            <FileText className="mr-2 h-4 w-4" />
-            Request Complete Fee Structure
-          </Button>
+          <div className="mt-12 text-center">
+            <Button 
+              size="lg"
+              className="bg-yellow-400 text-black hover:bg-yellow-500 animate-fade-in"
+              onClick={() => window.open("/contact")}
+            >
+              <FileText className="mr-2 h-4 w-4" />
+              Request Complete Fee Structure
+            </Button>
+          </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
