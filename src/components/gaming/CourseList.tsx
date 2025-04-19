@@ -1,50 +1,71 @@
 
 import React from "react";
 import { Card, CardContent } from "../ui/card";
-import { GraduationCap, Brush, Video, MonitorPlay, Layout, Globe } from "lucide-react";
+import { 
+  GraduationCap, 
+  Video, 
+  Building, 
+  Tv, 
+  PenTool, 
+  Globe, 
+  Layout, 
+  Cpu, 
+  Play,
+  Gamepad
+} from "lucide-react";
 import { Button } from "./Button";
 
 const courses = [
   {
-    title: "Arena Certified Professional In Animation & VFX",
-    type: "Career Course",
+    title: "AAIPP (Arena Animation International Premier Program)",
+    description: "This flagship program transforms creative talent into skilled professionals capable of producing high-quality animations using industry-leading tools including Unreal Engine.",
     icon: GraduationCap,
   },
   {
-    title: "Arena Certified Professional In VFX Compositing & Editing",
-    type: "Career Course",
+    title: "Advanced Program in Visual Effects",
+    description: "This comprehensive program equips students with the skills to create stunning visual effects for film, television, and digital media.",
     icon: Video,
   },
   {
-    title: "Animation Prime",
-    type: "Career Course",
-    icon: MonitorPlay,
+    title: "Advanced Program in Architectural Visualization and Interior Design",
+    description: "This program teaches students to transform architectural concepts into stunning visual presentations using cutting-edge tools and techniques.",
+    icon: Building,
   },
   {
-    title: "VFX Prime",
-    type: "Career Course",
-    icon: Video,
+    title: "Broadcast Design",
+    description: "This program focuses on creating dynamic visual content for television, film, and digital media platforms.",
+    icon: Tv,
   },
   {
-    title: "Broadcast Prime",
-    type: "Career Course",
+    title: "Digital Content Creation (DCC)",
+    description: "This comprehensive program covers all aspects of digital content creation, from visual design to UI/UX and motion graphics.",
+    icon: PenTool,
+  },
+  {
+    title: "Next-Gen Graphic Design and Web Development",
+    description: "This program focuses on graphic design principles and web development skills for creating engaging digital experiences.",
     icon: Globe,
   },
   {
-    title: "Multimedia & Graphics",
-    type: "Skill Course",
-    icon: Brush,
-  },
-  {
-    title: "UI-UX Design",
-    type: "Skill Course",
+    title: "Advanced Program in UI/UX Design",
+    description: "This specialized program focuses on user interface and user experience design principles and practices.",
     icon: Layout,
   },
   {
-    title: "Digital Design & Marketing",
-    type: "Skill Course",
-    icon: Globe,
+    title: "Advanced Program in Digital Marketing with Gen AI",
+    description: "This program equips students with cutting-edge digital marketing skills enhanced by artificial intelligence tools.",
+    icon: Cpu,
   },
+  {
+    title: "Next-Gen Visual Design & Motion Graphics",
+    description: "This program focuses on creating dynamic visual content through motion graphics and animation.",
+    icon: Play,
+  },
+  {
+    title: "Gaming & Interactive Design",
+    description: "This comprehensive program covers all aspects of game development, including immersive technologies like AR/VR/XR.",
+    icon: Gamepad,
+  }
 ];
 
 export const CourseList = () => {
@@ -59,7 +80,7 @@ export const CourseList = () => {
               <CardContent className="p-6">
                 <course.icon className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
-                <p className="text-purple-300 mb-4">{course.type}</p>
+                <p className="text-white/80 mb-6 text-sm leading-relaxed">{course.description}</p>
                 <Button variant="secondary" className="w-full">Enroll Now</Button>
               </CardContent>
             </Card>
