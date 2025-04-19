@@ -9,8 +9,8 @@ export const Header: React.FC = () => {
     { name: "Home", url: "/", icon: Home },
     { name: "Admission", url: "/admission", icon: FileText },
     { name: "Placements", url: "/placements", icon: FileText },
-    { name: "FAQ", url: "#", icon: FileText },
-    { name: "Degree", url: "/degree", icon: User },
+    { name: "FAQ", url: "/faq", icon: FileText },
+    { name: "Courses", url: "/degree", icon: User },
     { name: "Contact Us", url: "/contact", icon: Mail },
   ];
 
@@ -42,3 +42,4 @@ export const Header: React.FC = () => {
     </header>
   );
 };
+
