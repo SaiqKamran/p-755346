@@ -17,7 +17,27 @@ export const FAQSection = () => {
       questions: [
         {
           q: "What is Arena's Employment Driven Education strategy?",
-          a: "With Employment Driven Education, Arena enhances your job prospects by monitoring trending jobs through recruiter feedback and recommending specific courses to help you gain the required skills. This is an evolution from the traditional approach where placement assistance was only offered after course completion."
+          a: "Arena's Employment Driven Education strategy represents an evolution from traditional education models. Rather than simply enrolling students in courses and offering placement assistance upon completion, Arena actively monitors industry trends and job market demands with the help of recruiters. This approach allows Arena to recommend specific courses that will equip students with the skills most in-demand in the current job market, significantly enhancing their employment prospects."
+        },
+        {
+          q: "How does Arena stay updated with industry trends?",
+          a: "Arena maintains close relationships with industry professionals and recruiters to continuously monitor evolving trends, technological advancements, and changing skill requirements in the animation, VFX, gaming, and digital content creation industries. This network allows Arena to adapt its curriculum to ensure students learn the most relevant and in-demand skills."
+        },
+        {
+          q: "What role does Unreal Engine play in Arena's curriculum?",
+          a: "Unreal Engine has become a cornerstone of Arena's curriculum, particularly in programs like the Advanced Program in Animation with Unreal Engine. The industry is rapidly adopting Unreal Engine for real-time rendering, character animation, virtual production, and AI-assisted tools. Arena recognizes this shift and has integrated Unreal Engine training to prepare students for the future of animation and visual effects production."
+        },
+        {
+          q: "How does Arena incorporate AI into its training programs?",
+          a: "Arena has embraced AI across its curriculum, offering specialized courses like Master in Gen AI while also integrating AI tools and concepts into most programs. Students learn AI-driven workflows for asset creation, animation, design automation, and creative problem-solving, preparing them for an industry where AI is increasingly important for efficiency and innovation."
+        },
+        {
+          q: "What industry partnerships does Arena maintain?",
+          a: "Arena maintains partnerships with leading studios, production houses, and technology companies across the animation, VFX, gaming, and digital content industries. These partnerships facilitate masterclasses, workshops, industry projects, and placement opportunities for students."
+        },
+        {
+          q: "How does Arena prepare students for emerging technologies?",
+          a: "Arena's curriculum is continuously updated to include emerging technologies like virtual production, augmented reality (AR), virtual reality (VR), and extended reality (XR). Programs such as the Master Program in Game Art, Design & Development with ARVR-XR and Advanced Program in Immersive Design specifically focus on these cutting-edge technologies."
         }
       ]
     },
@@ -26,20 +46,20 @@ export const FAQSection = () => {
       label: "Jobs & Placements",
       questions: [
         {
-          q: "Is media & entertainment industry impacted by job losses?",
-          a: "No! There is huge demand for media & entertainment professionals. The Animation & VFX industry in India continues to grow exponentially, requiring trained and skilled professionals for films, TV shows, ads, and more."
-        },
-        {
           q: "How does Arena help students to get jobs?",
-          a: "Arena's dedicated placement cell provides: \n• Special interview preparation training\n• Project and demo reel guidance\n• Access to Employability Enhancement Program (EEP)\n• On-campus placements through job fairs & placement drives"
+          a: "Arena provides comprehensive placement assistance through its dedicated placement cell. Students receive specialized interview preparation, portfolio development guidance, and access to the Employability Enhancement Program (EEP). Arena also organizes on-campus placements through job fairs and placement drives, connecting students directly with potential employers from the media and entertainment industry."
         },
         {
-          q: "How many students got placements last year?",
-          a: "Over 2800 students of Arena Animation received job placements in top companies across India during the last placement cycle."
+          q: "What types of companies hire Arena Animation graduates?",
+          a: "Arena graduates are hired by a diverse range of companies including major television networks (Aaj Tak, NDTV, Zee Media), animation studios (DQ Entertainment, Prana Studio), VFX houses (Prime Focus, Red Chillies, Makuta Visual Effects), tech giants (Amazon, Accenture), and digital payment platforms (Paytm). These companies represent various sectors of the media, entertainment, and technology industries."
         },
         {
-          q: "Do you offer 100% job placement?",
-          a: "Arena Animation offers 100% job placement assistance.* When you complete your course successfully, Arena's Placements Cell helps you get interviews with major companies. (*Placements are at the sole discretion of recruiters)"
+          q: "What job roles can graduates from Arena's animation programs expect?",
+          a: "Graduates from Arena's animation programs can pursue roles such as 3D Animator, Character Designer, Storyboard Artist, 3D Modeler, Texturing Artist, Lighting Artist, Rigging Artist, 3D Generalist, and Technical Artist. With specialized training in Unreal Engine, graduates can also work as Real-time 3D Artists and Virtual Production Specialists."
+        },
+        {
+          q: "How does Arena support students interested in game development careers?",
+          a: "Arena offers specialized programs in game art, design, and development, preparing students for roles like Game Designer, Game Producer, Level Designer, 2D/3D Game Artist, UI Artist, Technical Artist, and Game Developer. The curriculum covers both artistic and technical aspects of game creation, using tools like Unreal Engine and Unity."
         }
       ]
     },
@@ -48,16 +68,24 @@ export const FAQSection = () => {
       label: "Courses & Eligibility",
       questions: [
         {
-          q: "What courses does Arena Animation offer?",
-          a: "Arena offers a wide range of career & short-term courses including:\n• AAIPP (Arena Animation International Premier Program)\n• Advanced Programs in Animation, VFX, Game Design\n• Digital Content Creation\n• UI/UX Design\n• Digital Marketing with Gen AI\n• And many more specialized programs"
+          q: "What are the basic eligibility criteria for Arena Animation courses?",
+          a: "The basic eligibility requirement for most Arena Animation career courses is completion of 10+2 (higher secondary education). This applies to programs across animation, VFX, game development, digital content creation, and architectural visualization."
         },
         {
-          q: "What is the eligibility for joining an Arena course?",
-          a: "The basic eligibility for Arena's Career Courses is completion of class 12 or 10."
+          q: "What courses does Arena offer in Animation and VFX?",
+          a: "Arena offers several programs in Animation and VFX, including:\n\n• Advanced Program in Animation with Unreal Engine\n• Advanced Program in Visual Effects\n• Advanced Program in Animation and VFX\n• Advanced Digital Graphics and Animation\n• Advanced Program in VFX Filmmaking\n• Advanced Program in VFX Compositing and Editing"
         },
         {
-          q: "Are there courses for working professionals?",
-          a: "Yes! Arena offers various short-term courses for working professionals, including specialized programs in Gen AI, Blender, Maya, Unreal Engine, and more."
+          q: "What Digital Content Creation courses are available at Arena?",
+          a: "Arena's Digital Content Creation offerings include:\n\n• Digital Content Creation Program\n• Next-Gen Graphic Design and Web Development\n• Advanced Program in UI/UX Design\n• Advanced Program in Digital Marketing with Gen AI\n• Next-Gen Visual Design & Motion Graphics"
+        },
+        {
+          q: "What Gaming and Interactive Design programs does Arena provide?",
+          a: "Arena offers several Gaming and Interactive Design programs:\n\n• Master Program in Game Art, Design & Development with ARVR-XR\n• Advanced Program in Game Art and Design with Specialization\n• Advanced Program in Game Art, Design and Development\n• Advanced Program in Immersive Design"
+        },
+        {
+          q: "What short-term courses does Arena offer for working professionals?",
+          a: "Arena provides several short-term courses for skill enhancement:\n\n• Master in Gen AI\n• Master in Blender\n• Master in Unreal Engine\n• Master in Maya\n• Digital Architecture and Interior Design\n• Master in 2D Animation\n• Master in 3ds Max"
         }
       ]
     },
@@ -66,16 +94,24 @@ export const FAQSection = () => {
       label: "Fees & Loans",
       questions: [
         {
-          q: "What are the fee structure and duration for Arena courses?",
-          a: "Each course has a different fee structure and duration. The fee is paid in installments."
+          q: "Does Arena offer student loan facilities?",
+          a: "Yes, Arena offers student loan facilities at 0% interest. This makes education more accessible to students who may not be able to pay the full course fee upfront. Students can visit their local Arena institute or call for details about this facility."
         },
         {
-          q: "Will Arena provide me a student loan?",
-          a: "Yes, Arena offers student loan facility at 0% interest. Please visit the institute for details."
+          q: "How is the fee structure organized at Arena?",
+          a: "Each course at Arena has a different fee structure based on the program's duration, content, and resources required. The fees are typically paid in installments rather than as a lump sum, making it more manageable for students."
         },
         {
-          q: "How can I apply for a student loan?",
-          a: "Please visit the institute or call us for details. It is a 5-minute procedure and needs no paperwork. You will get instant notification on your loan status."
+          q: "What is the application process for student loans at Arena?",
+          a: "The student loan application process at Arena is designed to be quick and hassle-free. It's described as a 5-minute procedure that requires no paperwork, with instant notification of loan status. Students need to visit the institute or call for specific details."
+        },
+        {
+          q: "Are there any scholarships available for Arena Animation courses?",
+          a: "Arena may offer scholarships or special fee considerations based on merit, need, or other criteria. Prospective students should contact their local Arena center for information about any current scholarship opportunities."
+        },
+        {
+          q: "Do the course fees include software licenses?",
+          a: "Arena's course fees typically include access to the software and tools needed for training during the course duration. Students should check with their specific center regarding any software that might be provided for personal use beyond the classroom."
         }
       ]
     }
