@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { WhatsApp, FileText, Phone } from "lucide-react";
+import { MessageCircle, FileText, Phone } from "lucide-react";
 import { 
   Card, 
   CardContent, 
@@ -55,7 +55,7 @@ const Fees = () => {
                   className="w-full bg-green-600 hover:bg-green-700"
                   onClick={() => window.open(course.whatsappLink, '_blank')}
                 >
-                  <WhatsApp className="mr-2 h-4 w-4" />
+                  <MessageCircle className="mr-2 h-4 w-4" />
                   Get Fee Details on WhatsApp
                 </Button>
                 <Button 
