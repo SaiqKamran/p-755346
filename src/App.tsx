@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import Degree from "./pages/Degree";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import Admission from "./pages/Admission";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,7 @@ const App = () => (
           <Route path="/degree" element={<Degree />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admission" element={<Admission />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
