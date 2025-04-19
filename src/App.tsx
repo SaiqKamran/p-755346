@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import Admission from "./pages/Admission";
 import FAQ from "./pages/FAQ";
 import Fees from "./pages/Fees";
+import News from "./pages/News";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/degree" element={<Degree />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admission" element={<Admission />} />
+          <Route path="/news" element={<News />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/fees" element={<Fees />} />
           <Route path="*" element={<NotFound />} />
