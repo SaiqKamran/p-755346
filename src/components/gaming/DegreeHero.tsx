@@ -18,7 +18,7 @@ export const DegreeHero = () => {
             label="Bachelor of Vocational Studies"
             styles={{
               transform: {
-                from: "translateY(20px) scale(0.95)",
+                from: "translateY(-10px) scale(0.95)", // Adjusted to move up
                 to: "translateY(0px) scale(1)",
               },
               color: {
@@ -28,7 +28,7 @@ export const DegreeHero = () => {
             }}
             falloff="gaussian"
             radius={300}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-4xl md:text-6xl font-bold mb-6 block" // Added block to ensure proper spacing
           />
           <div className="mt-4 mb-8">
             <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
