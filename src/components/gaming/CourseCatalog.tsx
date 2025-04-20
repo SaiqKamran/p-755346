@@ -7,7 +7,7 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
-import { ImageCarousel } from "@/components/gaming/ImageCarousel";
+import ImageCarousel from "@/components/ImageCarousel";
 
 interface CourseTermProps {
   title: string;

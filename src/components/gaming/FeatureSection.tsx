@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
@@ -7,13 +6,6 @@ import { Meteors } from "@/components/ui/meteors";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
-  // Add example images for the feature section
-  const featureImages = [
-    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80"
-  ];
 
   return (
     <section className="relative" ref={sectionRef}>
@@ -35,7 +27,7 @@ export const FeatureSection: React.FC = () => {
         <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5 relative z-10">
           <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
             <div className="w-full md:w-[50%] max-md:w-full">
-              <ImageCarousel images={featureImages} />
+              <ImageCarousel />
             </div>
             <div className="w-full md:w-[50%] max-md:w-full">
               <div className="flex flex-col h-full justify-center max-md:mt-10">
