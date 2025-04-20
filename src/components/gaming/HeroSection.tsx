@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -30,24 +29,24 @@ export const HeroSection: React.FC = () => {
         }}
         plugins={[
           Autoplay({
-            delay: 8000, // 8 seconds
-            stopOnInteraction: true, // stops after user interaction
-            playOnInit: true, // starts playing on init
-            stopOnLastSnap: true, // stops on last slide
+            delay: 8000,
+            stopOnInteraction: true,
+            playOnInit: true,
+            stopOnLastSnap: true,
           })
         ]}
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <img 
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/035acd8c83f372da62c47ee0517293e00e602a6a?placeholderIfAbsent=true" 
-                className="absolute top-0 left-0 w-full h-full object-cover object-top" 
-                alt="Hero background" 
+                src="/lovable-uploads/90284972-4ecb-48af-a99c-ab9d130af555.png" 
+                className="absolute top-0 left-0 w-full h-full object-cover object-center" 
+                alt="VR Experience Background" 
               />
             </div>
             
-            <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-10 pt-14">
+            <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-20 pt-14">
               <Header />
               <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
                 <div className="w-full md:w-1/2">
