@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { motion } from "framer-motion";
 import { HeroContent } from "./HeroContent";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   Carousel, 
   CarouselContent, 
@@ -18,6 +19,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
@@ -40,7 +42,7 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <img 
-                src="/lovable-uploads/90284972-4ecb-48af-a99c-ab9d130af555.png" 
+                src={isMobile ? "/lovable-uploads/ceb95f2e-11b6-47c5-97fb-0b79ae543f81.png" : "/lovable-uploads/90284972-4ecb-48af-a99c-ab9d130af555.png"}
                 className="absolute top-0 left-0 w-full h-full object-cover object-center scale-95 origin-center" 
                 alt="VR Experience Background" 
                 style={{ 
