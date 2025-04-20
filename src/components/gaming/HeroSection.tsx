@@ -41,8 +41,14 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <img 
                 src="/lovable-uploads/90284972-4ecb-48af-a99c-ab9d130af555.png" 
-                className="absolute top-0 left-0 w-full h-full object-cover object-center" 
+                className="absolute top-0 left-0 w-full h-full object-cover object-center scale-95 origin-center" 
                 alt="VR Experience Background" 
+                style={{ 
+                  position: 'fixed',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)'
+                }}
               />
             </div>
             
