@@ -7,6 +7,7 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import ImageCarousel from "@/components/ImageCarousel";
 
 interface CourseTermProps {
   title: string;
@@ -563,6 +564,59 @@ const courses: Course[] = [
   }
 ];
 
+const courseImages = {
+  aaipp: [
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80"
+  ],
+  vfx: [
+    "https://images.unsplash.com/photo-1578632292335-df3abbb0d586?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1617499617507-0537e783a3a4?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80"
+  ],
+  archviz: [
+    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80"
+  ],
+  broadcast: [
+    "https://images.unsplash.com/photo-1595859703065-2c794418e83d?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1616469832301-ffb2c59f3b51?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1533422902779-aff35862e462?auto=format&fit=crop&q=80"
+  ],
+  dcc: [
+    "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1523726491678-bf852e717f6a?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80"
+  ],
+  graphicweb: [
+    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1603969072881-b0fc7f3d77d7?auto=format&fit=crop&q=80"
+  ],
+  uiux: [
+    "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1629752187687-3d3c7ea3a21b?auto=format&fit=crop&q=80"
+  ],
+  digitalmarketing: [
+    "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&q=80"
+  ],
+  visualmotiongraphics: [
+    "https://images.unsplash.com/photo-1626785774625-8e8db07ec596?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1626785774673-2c96bce10c68?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1626785774536-f2ac0b504192?auto=format&fit=crop&q=80"
+  ],
+  gaming: [
+    "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80"
+  ]
+};
+
 export const CourseCatalog = () => {
   const [openCourse, setOpenCourse] = useState<string | null>(null);
 
@@ -615,6 +669,9 @@ export const CourseCatalog = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-2">
+                  <ImageCarousel 
+                    images={courseImages[course.id as keyof typeof courseImages]} 
+                  />
                   <div className="bg-black/20 rounded-lg p-6 space-y-6">
                     {course.terms && course.terms.map((term, idx) => (
                       <div key={idx} className="space-y-3">

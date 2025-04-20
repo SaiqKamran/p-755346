@@ -3,33 +3,43 @@ import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
+import Autoplay from 'embla-carousel-autoplay';
 
-const images = [
-  "/lovable-uploads/5db5f36c-5a6c-438a-aa00-5728e5650b72.png",
-  "/lovable-uploads/3730923e-bb5c-4373-a7f3-1ba8671c9659.png",
-];
+interface ImageCarouselProps {
+  images: string[];
+  autoplay?: boolean;
+}
 
-export const ImageCarousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+export const ImageCarousel: React.FC<ImageCarouselProps> = ({ 
+  images,
+  autoplay = true 
+}) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true },
+    autoplay ? [
+      Autoplay({
+        delay: 4000,
+        stopOnInteraction: false,
+      })
+    ] : []
+  );
 
   return (
-    <div className="relative">
-      <div className="border-4 border-yellow-400 rounded-lg overflow-hidden">
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {images.map((src, index) => (
-              <div 
-                key={index} 
-                className="relative flex-[0_0_100%] min-w-0 aspect-square"
-              >
-                <img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+    <div className="relative rounded-xl overflow-hidden mb-6">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {images.map((src, index) => (
+            <div 
+              key={index} 
+              className="relative flex-[0_0_100%] min-w-0 h-[300px]"
+            >
+              <img
+                src={src}
+                alt={`Course Image ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
       
