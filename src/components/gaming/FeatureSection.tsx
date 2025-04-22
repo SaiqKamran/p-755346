@@ -76,8 +76,7 @@ export const FeatureSection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="h-[400px] rounded-lg overflow-hidden bg-black/20">
-              {/* We're deliberately using a non-existent path since we've added fallback content */}
-              <GltfModelViewer modelUrl="/3d-model.glb" className="w-full h-full" />
+              <GltfModelViewer modelUrl="" className="w-full h-full" />
             </div>
             <StatsDisplay />
           </div>
@@ -85,4 +84,4 @@ export const FeatureSection: React.FC = () => {
       </div>
     </section>
   );
-};
+}
