@@ -54,7 +54,7 @@ export const TestimonialSection: React.FC = () => {
         <div className="relative">
           <div className="flex animate-scroll-x">
             {/* First set of testimonials */}
-            <div className="flex gap-6 min-w-full">
+            <div className="flex gap-6">
               {testimonials.map((testimonial, index) => (
                 <div key={`first-${index}`} className="w-[400px] flex-shrink-0">
                   <TestimonialCard {...testimonial} />
@@ -62,10 +62,19 @@ export const TestimonialSection: React.FC = () => {
               ))}
             </div>
             
-            {/* Duplicate set for seamless scrolling */}
-            <div className="flex gap-6 min-w-full">
+            {/* Second set for seamless loop */}
+            <div className="flex gap-6">
               {testimonials.map((testimonial, index) => (
                 <div key={`second-${index}`} className="w-[400px] flex-shrink-0">
+                  <TestimonialCard {...testimonial} />
+                </div>
+              ))}
+            </div>
+
+            {/* Third set for extra buffer */}
+            <div className="flex gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={`third-${index}`} className="w-[400px] flex-shrink-0">
                   <TestimonialCard {...testimonial} />
                 </div>
               ))}
