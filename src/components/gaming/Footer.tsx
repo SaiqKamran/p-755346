@@ -1,5 +1,6 @@
+
 import React from "react";
-import { Facebook, Instagram, Twitter, Github, WhatsApp } from "lucide-react";
+import { Facebook, Instagram, Twitter, Github, MessageSquare } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
@@ -56,7 +57,7 @@ export const Footer: React.FC = () => {
               rel="noopener noreferrer" 
               className="text-white hover:text-yellow-400"
             >
-              <WhatsApp />
+              <MessageSquare />
             </a>
           </div>
         </div>
