@@ -1,12 +1,40 @@
 
-import React, { Suspense, useRef } from 'react';
+import React, { Suspense, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, Stage } from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, Stage, Box, Sphere, Torus } from '@react-three/drei';
+
+// Fallback model when a GLB file isn't available
+function FallbackModel() {
+  return (
+    <group>
+      <Box args={[1, 1, 1]} position={[0, 0, 0]}>
+        <meshStandardMaterial color="purple" />
+      </Box>
+      <Torus args={[1.5, 0.5, 16, 32]} position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <meshStandardMaterial color="hotpink" />
+      </Torus>
+      <Sphere args={[0.5, 32, 32]} position={[0, 2, 0]}>
+        <meshStandardMaterial color="gold" />
+      </Sphere>
+    </group>
+  );
+}
 
 function Model({ url }: { url: string }) {
-  const { scene } = useGLTF(url);
+  const [hasError, setHasError] = useState(false);
   
-  return <primitive object={scene} />;
+  if (hasError) {
+    return <FallbackModel />;
+  }
+  
+  try {
+    const { scene } = useGLTF(url);
+    return <primitive object={scene} />;
+  } catch (error) {
+    console.error("Error loading model:", error);
+    setHasError(true);
+    return <FallbackModel />;
+  }
 }
 
 interface GltfModelViewerProps {
@@ -23,7 +51,9 @@ export function GltfModelViewer({ modelUrl, className }: GltfModelViewerProps) {
       >
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.5}>
-            <Model url={modelUrl} />
+            <ErrorBoundary fallback={<FallbackModel />}>
+              <Model url={modelUrl} />
+            </ErrorBoundary>
           </Stage>
           <OrbitControls 
             autoRotate
@@ -37,4 +67,24 @@ export function GltfModelViewer({ modelUrl, className }: GltfModelViewerProps) {
       </Canvas>
     </div>
   );
+}
+
+// Error boundary to catch model loading errors
+class ErrorBoundary extends React.Component<{children: React.ReactNode, fallback: React.ReactNode}> {
+  state = { hasError: false };
+  
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  
+  componentDidCatch(error: Error) {
+    console.error("Error in component:", error);
+  }
+  
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
 }
