@@ -30,7 +30,7 @@ function Model() {
 
   return (
     <group ref={group}>
-      <primitive object={scene} scale={3} position={[0, -2.5, 0]} />
+      <primitive object={scene} scale={5} position={[0, -1.5, 0]} />
     </group>
   );
 }
@@ -42,17 +42,17 @@ export const RobotModel = () => {
         camera={{ position: [0, 0, 10], fov: 40 }}
         style={{ background: 'transparent' }}
       >
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
-        <directionalLight position={[-5, -5, -5]} intensity={0.5} color="#9f7aea" />
+        <ambientLight intensity={1.2} />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} color="#ffffff" />
+        <directionalLight position={[-5, -5, -5]} intensity={0.8} color="#9f7aea" />
         <Suspense fallback={null}>
           <Model />
           <OrbitControls 
-            enableZoom={false} 
-            enablePan={false}
+            enableZoom={true} 
+            enablePan={true}
             autoRotate={false}
-            minPolarAngle={Math.PI / 3}
-            maxPolarAngle={Math.PI / 1.5}
+            minPolarAngle={Math.PI / 4}
+            maxPolarAngle={Math.PI / 1.8}
           />
         </Suspense>
       </Canvas>
