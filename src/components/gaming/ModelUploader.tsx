@@ -1,7 +1,8 @@
 
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { SplineScene } from "@/components/ui/splite";
+import { GltfModelViewer } from "@/components/ui/GltfModelViewer";
+import { toast } from "sonner";
 
 export const ModelUploader = () => {
   const [modelUrl, setModelUrl] = useState<string | null>(null);
@@ -13,6 +14,7 @@ export const ModelUploader = () => {
       const objectUrl = URL.createObjectURL(file);
       console.log('GLB file uploaded:', objectUrl);
       setModelUrl(objectUrl);
+      toast.success("3D model uploaded successfully");
     }
   }, []);
 
@@ -40,7 +42,7 @@ export const ModelUploader = () => {
       
       {modelUrl && (
         <div className="mt-6 h-[400px] rounded-lg overflow-hidden bg-black/20">
-          <SplineScene scene={modelUrl} className="w-full h-full" />
+          <GltfModelViewer modelUrl={modelUrl} className="w-full h-full" />
         </div>
       )}
     </div>
