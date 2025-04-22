@@ -33,7 +33,7 @@ function VintageRobotModel() {
 
   return (
     <group ref={group}>
-      <primitive object={scene} scale={2.35} />
+      <primitive object={scene} scale={2} position={[0, -1, 0]} />
     </group>
   );
 }
@@ -45,8 +45,11 @@ export const RobotModel = () => (
       background: "linear-gradient(135deg, #1b1240 80%, #221F2C 100%)",
     }}
   >
-    <div style={{ width: "100%", maxWidth: 600, aspectRatio: "3/2", height: "auto" }}>
-      <Canvas camera={{ position: [0, 1.4, 4], fov: 60 }} style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "400px" }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 50 }} 
+        style={{ width: "100%", height: "100%" }}
+      >
         {/* Theme matching background */}
         <color attach="background" args={["#1b1240"]} />
         <ambientLight intensity={0.95} />
