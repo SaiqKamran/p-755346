@@ -47,8 +47,8 @@ export const DegreeHero = () => {
             <Button 
               variant="primary" 
               onClick={() => {
-                const message = "Hi, I'm interested in the B.Voc Degree program at Arena Animation Chandigarh. Please provide more information.";
-                openWhatsAppChat("B.Voc Degree Inquiry", message);
+                console.log("B.Voc Degree Inquiry - Opening WhatsApp");
+                openWhatsAppChat("B.Voc Degree Inquiry");
               }}
             >
               WhatsApp Us
