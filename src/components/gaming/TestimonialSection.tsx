@@ -47,8 +47,18 @@ export const TestimonialSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-indigo-900/50 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-16 overflow-hidden relative">
+      {/* Gaming texture background */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage: 'url("/lovable-uploads/8eb8219c-9593-4745-874f-ab44635fc001.png")'
+        }}
+      />
+      {/* Purple overlay */}
+      <div className="absolute inset-0 z-0 bg-indigo-900/50" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center text-white mb-12">Student Testimonials</h2>
         
         <div className="relative">

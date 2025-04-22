@@ -1,15 +1,33 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { newsItems } from "@/data/news";
+
 export const HomeNewsSection: React.FC = () => {
   const navigate = useNavigate();
-  return <section className="py-16 bg-indigo-900/30 overflow-hidden">
-      <div className="container mx-auto px-4">
+  
+  return (
+    <section className="py-16 overflow-hidden relative">
+      {/* Gaming texture background */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+        style={{
+          backgroundImage: 'url("/lovable-uploads/1a5847b5-dbb9-4335-bf80-105dfde2aa78.png")'
+        }}
+      />
+      {/* Purple overlay */}
+      <div className="absolute inset-0 z-0 bg-indigo-900/30" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold text-white">Latest News & Events</h2>
-          <Button variant="outline" onClick={() => navigate('/news')} className="border-white/20 hover:bg-white/10 font-normal text-slate-50">
+          <Button 
+            variant="outline" 
+            onClick={() => navigate('/news')} 
+            className="border-white/20 hover:bg-white/10 font-normal text-slate-50"
+          >
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -72,5 +90,6 @@ export const HomeNewsSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
