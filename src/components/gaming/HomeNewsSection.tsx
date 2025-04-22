@@ -14,7 +14,7 @@ export const HomeNewsSection: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: 'url("/lovable-uploads/1a5847b5-dbb9-4335-bf80-105dfde2aa78.png")'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80")'
         }}
       />
       {/* Purple overlay */}

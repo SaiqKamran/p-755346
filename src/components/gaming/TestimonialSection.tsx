@@ -52,7 +52,7 @@ export const TestimonialSection: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
         style={{
-          backgroundImage: 'url("/lovable-uploads/8eb8219c-9593-4745-874f-ab44635fc001.png")'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80")'
         }}
       />
       {/* Purple overlay */}
