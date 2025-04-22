@@ -3,6 +3,7 @@ import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
+import { ModelUploader } from "./ModelUploader";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -84,6 +85,11 @@ export const FeatureSection: React.FC = () => {
               <div className="text-4xl font-extrabold text-yellow-400">Over 20</div>
               <div className="text-sm text-white mt-2">including China</div>
             </div>
+          </div>
+
+          <div className="mt-12">
+            <h3 className="text-white text-2xl font-bold text-center mb-6">Upload 3D Model</h3>
+            <ModelUploader />
           </div>
         </div>
       </div>
