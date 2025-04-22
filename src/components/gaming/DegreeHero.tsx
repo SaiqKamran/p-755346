@@ -2,9 +2,15 @@
 import React from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "../ui/text-cursor-proximity";
+import { openWhatsAppChat } from "@/utils/whatsapp";
+import { Phone } from "lucide-react";
 
 export const DegreeHero = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const handleCall = () => {
+    window.location.href = "tel:+918264900999";
+  };
 
   return (
     <div 
@@ -18,7 +24,7 @@ export const DegreeHero = () => {
             label="Bachelor of Vocational Studies"
             styles={{
               transform: {
-                from: "translateY(-10px) scale(0.95)", // Adjusted to move up
+                from: "translateY(-10px) scale(0.95)",
                 to: "translateY(0px) scale(1)",
               },
               color: {
@@ -28,7 +34,7 @@ export const DegreeHero = () => {
             }}
             falloff="gaussian"
             radius={300}
-            className="text-4xl md:text-6xl font-bold mb-6 block" // Added block to ensure proper spacing
+            className="text-4xl md:text-6xl font-bold mb-6 block"
           />
           <div className="mt-4 mb-8">
             <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -38,11 +44,17 @@ export const DegreeHero = () => {
             </p>
           </div>
           <div className="flex gap-4 justify-center">
-            <Button variant="primary">Begin Application</Button>
-            <Button variant="secondary">Schedule Consultation</Button>
+            <Button variant="primary" onClick={() => openWhatsAppChat("B.Voc Degree Inquiry")}>
+              WhatsApp Us
+            </Button>
+            <Button variant="secondary" onClick={handleCall}>
+              <Phone className="mr-2 h-4 w-4" />
+              Call Us
+            </Button>
           </div>
         </div>
       </div>
     </div>
   );
 };
+
