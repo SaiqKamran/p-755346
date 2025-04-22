@@ -59,7 +59,7 @@ export const HeroSection: React.FC = () => {
               <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
                 <div className="w-full md:w-1/2">
                   <HeroContent
-                    title="Arena Animation Chandigarh Sector 9"
+                    title="About Arena Animation Sector 9"
                     description="The city's leading institute for Animation and Visual Effects (VFx) education and training. Offering career courses in Animation, Multimedia, VFx, Digital Marketing, and more."
                   />
                 </div>
