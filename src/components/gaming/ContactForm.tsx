@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -37,7 +38,15 @@ export const ContactForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    const formattedMessage = `
+New Contact Form Submission:
+Name: ${values.name}
+Phone: ${values.phone}
+Email: ${values.email || 'Not provided'}
+City: ${values.city}
+Message: ${values.message || 'No message provided'}`;
+
+    openWhatsAppChat('Contact Form Submission', formattedMessage);
     toast.success("Message sent successfully!");
     form.reset();
   }
