@@ -25,12 +25,7 @@ function VintageRobotModel() {
       cancelAnimationFrame(frameId);
     };
   }, [animations]);
-  // Rotate slowly around Y-axis
-  useFrame((state, delta) => {
-    if (group.current) {
-      group.current.rotation.y += delta * 0.25; // slow rotate (0.25 radians/sec)
-    }
-  });
+  // Removed the rotation code to focus on the original animation
   return <primitive ref={group} object={scene} scale={3} />;
 }
 
