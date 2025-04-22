@@ -86,8 +86,8 @@ export const CourseList = () => {
                   variant="secondary" 
                   className="w-full"
                   onClick={() => {
-                    console.log(`Enrolling in course: ${course.title}`);
-                    openWhatsAppChat(course.title);
+                    const message = `Hi, I'm interested in enrolling in the ${course.title} course at Arena Animation Chandigarh. Please provide course details, fee structure, and admission process.`;
+                    openWhatsAppChat(course.title, message);
                   }}
                 >
                   Enroll Now
