@@ -33,7 +33,7 @@ function VintageRobotModel() {
 
   return (
     <group ref={group}>
-      <primitive object={scene} scale={2} position={[0, -1, 0]} />
+      <primitive object={scene} scale={3.5} position={[0, -3, 0]} />
     </group>
   );
 }
