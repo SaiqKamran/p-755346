@@ -1,14 +1,12 @@
-
 "use client";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Check, GraduationCap, Star } from "lucide-react";
-import { Link } from "react-router-dom"; // Changed from next/link to react-router-dom
-import { useState, useEffect } from "react"; // We'll create our own useMediaQuery hook
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-// Create a simple useMediaQuery hook
 const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
 
@@ -54,7 +52,7 @@ const defaultCourses: Course[] = [
     ],
     description: "With sharp skills and the right training, you can work in animation studios, gaming companies, television channels, advertising agencies & film production companies, and have a high-paying career.",
     buttonText: "More Info",
-    href: "/career-courses",
+    href: "/career-courses/professional",
     isPopular: true,
   },
   {
@@ -69,7 +67,7 @@ const defaultCourses: Course[] = [
     ],
     description: "Get Skilled, Get Job Ready, Get Hired!",
     buttonText: "More Info",
-    href: "/professional-courses",
+    href: "/career-courses/short-term",
     isPopular: false,
   },
   {
@@ -84,7 +82,7 @@ const defaultCourses: Course[] = [
     ],
     description: "Perfect for quick skill enhancement and specific tool mastery",
     buttonText: "More Info",
-    href: "/short-courses",
+    href: "/career-courses/specialized",
     isPopular: false,
   },
 ];
@@ -171,7 +169,7 @@ export function Courses({
 
               <div className="mt-auto">
                 <Link
-                  to={course.href} // Changed from href to to for React Router
+                  to={course.href}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "w-full bg-white/5 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all duration-300"
