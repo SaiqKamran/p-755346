@@ -5,51 +5,71 @@ import { TestimonialCard } from "./TestimonialCard";
 export const TestimonialSection: React.FC = () => {
   const testimonials = [
     {
-      content: "Arena Chandigarh provided an amazing experience for my son's birthday party. The gaming setup was fantastic, and the staff was incredibly helpful in organizing everything. All the kids had a blast, and the party room was perfect for the celebration. We'll definitely be returning for future events!",
-      avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/93fbd035a360d965855e9df06d5d3fd0e05961b2?placeholderIfAbsent=true",
-      name: "Rajan Sharma",
-      company: "Birthday Party",
-      backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1f9d61f26074169e407c578bd796c521853b89a5?placeholderIfAbsent=true"
+      content: "When I joined Arena Animation Sector 9, I was curious about AI in design and creative tech. I wanted a place where I could actually learn hands-on. And honestly? This place exceeded every expectation. The labs are next level — modern, spacious, and seriously inspiring. Arena 9 have the highest number of computers in the entire Tricity — so there's always a system available.",
+      avatarSrc: "/lovable-uploads/02566b49-2607-4ef4-b0d5-1b57cfe47f53.png",
+      name: "Parmod Kumar",
+      role: "AI Design Student",
+      rating: 5,
+      date: "4 days ago"
     },
     {
-      content: "We hosted our company's team-building event at Arena Chandigarh and it was a huge success. The staff was professional and accommodating, the facilities were excellent, and everyone enjoyed the gaming competitions. The venue has a great ambiance and the catering options were delicious. Highly recommended for corporate events!",
-      avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/dafa45290ac6eca1324bf83a757ab9e8ad835e7e?placeholderIfAbsent=true",
-      name: "Priya Kapoor",
-      company: "Corporate Event",
-      backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/e5089c3ff035d5dbc53b0b36cfd66e482b308a88?placeholderIfAbsent=true"
+      content: "I joined arena sector 9 Institute for graphic course it's really nice, and Graphic designer with good package now I am financially independent and I want to thanks arena For this Great opportunity",
+      avatarSrc: "/lovable-uploads/72e2f71b-f56b-4c5d-9644-4645afa0856b.png",
+      name: "Kirashna Varma",
+      role: "Graphic Design Student",
+      rating: 5,
+      date: "4 days ago"
     },
-    // Duplicate testimonials to create continuous effect
     {
-      content: "The animation courses at Arena are outstanding! The instructors are industry professionals who bring real-world experience to the classroom. I've learned so much about 3D modeling and character design.",
-      avatarSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/93fbd035a360d965855e9df06d5d3fd0e05961b2?placeholderIfAbsent=true",
-      name: "Amit Verma",
-      company: "Animation Student",
-      backgroundSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1f9d61f26074169e407c578bd796c521853b89a5?placeholderIfAbsent=true"
+      content: "Being a part of Arena Animation from last few months, I highly recommend this Institute for making career in Animation, Multimedia, VFX, Graphics design and many more. From my experience I can say It's a best Institute to learn these courses. Whole Arena faculty is highly experienced, interactive n cooperative.",
+      avatarSrc: "/lovable-uploads/dfe52c35-1a43-415d-8f68-a98225c1aa88.png",
+      name: "Zinia Gill",
+      role: "Animation Student",
+      rating: 5,
+      date: "3 years ago"
+    },
+    {
+      content: "One of the best institutes I have attended so far! Great animation and multimedia courses offered. I have taken the Web and Graphic Designing course and it really helped me to enhance my creative skills. Overall, the experience and knowledge gained is worth the time and money.",
+      avatarSrc: "/lovable-uploads/23451786-6485-4768-8a76-53befcd5cb6a.png",
+      name: "Ayushi Jain",
+      role: "Web Design Student",
+      rating: 5,
+      date: "2 years ago"
+    },
+    {
+      content: "Best institute with good faculty and great atmosphere is friendly and comfortable and the education are dedicated and cooperative. Big thumbs up 👍👍",
+      avatarSrc: "/lovable-uploads/f5fb0529-7420-4f21-b796-ab6c9c0841aa.png",
+      name: "Sumit Sahu",
+      role: "Current Student",
+      rating: 5,
+      date: "7 months ago"
     }
   ];
 
   return (
     <section className="py-16 bg-indigo-900/50 overflow-hidden">
-      <h2 className="text-4xl font-bold text-center text-white mb-12">What Our Students Say</h2>
-      
-      <div className="relative">
-        <div className="flex animate-scroll-x">
-          {/* First set of testimonials */}
-          <div className="flex gap-6 min-w-full">
-            {testimonials.map((testimonial, index) => (
-              <div key={`first-${index}`} className="w-[400px] flex-shrink-0">
-                <TestimonialCard {...testimonial} />
-              </div>
-            ))}
-          </div>
-          
-          {/* Duplicate set for seamless scrolling */}
-          <div className="flex gap-6 min-w-full">
-            {testimonials.map((testimonial, index) => (
-              <div key={`second-${index}`} className="w-[400px] flex-shrink-0">
-                <TestimonialCard {...testimonial} />
-              </div>
-            ))}
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center text-white mb-12">Student Testimonials</h2>
+        
+        <div className="relative">
+          <div className="flex animate-scroll-x">
+            {/* First set of testimonials */}
+            <div className="flex gap-6 min-w-full">
+              {testimonials.map((testimonial, index) => (
+                <div key={`first-${index}`} className="w-[400px] flex-shrink-0">
+                  <TestimonialCard {...testimonial} />
+                </div>
+              ))}
+            </div>
+            
+            {/* Duplicate set for seamless scrolling */}
+            <div className="flex gap-6 min-w-full">
+              {testimonials.map((testimonial, index) => (
+                <div key={`second-${index}`} className="w-[400px] flex-shrink-0">
+                  <TestimonialCard {...testimonial} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

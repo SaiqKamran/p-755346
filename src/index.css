@@ -131,8 +131,11 @@
   }
 
   .animate-scroll-x {
-    animation: scroll 30s linear infinite;
+    animation: scroll 40s linear infinite;
     display: flex;
     width: max-content;
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 }
