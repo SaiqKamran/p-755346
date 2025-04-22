@@ -51,66 +51,14 @@ export const CompanyGrid = () => {
     {
       name: "Legend 3D",
       logo: "/lovable-uploads/44e8859b-9338-4633-8c89-4db9278b0361.png"
-    },
-    {
-      name: "Makuta VFX",
-      logo: "/lovable-uploads/072c3289-6f05-4ed7-adb6-ffa613e58891.png"
-    },
-    {
-      name: "MPC Studios",
-      logo: "/lovable-uploads/4db14d27-72cf-4d62-918e-a7eae38c094a.png"
-    },
-    {
-      name: "Nazara",
-      logo: "/lovable-uploads/2ec41f6e-b97c-4209-8d9d-e9558284d42a.png"
-    },
-    {
-      name: "Papaya Gaming",
-      logo: "/lovable-uploads/2de0a72f-ccde-4b7c-97d7-f39bc3ded4b8.png"
-    },
-    {
-      name: "Philm CGI",
-      logo: "/lovable-uploads/6e1b9f57-9d1c-4591-80d5-ef166100ef31.png"
-    },
-    {
-      name: "Prana Studios",
-      logo: "/lovable-uploads/ac29c05c-5c5e-4cb7-9685-adb7713b0a1b.png"
-    },
-    {
-      name: "Red Chillies Entertainment",
-      logo: "/lovable-uploads/84d6d3b7-05f7-4091-a660-8239a0170cd8.png"
-    },
-    {
-      name: "Rockstar Games",
-      logo: "/lovable-uploads/3032c883-b3d9-4e5f-9873-2703c9b55754.png"
-    },
-    {
-      name: "Sumo Digital",
-      logo: "/lovable-uploads/35583a19-b983-4f7c-9968-8ea802923a1c.png"
-    },
-    {
-      name: "Technicolor",
-      logo: "/lovable-uploads/b1f59e0e-f4ed-4046-9850-7431c83a2f77.png"
-    },
-    {
-      name: "Trace VFX",
-      logo: "/lovable-uploads/fc665197-bcce-4da0-9667-2e6517c44450.png"
-    },
-    {
-      name: "Xentrix Studios",
-      logo: "/lovable-uploads/2526a131-d93a-43ad-bde4-26fac9d04441.png"
-    },
-    {
-      name: "Yash Raj Films",
-      logo: "/lovable-uploads/0b8baca2-7ff2-49bc-850c-fe148009d940.png"
     }
   ];
 
   return (
     <section className="py-20 px-4 bg-[#160f35]">
-      <div className="max-w-[1400px] mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Students Work At</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+      <div className="max-w-[1200px] mx-auto">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Students Work At</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {companies.map((company, index) => (
             <Card 
               key={index} 
