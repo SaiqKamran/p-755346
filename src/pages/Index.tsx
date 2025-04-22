@@ -8,6 +8,7 @@ import { Footer } from "@/components/gaming/Footer";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 import { TextCursorProximityDemo } from "@/components/ui/text-cursor-proximity-demo";
 import { TestimonialSection } from "@/components/gaming/TestimonialSection";
+import { HomeNewsSection } from "@/components/gaming/HomeNewsSection";
 
 const Index = () => {
   return (
@@ -28,8 +29,9 @@ const Index = () => {
         <HeroSection />
         <GameShowcase />
         <FeatureSection />
-        <LocationSection />
         <TestimonialSection />
+        <HomeNewsSection />
+        <LocationSection />
         <TextCursorProximityDemo />
         <Footer />
       </div>
