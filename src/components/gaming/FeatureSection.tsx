@@ -86,11 +86,6 @@ export const FeatureSection: React.FC = () => {
               <div className="text-sm text-white mt-2">including China</div>
             </div>
           </div>
-
-          <div className="mt-12">
-            <h3 className="text-white text-2xl font-bold text-center mb-6">Upload 3D Model</h3>
-            <ModelUploader />
-          </div>
         </div>
       </div>
     </section>
