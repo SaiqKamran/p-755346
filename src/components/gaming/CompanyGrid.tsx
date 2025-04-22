@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 
@@ -5,112 +6,53 @@ export const CompanyGrid = () => {
   const companies = [
     {
       name: "Amazon",
-      logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/177dc4ac-2a5c-4a60-a4f8-14dbbd5d1899.png"
     },
     {
       name: "Byju's",
-      logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/1a5847b5-dbb9-4335-bf80-105dfde2aa78.png"
     },
     {
       name: "Dhruva Interactive",
-      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/158e42cc-a29f-4938-a069-5d8f1bdbc749.png"
     },
     {
       name: "Digital Domain",
-      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/bf8b3260-ad02-4852-8bc2-c6314511071a.png"
     },
     {
       name: "Dneg",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/eb5e1b15-9540-4b2d-8ae0-94923ef71f6b.png"
     },
     {
       name: "DQ Entertainment",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/25977577-3c5f-4638-9185-6e56d1f5e55c.png"
     },
     {
       name: "Eplus Studios",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/d641a5fb-566b-4ca9-9bf8-0ec08e868d34.png"
     },
     {
       name: "Firefly Studios",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/cd3b17e0-2ef3-4af1-96e5-eb470b8d9a1a.png"
     },
     {
       name: "Golden Robot Animation",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/5c403dd9-fa9e-472e-935d-8bb5f08f247c.png"
     },
     {
       name: "Green Gold Animation",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/70827f88-0162-40a6-88b2-2940482b924b.png"
     },
     {
-      name: "Lakshaya Digital",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      name: "Lakshya Digital",
+      logo: "/lovable-uploads/dd065762-877c-4393-b40c-5f6033b6749e.png"
     },
     {
       name: "Legend 3D",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Little Red Zombies",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Makuta VFx",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "MPC Studios",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Nazara",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Nodding Heads Games",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Philmcgi",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Prana Studios",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Red Chillies VFx",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Rockstar Games",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Sumo Video Games",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Technicolor India",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Trace VFx",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "Xentrix Solutions",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
-    },
-    {
-      name: "YRF Studios",
-      logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&fit=crop&auto=format"
+      logo: "/lovable-uploads/44e8859b-9338-4633-8c89-4db9278b0361.png"
     }
-  ].map(company => ({
-    ...company,
-    logo: company.logo || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&fit=crop&auto=format"
-  }));
+  ];
 
   return (
     <section className="py-20 px-4 bg-[#160f35]">
@@ -125,7 +67,7 @@ export const CompanyGrid = () => {
               <img 
                 src={company.logo} 
                 alt={`${company.name} logo`} 
-                className="w-full h-12 object-contain mb-2 filter brightness-0 invert opacity-80"
+                className="w-full h-12 object-contain mb-2"
               />
               <span className="text-white/90 font-medium text-center text-sm">{company.name}</span>
             </Card>
