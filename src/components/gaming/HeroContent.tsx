@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
+import { openWhatsAppChat } from "@/utils/whatsapp";
+import { Phone } from "lucide-react";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -13,6 +15,10 @@ interface HeroContentProps {
 
 export function HeroContent({ title, description }: HeroContentProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleCall = () => {
+    window.location.href = "tel:+918264900999";
+  };
 
   return (
     <div className="flex flex-col space-y-4" ref={containerRef}>
@@ -47,8 +53,13 @@ export function HeroContent({ title, description }: HeroContentProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1.2, ease }}
       >
-        <Button variant="primary">Get Course Info</Button>
-        <Button variant="secondary">Contact Us</Button>
+        <Button variant="primary" onClick={() => openWhatsAppChat("General Inquiry")}>
+          WhatsApp Us
+        </Button>
+        <Button variant="secondary" onClick={handleCall}>
+          <Phone className="mr-2 h-4 w-4" />
+          Call Us
+        </Button>
       </motion.div>
     </div>
   );
