@@ -1,12 +1,37 @@
 
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Stage } from "@react-three/drei";
+import * as THREE from "three";
 
 function VintageRobotModel() {
   // The file is public so path is '/vintage_robot_animated.glb'
-  const { scene } = useGLTF("/vintage_robot_animated.glb");
-  return <primitive object={scene} scale={3.5} />;
+  const group = useRef<THREE.Group>(null);
+  const { scene, animations } = useGLTF("/vintage_robot_animated.glb") as any;
+  // If glTF has animation, play the first clip (basic autoplay via AnimationMixer)
+  React.useEffect(() => {
+    if (!animations || animations.length === 0 || !group.current) return;
+    const mixer = new THREE.AnimationMixer(group.current);
+    const action = mixer.clipAction(animations[0]);
+    action.play();
+    let frameId: number;
+    const animate = (delta: number) => {
+      mixer.update(delta);
+      frameId = requestAnimationFrame(animate);
+    };
+    frameId = requestAnimationFrame(animate);
+    return () => {
+      mixer.stopAllAction();
+      cancelAnimationFrame(frameId);
+    };
+  }, [animations]);
+  // Rotate slowly around Y-axis
+  useFrame((state, delta) => {
+    if (group.current) {
+      group.current.rotation.y += delta * 0.25; // slow rotate (0.25 radians/sec)
+    }
+  });
+  return <primitive ref={group} object={scene} scale={3} />;
 }
 
 export const RobotModel = () => (
@@ -37,3 +62,4 @@ export const RobotModel = () => (
 
 // drei's useGLTF has a cache, but let's pre-load it for perf
 useGLTF.preload("/vintage_robot_animated.glb");
+
