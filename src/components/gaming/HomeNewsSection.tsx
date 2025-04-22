@@ -1,23 +1,15 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { newsItems } from "@/data/news";
-
 export const HomeNewsSection: React.FC = () => {
   const navigate = useNavigate();
-  
-  return (
-    <section className="py-16 bg-indigo-900/30 overflow-hidden">
+  return <section className="py-16 bg-indigo-900/30 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold text-white">Latest News & Events</h2>
-          <Button 
-            variant="outline" 
-            className="text-white border-white/20 hover:bg-white/10"
-            onClick={() => navigate('/news')}
-          >
+          <Button variant="outline" onClick={() => navigate('/news')} className="border-white/20 hover:bg-white/10 font-normal text-slate-50">
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -25,12 +17,7 @@ export const HomeNewsSection: React.FC = () => {
         <div className="relative">
           <div className="flex animate-scroll-x gap-6">
             {/* First set */}
-            {newsItems.map((item, index) => (
-              <div 
-                key={`first-${index}`} 
-                className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300"
-                onClick={() => navigate('/news')}
-              >
+            {newsItems.map((item, index) => <div key={`first-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
                 <div className="flex items-center gap-2 text-purple-400 mb-2">
                   <span className="text-sm">{item.date}</span>
                 </div>
@@ -38,27 +25,17 @@ export const HomeNewsSection: React.FC = () => {
                 <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button 
-                    variant="link" 
-                    className="text-purple-400 hover:text-purple-300 p-0"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate('/news');
-                    }}
-                  >
+                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
+                e.stopPropagation();
+                navigate('/news');
+              }}>
                     Read More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
             
             {/* Second set for seamless loop */}
-            {newsItems.map((item, index) => (
-              <div 
-                key={`second-${index}`} 
-                className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300"
-                onClick={() => navigate('/news')}
-              >
+            {newsItems.map((item, index) => <div key={`second-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
                 <div className="flex items-center gap-2 text-purple-400 mb-2">
                   <span className="text-sm">{item.date}</span>
                 </div>
@@ -66,27 +43,17 @@ export const HomeNewsSection: React.FC = () => {
                 <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button 
-                    variant="link" 
-                    className="text-purple-400 hover:text-purple-300 p-0"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate('/news');
-                    }}
-                  >
+                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
+                e.stopPropagation();
+                navigate('/news');
+              }}>
                     Read More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
             
             {/* Third set for extra buffer */}
-            {newsItems.map((item, index) => (
-              <div 
-                key={`third-${index}`} 
-                className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300"
-                onClick={() => navigate('/news')}
-              >
+            {newsItems.map((item, index) => <div key={`third-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
                 <div className="flex items-center gap-2 text-purple-400 mb-2">
                   <span className="text-sm">{item.date}</span>
                 </div>
@@ -94,22 +61,16 @@ export const HomeNewsSection: React.FC = () => {
                 <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button 
-                    variant="link" 
-                    className="text-purple-400 hover:text-purple-300 p-0"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate('/news');
-                    }}
-                  >
+                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
+                e.stopPropagation();
+                navigate('/news');
+              }}>
                     Read More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
