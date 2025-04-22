@@ -3,9 +3,15 @@ import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { Button } from "./Button";
 import { Meteors } from "@/components/ui/meteors";
+import { openWhatsAppChat } from "@/utils/whatsapp";
+import { Phone } from "lucide-react";
 
 export const AdmissionHero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const handleCall = () => {
+    window.location.href = "tel:+918264900999";
+  };
 
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
@@ -39,8 +45,22 @@ export const AdmissionHero = () => {
           </div>
           
           <div className="flex flex-wrap gap-4 justify-center mt-8">
-            <Button variant="primary">Meet Career Advisor</Button>
-            <Button variant="secondary">Download Brochure</Button>
+            <Button 
+              variant="primary"
+              onClick={() => {
+                console.log("Admission Inquiry - Opening WhatsApp");
+                openWhatsAppChat("Admission Inquiry");
+              }}
+            >
+              WhatsApp Us
+            </Button>
+            <Button 
+              variant="secondary" 
+              onClick={handleCall}
+            >
+              <Phone className="mr-2 h-4 w-4" />
+              Call Us
+            </Button>
           </div>
         </div>
       </div>
