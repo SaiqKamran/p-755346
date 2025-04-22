@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { 
@@ -14,6 +13,7 @@ import {
   Gamepad
 } from "lucide-react";
 import { Button } from "./Button";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 const courses = [
   {
@@ -81,7 +81,13 @@ export const CourseList = () => {
                 <course.icon className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
                 <p className="text-white/80 mb-6 text-sm leading-relaxed">{course.description}</p>
-                <Button variant="secondary" className="w-full">Enroll Now</Button>
+                <Button 
+                  variant="secondary" 
+                  className="w-full"
+                  onClick={() => openWhatsAppChat(course.title)}
+                >
+                  Enroll Now
+                </Button>
               </CardContent>
             </Card>
           ))}
