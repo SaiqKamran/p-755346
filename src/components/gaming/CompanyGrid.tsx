@@ -5,19 +5,19 @@ export const CompanyGrid = () => {
   const companies = [
     {
       name: "Amazon",
-      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop&auto=format"
+      logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=200&h=100&fit=crop&auto=format"
     },
     {
       name: "Byju's",
-      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop&auto=format"
+      logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&h=100&fit=crop&auto=format"
     },
     {
       name: "Dhruva Interactive",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=200&h=100&fit=crop&auto=format"
     },
     {
       name: "Digital Domain",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=200&h=100&fit=crop&auto=format"
     },
     {
       name: "Dneg",
@@ -105,7 +105,7 @@ export const CompanyGrid = () => {
     },
     {
       name: "YRF Studios",
-      logo: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=200&h=100&fit=crop&auto=format"
+      logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&h=100&fit=crop&auto=format"
     }
   ].map(company => ({
     ...company,
