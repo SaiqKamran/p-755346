@@ -26,7 +26,7 @@ export const HomeNewsSection: React.FC = () => {
           <Button 
             variant="outline" 
             onClick={() => navigate('/news')} 
-            className="border-white/20 hover:bg-white/10 font-normal text-slate-50"
+            className="bg-yellow-400 text-black hover:bg-yellow-500 border-yellow-400 font-normal"
           >
             View All News <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
