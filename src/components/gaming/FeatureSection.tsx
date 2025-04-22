@@ -9,14 +9,11 @@ export const FeatureSection: React.FC = () => {
 
   return (
     <section className="relative" ref={sectionRef}>
-      {/* Updated gradient transition with new purple-black shade */}
       <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#1b1240] via-[rgba(27,18,64,0.7)] to-[#1b124000] z-0" />
       
-      {/* Purplish-black background section */}
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#1b1240] z-0" />
       
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
-        {/* Meteors with increased number and customized appearance */}
         <div className="absolute inset-0 z-5">
           <Meteors 
             number={40} 
@@ -55,18 +52,25 @@ export const FeatureSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-[1240px] mt-20 relative z-10">
-          <TextCursorProximity label="The Industry" styles={{
-          transform: {
-            from: "scale(1)",
-            to: "scale(1.3)"
-          },
-          color: {
-            from: "#FFFFFF",
-            to: "#FFD700"
-          }
-        }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="w-full max-w-[1240px] mt-32 relative z-10">
+          <TextCursorProximity 
+            label="About Arena Animation sector 9" 
+            styles={{
+              transform: {
+                from: "scale(1)",
+                to: "scale(1.3)"
+              },
+              color: {
+                from: "#FFFFFF",
+                to: "#FFD700"
+              }
+            }} 
+            falloff="gaussian" 
+            radius={200} 
+            containerRef={sectionRef} 
+            className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" 
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-8">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
               <div className="text-3xl font-bold text-white mb-2">FOUNDED</div>
               <div className="text-5xl font-extrabold text-yellow-400">1996</div>
