@@ -167,7 +167,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Storyboarder, Adobe Premiere Pro CC, Adobe Audition CC, Adobe Animate CC, Adobe After Effects CC, Autodesk Maya, nCloth, X-Gen, Maxon ZBrush, Adobe Substance Painter, Reality Capture, Unreal Engine, MetaHuman, Gen AI Tools",
     careers: "Concept Artist, Character Designer, Storyboard Artist, 3D Modeler, Texturing Artist, Lighting Artist, 3D Animator, Rigging Artist, 3D Generalist, 3D Designer, 3D Product Designer, Unreal Generalist, Real-time 3D Artist, 3D Visualizer",
-    salaryInfo: "Entry-level positions start at ₹3-5 LPA, with experienced professionals earning ₹8-15+ LPA in roles like Senior Animator or Technical Director. Top positions in major studios can command ₹20+ LPA."
+    salaryInfo: "Entry-level positions start at ₹3-5 Lakhs Per Annum, with experienced professionals earning ₹8-15+ Lakhs Per Annum in roles like Senior Animator or Technical Director. Top positions in major studios can command ₹20+ Lakhs Per Annum."
   },
   {
     id: "vfx",
@@ -222,7 +222,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Storyboarder, Adobe Premiere Pro CC, Adobe Audition CC, Adobe Animate CC, Adobe After Effects CC, Autodesk Maya, nCloth, X-Gen, Adobe Substance Painter, Reality Capture, Houdini, Silhouette, 3D Equalizer, Nuke, Gen AI Tools",
     careers: "Concept Artist, Character Designer, Storyboard Artist, 3D Artist, Lighting Artist, 3D Generalist, 3D Designer, 3D Product Designer, Compositor, Matchmove Artist, VFX Generalist, FX Artist, Motion Graphics Artist, Matte Painter, Video Editor, Roto Artist",
-    salaryInfo: "VFX artists typically start at ₹4-6 LPA, progressing to ₹10-18+ LPA with experience. Senior VFX Supervisors at leading studios can earn upwards of ₹25+ LPA."
+    salaryInfo: "VFX artists typically start at ₹4-6 Lakhs Per Annum, progressing to ₹10-18+ Lakhs Per Annum with experience. Senior VFX Supervisors at leading studios can earn upwards of ₹25+ Lakhs Per Annum."
   },
   {
     id: "archviz",
@@ -280,7 +280,7 @@ const courses: Course[] = [
     ],
     software: "Gen AI, Adobe Illustrator CC, Storyboarder, Adobe Premier Pro CC, Adobe Audition CC, Adobe Animate CC, Adobe After Effects CC, AutoCAD, 3Ds Max, Vray, Substance Painter, Sketchup, Blender, Unreal Engine, Twinmotion",
     careers: "Concept Artist, 3D Artist, Lighting Artist, 3D Generalist, 3D Designer, 3D Product Designer, Archviz Artist, Interior Designer, 3D Visualizer",
-    salaryInfo: "Starting salaries range from ₹3-5 LPA, with experienced Architectural Visualizers earning ₹8-15+ LPA. Senior positions and independent consultants can earn ₹20+ LPA."
+    salaryInfo: "Starting salaries range from ₹3-5 Lakhs Per Annum, with experienced Architectural Visualizers earning ₹8-15+ Lakhs Per Annum. Senior positions and independent consultants can earn ₹20+ Lakhs Per Annum."
   },
   {
     id: "broadcast",
@@ -323,7 +323,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Storyboarder, Adobe Premiere Pro CC, Adobe Audition CC, Adobe Animate CC, Adobe After Effects CC, Autodesk 3ds Max, Cinema4D, Gen AI Tools",
     careers: "Concept Artist, Storyboard Artist, 3D Artist, Lighting Artist, 3D Generalist, 3D Designer, Broadcast Designer, Motion Graphics Designer, Video Editor, Motion Design Visualizer",
-    salaryInfo: "Entry-level Broadcast Designers start at ₹3-4.5 LPA, mid-level professionals earn ₹6-12 LPA, while Senior Broadcast Design Directors can command ₹15+ LPA."
+    salaryInfo: "Entry-level Broadcast Designers start at ₹3-4.5 Lakhs Per Annum, mid-level professionals earn ₹6-12 Lakhs Per Annum, while Senior Broadcast Design Directors can command ₹15+ Lakhs Per Annum."
   },
   {
     id: "dcc",
@@ -382,7 +382,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Adobe InDesign CC, Canva, Adobe Dimensions, Adobe Premiere Pro CC, Adobe Audition CC, Adobe Animate CC, Adobe After Effects CC, DaVinci, Figma, Draw.io, VS Code, WordPress, XAMPP, Gen AI Tools",
     careers: "Graphic Designer, Digital Illustrator, UI Artist, Motion Graphics Artist, UX Designer, Social Media Designer, Video Editor, Front-end Designer, UX Researcher, Web Designer",
-    salaryInfo: "Content Creators begin at ₹3-5 LPA, with experienced professionals earning ₹7-15+ LPA. Senior Creative Directors can earn ₹18+ LPA, with additional income from freelance projects."
+    salaryInfo: "Content Creators begin at ₹3-5 Lakhs Per Annum, with experienced professionals earning ₹7-15+ Lakhs Per Annum. Senior Creative Directors can earn ₹18+ Lakhs Per Annum, with additional income from freelance projects."
   },
   {
     id: "graphicweb",
@@ -426,8 +426,8 @@ const courses: Course[] = [
       }
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Adobe InDesign CC, Canva, Adobe Dimensions, Draw.io, Figma, HTML5, CSS3, Bootstrap, JavaScript, WordPress, XAMPP, Google AdWords & Analytics, PHP & MySQL, Gen AI Tools",
-    careers: "Graphic Designer, Digital Illustrator, UI Artist, Social Media Designer, Front-end Designer, UX Researcher, Web Designer, Web Developer",
-    salaryInfo: "Starting salaries range from ₹3-5 LPA, increasing to ₹8-15+ LPA for experienced designers. Full-stack designers with both graphic and web skills can earn ₹20+ LPA."
+    careers: "Graphic Designer, Digital Illustrator, UI Artist, Social Media Designer, UX Researcher, Front-end Designer, Web Designer, Web Developer",
+    salaryInfo: "Starting salaries range from ₹3-5 Lakhs Per Annum, increasing to ₹8-15+ Lakhs Per Annum for experienced designers. Full-stack designers with both graphic and web skills can earn ₹20+ Lakhs Per Annum."
   },
   {
     id: "uiux",
@@ -454,7 +454,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Draw.io, Figma, HTML5, CSS3, WordPress, XAMPP, VS Code, Gen AI Tools",
     careers: "Creative Designer, Digital Illustrator, UI Artist, Social Media Designer, UX Researcher, Interaction Designer, Visual Designer",
-    salaryInfo: "UI/UX Designers start at ₹4-6 LPA, with experienced professionals earning ₹10-18+ LPA. Senior UX Leaders in top tech companies can command ₹25+ LPA."
+    salaryInfo: "UI/UX Designers start at ₹4-6 Lakhs Per Annum, with experienced professionals earning ₹10-18+ Lakhs Per Annum. Senior UX Leaders in top tech companies can command ₹25+ Lakhs Per Annum."
   },
   {
     id: "digitalmarketing",
@@ -476,7 +476,7 @@ const courses: Course[] = [
     ],
     software: "Google Ads, Google Analytics, Semrush, SpyFLU / Wordstream, Social Pilot, UpContent, Curata, Social Media Ads Platforms, Hubspot, Mixpanel, Sprout Social, Ahrefs, Google Data Studio, Bitly, Canva, Mailerlite, WordPress, Mailchimp, Zapier, Hootsuite",
     careers: "Digital Marketing Executive, Social Media Strategist, Marketing Data Analyst, SEO/SEM Specialist, Digital Marketing Consultant, Paid Media Specialist",
-    salaryInfo: "Digital Marketing specialists begin at ₹3.5-5 LPA, progressing to ₹8-15+ LPA with experience. Marketing Managers and Digital Strategy Directors can earn ₹20+ LPA."
+    salaryInfo: "Digital Marketing specialists begin at ₹3.5-5 Lakhs Per Annum, progressing to ₹8-15+ Lakhs Per Annum with experience. Marketing Managers and Digital Strategy Directors can earn ₹20+ Lakhs Per Annum."
   },
   {
     id: "visualmotiongraphics",
@@ -502,7 +502,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Canva, Adobe Animate CC, Adobe Premiere Pro CC, Adobe Audition CC, Adobe After Effects, DaVinci, Gen AI Tools",
     careers: "Graphic Designer, Digital Illustrator, UI Artist, Motion Graphics Artist, Social Media Designer, Video Editor, Color Grading Artist, Creative Designer",
-    salaryInfo: "Motion Graphics artists start at ₹3-5 LPA, with experienced professionals earning ₹8-15+ LPA. Senior Motion Graphics Directors can command ₹18+ LPA."
+    salaryInfo: "Motion Graphics artists start at ₹3-5 Lakhs Per Annum, with experienced professionals earning ₹8-15+ Lakhs Per Annum. Senior Motion Graphics Directors can command ₹18+ Lakhs Per Annum."
   },
   {
     id: "gaming",
@@ -580,7 +580,7 @@ const courses: Course[] = [
     ],
     software: "Adobe Illustrator CC, Adobe Photoshop CC, Figma, Adobe Animate CC, GDevelop.io, Autodesk Maya, Maxon ZBrush, Adobe Substance Painter, Unreal Engine, Blender, Adobe Substance Designer, Adobe Substance 3D Stager, Reality Capture, Unity, Spark AR, Gen AI Tools",
     careers: "Game Designer, Game Producer, Level Designer, 2D Game Artist, UI Artist, 3D Game Artist, Technical Artist, Game Environment Artist, Cinematic Artist, Unreal Generalist, Real-time 3D Artist, Game Developer, AR/VR Developer",
-    salaryInfo: "Game Artists and Designers start at ₹4-6 LPA, advancing to ₹10-18+ LPA with experience. Technical Art Directors and Game Design Leads can earn ₹25+ LPA in major gaming studios."
+    salaryInfo: "Game Artists and Designers start at ₹4-6 Lakhs Per Annum, advancing to ₹10-18+ Lakhs Per Annum with experience. Technical Art Directors and Game Design Leads can earn ₹25+ Lakhs Per Annum in major gaming studios."
   }
 ];
 
