@@ -4,6 +4,7 @@ import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
 import { ModelUploader } from "./ModelUploader";
+import { RobotModelViewer } from "./RobotModelViewer";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -86,6 +87,7 @@ export const FeatureSection: React.FC = () => {
               <div className="text-sm text-white mt-2">including China</div>
             </div>
           </div>
+          <RobotModelViewer />
         </div>
       </div>
     </section>
