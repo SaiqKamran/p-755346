@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { 
@@ -84,7 +85,10 @@ export const CourseList = () => {
                 <Button 
                   variant="secondary" 
                   className="w-full"
-                  onClick={() => openWhatsAppChat(course.title)}
+                  onClick={() => {
+                    console.log(`Enrolling in course: ${course.title}`);
+                    openWhatsAppChat(course.title);
+                  }}
                 >
                   Enroll Now
                 </Button>

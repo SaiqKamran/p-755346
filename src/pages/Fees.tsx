@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, FileText, Phone } from "lucide-react";
@@ -65,6 +66,10 @@ const courses = [
 const Fees = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const handleCall = () => {
+    window.location.href = "tel:+918264900999";
+  };
+
   return (
     <div className="min-h-screen bg-[rgba(45,30,107,1)] relative" ref={containerRef}>
       <Header />
@@ -101,7 +106,10 @@ const Fees = () => {
                 <CardFooter className="flex flex-col gap-3">
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700"
-                    onClick={() => openWhatsAppChat(course.title)}
+                    onClick={() => {
+                      console.log(`Requesting info for: ${course.title}`);
+                      openWhatsAppChat(course.title);
+                    }}
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     WhatsApp Us
@@ -109,7 +117,7 @@ const Fees = () => {
                   <Button 
                     variant="outline" 
                     className="w-full border-white/20 text-black bg-white hover:bg-white/90"
-                    onClick={() => window.location.href = "tel:+918264900999"}
+                    onClick={handleCall}
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     Call Us

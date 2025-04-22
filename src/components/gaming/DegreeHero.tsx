@@ -44,7 +44,13 @@ export const DegreeHero = () => {
             </p>
           </div>
           <div className="flex gap-4 justify-center">
-            <Button variant="primary" onClick={() => openWhatsAppChat("B.Voc Degree Inquiry")}>
+            <Button 
+              variant="primary" 
+              onClick={() => {
+                console.log("B.Voc Degree Inquiry - Opening WhatsApp");
+                openWhatsAppChat("B.Voc Degree Inquiry");
+              }}
+            >
               WhatsApp Us
             </Button>
             <Button variant="secondary" onClick={handleCall}>
@@ -57,4 +63,3 @@ export const DegreeHero = () => {
     </div>
   );
 };
-
