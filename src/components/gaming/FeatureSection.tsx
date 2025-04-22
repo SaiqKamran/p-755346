@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
@@ -76,7 +75,7 @@ export const FeatureSection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="h-[400px] rounded-lg overflow-hidden bg-black/20">
-              <GltfModelViewer modelUrl="" className="w-full h-full" />
+              <GltfModelViewer modelUrl="/example.glb" className="w-full h-full" />
             </div>
             <StatsDisplay />
           </div>
@@ -84,4 +83,4 @@ export const FeatureSection: React.FC = () => {
       </div>
     </section>
   );
-}
+};

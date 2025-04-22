@@ -1,26 +1,12 @@
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Stage } from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, Stage } from '@react-three/drei';
 
-// Fallback model made with pure Three.js meshes
-function FallbackModel() {
-  return (
-    <group>
-      <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="purple" />
-      </mesh>
-      <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[1.5, 0.5, 16, 32]} />
-        <meshStandardMaterial color="hotpink" />
-      </mesh>
-      <mesh position={[0, 2, 0]}>
-        <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial color="gold" />
-      </mesh>
-    </group>
-  );
+function Model({ url }: { url: string }) {
+  const { scene } = useGLTF(url);
+  
+  return <primitive object={scene} />;
 }
 
 interface GltfModelViewerProps {
@@ -37,7 +23,7 @@ export function GltfModelViewer({ modelUrl, className }: GltfModelViewerProps) {
       >
         <Suspense fallback={null}>
           <Stage environment="city" intensity={0.5}>
-            <FallbackModel />
+            <Model url={modelUrl} />
           </Stage>
           <OrbitControls 
             autoRotate
