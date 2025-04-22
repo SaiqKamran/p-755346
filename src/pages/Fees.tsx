@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, FileText, Phone } from "lucide-react";
@@ -105,15 +104,15 @@ const Fees = () => {
                     onClick={() => openWhatsAppChat(course.title)}
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    Get Fee Details on WhatsApp
+                    WhatsApp Us
                   </Button>
                   <Button 
                     variant="outline" 
                     className="w-full border-white/20 text-black bg-white hover:bg-white/90"
-                    onClick={() => window.location.href = "/contact"}
+                    onClick={() => window.location.href = "tel:+918264900999"}
                   >
                     <Phone className="mr-2 h-4 w-4" />
-                    Call for Enquiry
+                    Call Us
                   </Button>
                 </CardFooter>
               </Card>
