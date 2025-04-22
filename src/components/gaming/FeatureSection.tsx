@@ -5,16 +5,22 @@ import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
 import { ModelUploader } from "./ModelUploader";
 import { RobotModel } from './RobotModel';
+
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  return <section className="relative" ref={sectionRef}>
+
+  return (
+    <section className="relative" ref={sectionRef}>
       <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#1b1240] via-[rgba(27,18,64,0.7)] to-[#1b124000] z-0" />
       
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#1b1240] z-0" />
       
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-5">
-          <Meteors number={40} className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" />
+          <Meteors 
+            number={40} 
+            className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" 
+          />
         </div>
         
         <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5 relative z-10">
@@ -49,16 +55,23 @@ export const FeatureSection: React.FC = () => {
         </div>
 
         <div className="w-full max-w-[1240px] mt-32 relative z-10">
-          <TextCursorProximity label="About Arena Animation sector 9" styles={{
-          transform: {
-            from: "scale(1)",
-            to: "scale(1.3)"
-          },
-          color: {
-            from: "#FFFFFF",
-            to: "#FFD700"
-          }
-        }} falloff="gaussian" radius={200} containerRef={sectionRef} className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" />
+          <TextCursorProximity 
+            label="About Arena Animation sector 9" 
+            styles={{
+              transform: {
+                from: "scale(1)",
+                to: "scale(1.3)"
+              },
+              color: {
+                from: "#FFFFFF",
+                to: "#FFD700"
+              }
+            }} 
+            falloff="gaussian" 
+            radius={200} 
+            containerRef={sectionRef} 
+            className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" 
+          />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-8">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
               <div className="text-3xl font-bold text-white mb-2">FOUNDED</div>
@@ -77,8 +90,12 @@ export const FeatureSection: React.FC = () => {
 
           <RobotModel />
 
-          
+          <div className="mt-12">
+            <h3 className="text-white text-2xl font-bold text-center mb-6">Upload 3D Model</h3>
+            <ModelUploader />
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
