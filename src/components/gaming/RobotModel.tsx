@@ -30,16 +30,16 @@ function Model() {
 
   return (
     <group ref={group}>
-      <primitive object={scene} scale={3} position={[0, -1.5, 0]} />
+      <primitive object={scene} scale={2.5} position={[0, -2.5, 0]} />
     </group>
   );
 }
 
 export const RobotModel = () => {
   return (
-    <div className="h-[500px] w-full my-12 rounded-xl overflow-hidden bg-gradient-to-b from-purple-900/20 to-indigo-900/10 border border-purple-500/20">
+    <div className="h-[600px] w-full my-12 rounded-xl overflow-hidden bg-gradient-to-b from-purple-900/20 to-indigo-900/10 border border-purple-500/20">
       <Canvas
-        camera={{ position: [0, 0, 8], fov: 50 }}
+        camera={{ position: [0, 0, 10], fov: 40 }}
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={0.8} />
@@ -59,4 +59,3 @@ export const RobotModel = () => {
     </div>
   );
 };
-
