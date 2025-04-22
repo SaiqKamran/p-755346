@@ -3,7 +3,8 @@ import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
-import { ModelUploader } from "./ModelUploader";
+import { GltfModelViewer } from "@/components/ui/GltfModelViewer";
+import { StatsDisplay } from "./StatsDisplay";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -71,25 +72,12 @@ export const FeatureSection: React.FC = () => {
             containerRef={sectionRef} 
             className="text-white text-4xl font-extrabold mb-12 uppercase tracking-wider text-center" 
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-8">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <div className="text-3xl font-bold text-white mb-2">FOUNDED</div>
-              <div className="text-5xl font-extrabold text-yellow-400">1996</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <div className="text-3xl font-bold text-white mb-2">STUDENTS</div>
-              <div className="text-5xl font-extrabold text-yellow-400">450,000+</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <div className="text-3xl font-bold text-white mb-2">COUNTRIES</div>
-              <div className="text-4xl font-extrabold text-yellow-400">Over 20</div>
-              <div className="text-sm text-white mt-2">including China</div>
-            </div>
-          </div>
 
-          <div className="mt-12">
-            <h3 className="text-white text-2xl font-bold text-center mb-6">Upload 3D Model</h3>
-            <ModelUploader />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="h-[400px] rounded-lg overflow-hidden bg-black/20">
+              <GltfModelViewer modelUrl="/example.glb" className="w-full h-full" />
+            </div>
+            <StatsDisplay />
           </div>
         </div>
       </div>
