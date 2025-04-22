@@ -14,62 +14,52 @@ import {
   CardHeader, 
   CardTitle 
 } from "@/components/ui/card";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 const courses = [
   {
     title: "AAIPP",
     description: "Arena Animation International Premier Program - Transform creative talent into skilled animation professionals using Unreal Engine",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20AAIPP%20course%20fee%20details"
   },
   {
     title: "Advanced VFX",
     description: "Master stunning visual effects creation for film, television, and digital media",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Advanced%20VFX%20course%20fee%20details"
   },
   {
     title: "ArchViz",
     description: "Transform architectural concepts into stunning visual presentations with cutting-edge tools",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20ArchViz%20course%20fee%20details"
   },
   {
     title: "Broadcast Design",
     description: "Create dynamic visual content for television, film, and digital media platforms",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Broadcast%20Design%20course%20fee%20details"
   },
   {
     title: "Digital Content Creation",
     description: "Master all aspects of digital content creation, from visual design to UI/UX and motion graphics",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20DCC%20course%20fee%20details"
   },
   {
     title: "Next-Gen Graphic Design & Web",
     description: "Learn graphic design principles and web development for engaging digital experiences",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Web%20Design%20course%20fee%20details"
   },
   {
     title: "Advanced UI/UX Design",
     description: "Master user interface and user experience design principles and practices",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20UI/UX%20course%20fee%20details"
   },
   {
     title: "Digital Marketing with Gen AI",
     description: "Learn cutting-edge digital marketing enhanced with artificial intelligence tools",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Digital%20Marketing%20course%20fee%20details"
   },
   {
     title: "Visual Design & Motion Graphics",
     description: "Create dynamic visual content through motion graphics and animation",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Motion%20Graphics%20course%20fee%20details"
   },
   {
     title: "Gaming & Interactive Design",
     description: "Master game development including AR/VR/XR technologies",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20Gaming%20course%20fee%20details"
   },
   {
     title: "Custom Course",
     description: "Get a personalized course plan based on your needs",
-    whatsappLink: "https://wa.me/+919876543210?text=I'm%20interested%20in%20discussing%20a%20custom%20course"
   }
 ];
 
@@ -112,7 +102,7 @@ const Fees = () => {
                 <CardFooter className="flex flex-col gap-3">
                   <Button 
                     className="w-full bg-green-600 hover:bg-green-700"
-                    onClick={() => window.open(course.whatsappLink, '_blank')}
+                    onClick={() => openWhatsAppChat(course.title)}
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     Get Fee Details on WhatsApp
