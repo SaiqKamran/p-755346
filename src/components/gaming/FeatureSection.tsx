@@ -1,11 +1,10 @@
-
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
 import { ModelUploader } from "./ModelUploader";
-import { RobotViewer } from "./RobotViewer";
+import { RobotModelViewer } from "./RobotModelViewer";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -13,7 +12,9 @@ export const FeatureSection: React.FC = () => {
   return (
     <section className="relative" ref={sectionRef}>
       <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#1b1240] via-[rgba(27,18,64,0.7)] to-[#1b124000] z-0" />
+      
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#1b1240] z-0" />
+      
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-5">
           <Meteors 
@@ -21,6 +22,7 @@ export const FeatureSection: React.FC = () => {
             className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" 
           />
         </div>
+        
         <div className="shadow-[0px_4px_20px_-1px_rgba(0,0,0,0)] w-full max-w-[1240px] mt-[111px] rounded-[10px] max-md:mt-10 max-md:pr-5 relative z-10">
           <div className="gap-8 flex flex-col md:flex-row max-md:items-stretch">
             <div className="w-full md:w-[50%] max-md:w-full">
@@ -51,8 +53,7 @@ export const FeatureSection: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* Robot 3D Viewer is added here */}
-        <RobotViewer />
+
         <div className="w-full max-w-[1240px] mt-32 relative z-10">
           <TextCursorProximity 
             label="About Arena Animation sector 9" 
@@ -86,6 +87,7 @@ export const FeatureSection: React.FC = () => {
               <div className="text-sm text-white mt-2">including China</div>
             </div>
           </div>
+          <RobotModelViewer />
         </div>
       </div>
     </section>
