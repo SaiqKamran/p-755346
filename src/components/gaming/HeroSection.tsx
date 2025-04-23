@@ -5,13 +5,7 @@ import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { motion } from "framer-motion";
 import { HeroContent } from "./HeroContent";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -41,17 +35,23 @@ export const HeroSection: React.FC = () => {
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
-              <img 
-                src={isMobile ? "/lovable-uploads/ceb95f2e-11b6-47c5-97fb-0b79ae543f81.png" : "/lovable-uploads/90284972-4ecb-48af-a99c-ab9d130af555.png"}
-                className="absolute top-0 left-0 w-full h-full object-cover object-center scale-95 origin-center" 
-                alt="VR Experience Background" 
-                style={{ 
-                  position: 'fixed',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)'
-                }}
-              />
+              <div className="relative w-full h-full">
+                <iframe
+                  src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  allow="autoplay; encrypted-media"
+                  style={{ 
+                    position: 'fixed',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    minWidth: '100%',
+                    minHeight: '100%',
+                    width: 'auto',
+                    height: 'auto'
+                  }}
+                />
+              </div>
             </div>
             
             <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-20 pt-14">
