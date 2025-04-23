@@ -1,10 +1,10 @@
-
 import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { SplineSceneDemo } from "@/components/ui/spline-scene-demo";
 import { FloatingPaths } from "@/components/ui/background-paths";
 import { Courses } from "@/components/ui/courses";
 import { MeteorDemo } from "@/components/ui/meteor-demo";
+import { ScrollingCourseBar } from "@/components/ui/scrolling-course-bar";
 
 export const GameShowcase: React.FC = () => {
   const showcaseRef = useRef<HTMLDivElement>(null);
@@ -21,6 +21,7 @@ export const GameShowcase: React.FC = () => {
       
       {/* Content (with higher z-index) */}
       <div className="relative z-10 w-full flex flex-col items-center">
+        <ScrollingCourseBar />
         <TextCursorProximity 
           label="Arena Animation Chandigarh Sector 9" 
           styles={{
