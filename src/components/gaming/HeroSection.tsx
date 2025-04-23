@@ -16,8 +16,9 @@ export const HeroSection: React.FC = () => {
 
   const handleSlideClick = (index: number) => {
     setCurrentSlide(index);
-    // Make sure the carousel API is available before calling scrollTo
-    if (carouselRef.current?.api?.scrollTo) {
+    // Make sure the carousel API is available before trying to use it
+    if (carouselRef.current?.api) {
+      // Use scrollTo to navigate to the specified slide index
       carouselRef.current.api.scrollTo(index);
     }
   };
