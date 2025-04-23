@@ -12,10 +12,10 @@ import { HomeNewsSection } from "@/components/gaming/HomeNewsSection";
 
 const Index = () => {
   return (
-    <div className="bg-[rgba(45,30,107,1)] flex flex-col overflow-hidden items-center rounded-[10px] relative">
+    <div className="bg-[#0F0F0F] flex flex-col overflow-hidden items-center rounded-[10px] relative">
       {/* Black gradient overlay moved to back */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-black to-transparent z-0"
+        className="absolute top-0 left-0 right-0 h-[120px] bg-gradient-to-b from-black/70 to-transparent z-0"
       />
       
       <SplashCursor 

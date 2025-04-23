@@ -9,7 +9,7 @@ import Spline from '@splinetool/react-spline';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#1b1240]">
+    <div className="min-h-screen bg-[#0F0F0F]">
       <SplashCursor 
         BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}
         CURL={20}
@@ -20,7 +20,7 @@ const Contact = () => {
       <div className="max-w-[1400px] mx-auto">
         <Header />
       </div>
-      <div className="relative min-h-[80vh] bg-gradient-to-b from-indigo-900/50 to-[#1b1240] px-4 py-12">
+      <div className="relative min-h-[80vh] bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] px-4 py-12">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <ContactForm />
           <div className="relative h-[600px] w-full">

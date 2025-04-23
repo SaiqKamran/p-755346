@@ -12,7 +12,7 @@ const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<typeof newsItems[0] | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#1b1240]">
+    <div className="min-h-screen bg-[#0F0F0F]">
       <SplashCursor
         BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}
         CURL={20}
@@ -76,7 +76,7 @@ const News = () => {
       </div>
       
       <Dialog open={!!selectedArticle} onOpenChange={() => setSelectedArticle(null)}>
-        <DialogContent className="bg-[#1b1240] border-purple-500/20 text-white max-w-3xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="bg-[#1A1A1A] border-white/10 text-white max-w-3xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-white mb-2">
               {selectedArticle?.title}
@@ -106,7 +106,7 @@ const News = () => {
               dangerouslySetInnerHTML={{ __html: selectedArticle?.fullContent || "" }}
             />
             
-            <div className="flex items-center gap-6 pt-4 border-t border-purple-500/20">
+            <div className="flex items-center gap-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-purple-400">
                 <Eye className="h-4 w-4" />
                 <span>{selectedArticle?.views} views</span>

@@ -71,7 +71,7 @@ const Fees = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[rgba(45,30,107,1)] relative" ref={containerRef}>
+    <div className="min-h-screen bg-[#0F0F0F] relative" ref={containerRef}>
       <Header />
       <MeteorDemo />
       

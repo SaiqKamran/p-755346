@@ -7,7 +7,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 
 const FAQ = () => {
   return (
-    <div className="min-h-screen bg-[#1b1240]">
+    <div className="min-h-screen bg-[#0F0F0F]">
       <SplashCursor 
         BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}
         CURL={20}
