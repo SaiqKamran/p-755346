@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -10,16 +9,16 @@ export const HomeNewsSection: React.FC = () => {
   
   return (
     <section className="py-16 overflow-hidden relative">
-      {/* Gaming texture background */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80")'
-        }}
-      />
-      {/* Black overlay */}
-      <div className="absolute inset-0 z-0 bg-black/50" />
-      
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/9f6bb6e7-33d6-470b-8942-809e46a03eb2.png"
+          alt="Animation Studio Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80 backdrop-blur-[2px]" />
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold text-white">Latest News & Events</h2>
