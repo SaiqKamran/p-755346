@@ -13,6 +13,16 @@ import Autoplay from "embla-carousel-autoplay";
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const videoRef = useRef<HTMLIFrameElement>(null);
+  const [autoplayPlugin] = React.useState(() =>
+    Autoplay({
+      delay: 141000, // Video duration (2:21 = 141 seconds) in milliseconds
+      stopOnInteraction: true,
+      playOnInit: true,
+      stopOnLastSnap: true,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+    })
+  );
   
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
@@ -22,20 +32,14 @@ export const HeroSection: React.FC = () => {
           align: "start",
           loop: false,
         }}
-        plugins={[
-          Autoplay({
-            delay: 8000,
-            stopOnInteraction: true,
-            playOnInit: true,
-            stopOnLastSnap: true,
-          })
-        ]}
+        plugins={[autoplayPlugin]}
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <div className="relative w-full h-full overflow-hidden">
                 <iframe
+                  ref={videoRef}
                   src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0"
                   className="absolute top-0 left-0 w-full h-full"
                   allow="autoplay; encrypted-media"
