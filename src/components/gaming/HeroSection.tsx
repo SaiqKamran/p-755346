@@ -39,7 +39,11 @@ export const HeroSection: React.FC = () => {
           loop: true,
         }}
         ref={carouselRef}
-        onSelect={(index) => setCurrentSlide(index)}
+        onSelect={(api) => {
+          // Extract the selected index from the API
+          const selectedIndex = api.selectedScrollSnap();
+          setCurrentSlide(selectedIndex);
+        }}
       >
         <CarouselContent>
           <CarouselItem>
