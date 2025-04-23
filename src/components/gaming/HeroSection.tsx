@@ -34,17 +34,18 @@ export const HeroSection: React.FC = () => {
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
-              <div className="relative w-full h-full">
+              <div className="relative w-full h-full overflow-hidden">
                 <iframe
                   src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  className="absolute top-0 left-0 w-full h-full"
                   allow="autoplay; encrypted-media"
                   style={{ 
                     position: 'absolute',
-                    top: '0',
-                    left: '0',
-                    width: '100%',
-                    height: '100%',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%) scale(1.5)',
+                    width: '100vw',
+                    height: '100vh',
                     objectFit: 'cover',
                     zIndex: -1
                   }}
