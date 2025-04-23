@@ -16,13 +16,8 @@ export const useCarouselAutoplay = (slideDurations: number[]) => {
       const nextIndex = (currentIndex + 1) % slideDurations.length;
       
       timeoutRef.current = setTimeout(() => {
-        if (carouselRef.current) {
-          // Try different methods to scroll to the next slide
-          if (carouselRef.current.scrollTo) {
-            carouselRef.current.scrollTo(nextIndex);
-          } else if (carouselRef.current.api && carouselRef.current.api.scrollTo) {
-            carouselRef.current.api.scrollTo(nextIndex);
-          }
+        if (carouselRef.current?.api?.scrollTo) {
+          carouselRef.current.api.scrollTo(nextIndex);
           setCurrentSlide(nextIndex);
         }
         moveToNextSlide(nextIndex);

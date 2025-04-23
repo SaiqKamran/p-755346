@@ -17,14 +17,8 @@ export const HeroSection: React.FC = () => {
   const handleSlideClick = (index: number) => {
     setCurrentSlide(index);
     // Make sure the carousel API is available before calling scrollTo
-    if (carouselRef.current?.scrollTo) {
-      carouselRef.current.scrollTo(index);
-    } else if (carouselRef.current) {
-      // If the scrollTo method is not directly available, try to access it through the API
-      const api = carouselRef.current as any;
-      if (api.api && api.api.scrollTo) {
-        api.api.scrollTo(index);
-      }
+    if (carouselRef.current?.api?.scrollTo) {
+      carouselRef.current.api.scrollTo(index);
     }
   };
   
@@ -37,19 +31,10 @@ export const HeroSection: React.FC = () => {
           loop: true,
         }}
         ref={carouselRef}
-        onSelect={() => {
-          // Instead of trying to access API from the event, use the ref
-          if (carouselRef.current && carouselRef.current.selectedScrollSnap) {
-            // Direct access if the method is available
-            const index = carouselRef.current.selectedScrollSnap();
+        onSelect={(api) => {
+          if (api) {
+            const index = api.selectedScrollSnap();
             setCurrentSlide(index);
-          } else if (carouselRef.current) {
-            // Try accessing through the API property
-            const api = carouselRef.current as any;
-            if (api.api && api.api.selectedScrollSnap) {
-              const index = api.api.selectedScrollSnap();
-              setCurrentSlide(index);
-            }
           }
         }}
       >
