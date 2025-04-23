@@ -39,10 +39,20 @@ export const HeroSection: React.FC = () => {
           loop: true,
         }}
         ref={carouselRef}
-        onSelect={(api) => {
-          // Extract the selected index from the API
-          const selectedIndex = api.selectedScrollSnap();
-          setCurrentSlide(selectedIndex);
+        onSelect={() => {
+          // Instead of trying to access API from the event, use the ref
+          if (carouselRef.current && carouselRef.current.selectedScrollSnap) {
+            // Direct access if the method is available
+            const index = carouselRef.current.selectedScrollSnap();
+            setCurrentSlide(index);
+          } else if (carouselRef.current) {
+            // Try accessing through the API property
+            const api = carouselRef.current as any;
+            if (api.api && api.api.selectedScrollSnap) {
+              const index = api.api.selectedScrollSnap();
+              setCurrentSlide(index);
+            }
+          }
         }}
       >
         <CarouselContent>
