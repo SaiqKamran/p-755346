@@ -5,7 +5,7 @@ import { BadgeIndianRupee, GraduationCap, Users } from "lucide-react";
 
 export const AdmissionInfo = () => {
   return (
-    <section className="py-24 px-4 bg-purple-900/20">
+    <section className="py-24 px-4 bg-gradient-to-b from-black/20 to-[#0F0F0F]">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-white text-center mb-16">Admission Information</h2>
         
@@ -20,7 +20,7 @@ export const AdmissionInfo = () => {
           </div>
           
           <div className="grid gap-6">
-            <Card className="bg-white/5 border-white/10">
+            <Card className="bg-black/10 border-white/10">
               <CardContent className="p-6 flex gap-4">
                 <BadgeIndianRupee className="w-8 h-8 text-yellow-400" />
                 <div>
@@ -30,7 +30,7 @@ export const AdmissionInfo = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-white/5 border-white/10">
+            <Card className="bg-black/10 border-white/10">
               <CardContent className="p-6 flex gap-4">
                 <GraduationCap className="w-8 h-8 text-yellow-400" />
                 <div>
