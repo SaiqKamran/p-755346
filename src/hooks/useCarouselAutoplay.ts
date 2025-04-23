@@ -4,31 +4,40 @@ import { useEffect, useState, useRef } from 'react';
 export const useCarouselAutoplay = (slideDurations: number[]) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<any>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    // Clear any existing timeouts when the current slide changes manually
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     
     const moveToNextSlide = (currentIndex: number) => {
-      if (currentIndex >= slideDurations.length) {
-        carouselRef.current?.scrollTo(0);
-        return;
-      }
+      const nextIndex = (currentIndex + 1) % slideDurations.length;
       
-      timeoutId = setTimeout(() => {
-        carouselRef.current?.scrollTo(currentIndex + 1);
-        setCurrentSlide(currentIndex + 1);
-        moveToNextSlide(currentIndex + 1);
+      timeoutRef.current = setTimeout(() => {
+        if (carouselRef.current) {
+          // Try different methods to scroll to the next slide
+          if (carouselRef.current.scrollTo) {
+            carouselRef.current.scrollTo(nextIndex);
+          } else if (carouselRef.current.api && carouselRef.current.api.scrollTo) {
+            carouselRef.current.api.scrollTo(nextIndex);
+          }
+          setCurrentSlide(nextIndex);
+        }
+        moveToNextSlide(nextIndex);
       }, slideDurations[currentIndex]);
     };
     
-    moveToNextSlide(0);
+    // Start the autoplay from the current slide
+    moveToNextSlide(currentSlide);
     
     return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
-  }, [slideDurations]);
+  }, [currentSlide, slideDurations]);
 
   return {
     currentSlide,
@@ -36,4 +45,3 @@ export const useCarouselAutoplay = (slideDurations: number[]) => {
     setCurrentSlide,
   };
 };
-

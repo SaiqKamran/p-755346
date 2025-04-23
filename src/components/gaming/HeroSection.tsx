@@ -16,7 +16,18 @@ export const HeroSection: React.FC = () => {
 
   const handleSlideClick = (index: number) => {
     setCurrentSlide(index);
-    carouselRef.current?.scrollTo(index);
+    // Make sure the carousel API is available before calling scrollTo
+    if (carouselRef.current?.scrollTo) {
+      carouselRef.current.scrollTo(index);
+    } else if (carouselRef.current) {
+      // If the scrollTo method is not directly available, try to access it through the API
+      const api = carouselRef.current as any;
+      if (api.scrollTo) {
+        api.scrollTo(index);
+      } else if (api.api && api.api.scrollTo) {
+        api.api.scrollTo(index);
+      }
+    }
   };
   
   return (
@@ -25,9 +36,10 @@ export const HeroSection: React.FC = () => {
         className="w-full"
         opts={{
           align: "start",
-          loop: false,
+          loop: true,
         }}
         ref={carouselRef}
+        onSelect={(index) => setCurrentSlide(index)}
       >
         <CarouselContent>
           <CarouselItem>
@@ -63,7 +75,7 @@ export const HeroSection: React.FC = () => {
                 }`}
               />
               <button
-                className={`w-4 h-4 rounded-full transition-all ${
+                className={`w-4 h-4 rounded-full transition-all cursor-pointer ${
                   currentSlide === index 
                     ? "bg-yellow-400 scale-125" 
                     : "bg-white/50 hover:bg-white/75"
@@ -94,4 +106,3 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
-
