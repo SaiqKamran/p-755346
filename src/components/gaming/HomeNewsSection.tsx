@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -10,15 +9,19 @@ export const HomeNewsSection: React.FC = () => {
   
   return (
     <section className="py-16 overflow-hidden relative">
-      {/* Gaming texture background */}
+      {/* Background image with multiple overlay layers for better visibility */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80")'
+          backgroundImage: 'url("/lovable-uploads/821730b9-c168-4264-8d00-48ba0ddc9691.png")'
         }}
       />
-      {/* Black overlay */}
-      <div className="absolute inset-0 z-0 bg-black/50" />
+      
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
+      
+      {/* Additional subtle overlay for depth */}
+      <div className="absolute inset-0 z-0 backdrop-blur-[2px] bg-black/20" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-between items-center mb-12">
@@ -33,7 +36,7 @@ export const HomeNewsSection: React.FC = () => {
         </div>
         
         <div className="relative">
-          <div className="flex animate-scroll-x gap-6">
+          <div className="flex animate-scroll-x gap-6" style={{ animationDuration: '60s' }}>
             {/* First set */}
             {newsItems.map((item, index) => <div key={`first-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
                 <div className="flex items-center gap-2 text-purple-400 mb-2">
