@@ -14,15 +14,41 @@ export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const videoRef = useRef<HTMLIFrameElement>(null);
-  const [autoplayPlugin] = React.useState(() =>
-    Autoplay({
-      delay: 141000, // Video duration (2:21 = 141 seconds) in milliseconds
-      stopOnInteraction: true,
-      playOnInit: true,
-      stopOnLastSnap: true,
-      rootNode: (emblaRoot) => emblaRoot.parentElement,
-    })
-  );
+  const carouselRef = useRef<any>(null);
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  
+  const slideDurations = [47000, 10000, 10000]; // Duration for each slide in milliseconds
+  
+  React.useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    const moveToNextSlide = (currentIndex: number) => {
+      if (currentIndex >= slideDurations.length) {
+        // Stop at overview page after completing the cycle
+        carouselRef.current?.scrollTo(0);
+        return;
+      }
+      
+      timeoutId = setTimeout(() => {
+        carouselRef.current?.scrollTo(currentIndex + 1);
+        setCurrentSlide(currentIndex + 1);
+        moveToNextSlide(currentIndex + 1);
+      }, slideDurations[currentIndex]);
+    };
+    
+    moveToNextSlide(0);
+    
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, []);
+
+  const handleSlideClick = (index: number) => {
+    setCurrentSlide(index);
+    carouselRef.current?.scrollTo(index);
+  };
   
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
@@ -32,7 +58,7 @@ export const HeroSection: React.FC = () => {
           align: "start",
           loop: false,
         }}
-        plugins={[autoplayPlugin]}
+        ref={carouselRef}
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
