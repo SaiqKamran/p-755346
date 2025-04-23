@@ -7,6 +7,7 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import { ShootingStars } from "./ShootingStars";
 
 interface CourseTermProps {
   title: string;
@@ -588,18 +589,19 @@ export const CourseCatalog = () => {
   const [openCourse, setOpenCourse] = useState<string | null>(null);
 
   return (
-    <div className="py-24 px-4 bg-gradient-to-b from-[#1b1240] to-[#2a1b63]">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 overflow-hidden">
+      <ShootingStars />
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-yellow-400 mb-6 tracking-tight">
             Comprehensive Course Catalog
           </h2>
-          <p className="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-yellow-400/80 max-w-3xl mx-auto text-lg leading-relaxed">
             Discover our diverse range of cutting-edge programs in animation, visual effects, 
             game development, and digital content creation. Each course is crafted to prepare you 
             for success in the creative industry.
@@ -616,19 +618,19 @@ export const CourseCatalog = () => {
             >
               <AccordionItem 
                 value={course.id}
-                className="bg-white/[0.03] backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-colors duration-300"
+                className="bg-black/40 backdrop-blur-lg border border-yellow-400/20 rounded-xl overflow-hidden hover:border-yellow-400/50 transition-colors duration-300"
               >
                 <AccordionTrigger className="px-6 py-6 text-left hover:no-underline group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-purple-500/10 rounded-lg p-2 mt-1">
-                      <BookOpen className="text-purple-400 w-5 h-5" />
+                    <div className="bg-yellow-400/10 rounded-lg p-2 mt-1">
+                      <BookOpen className="text-yellow-400 w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
+                      <h3 className="text-xl font-semibold text-yellow-400 group-hover:text-yellow-300 transition-colors">
                         {course.title}
                       </h3>
                       {course.description && (
-                        <p className="text-sm text-white/60 mt-1 pr-8">
+                        <p className="text-sm text-yellow-400/60 mt-1 pr-8">
                           {course.description}
                         </p>
                       )}
@@ -636,16 +638,16 @@ export const CourseCatalog = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-2">
-                  <div className="bg-black/20 rounded-lg p-6 space-y-6">
+                  <div className="bg-black/60 rounded-lg p-6 space-y-6">
                     {course.terms && course.terms.map((term, idx) => (
                       <div key={idx} className="space-y-3">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           {term.title}
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {term.items.map((item, i) => (
-                            <li key={i} className="flex items-center gap-2 text-white/80">
-                              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                            <li key={i} className="flex items-center gap-2 text-yellow-400/80">
+                              <Check className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -656,8 +658,8 @@ export const CourseCatalog = () => {
                     {course.content && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {course.content.map((item, i) => (
-                          <div key={i} className="flex items-center gap-2 text-white/80">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                          <div key={i} className="flex items-center gap-2 text-yellow-400/80">
+                            <Check className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -666,28 +668,28 @@ export const CourseCatalog = () => {
 
                     {course.software && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Software & Tools
                         </h4>
-                        <p className="text-white/80">{course.software}</p>
+                        <p className="text-yellow-400/80">{course.software}</p>
                       </div>
                     )}
 
                     {course.careers && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Career Opportunities
                         </h4>
-                        <p className="text-white/80">{course.careers}</p>
+                        <p className="text-yellow-400/80">{course.careers}</p>
                       </div>
                     )}
 
                     {course.salaryInfo && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Career Earnings Potential
                         </h4>
-                        <p className="text-white/80 text-sm">{course.salaryInfo}</p>
+                        <p className="text-yellow-400/80 text-sm">{course.salaryInfo}</p>
                       </div>
                     )}
                   </div>
