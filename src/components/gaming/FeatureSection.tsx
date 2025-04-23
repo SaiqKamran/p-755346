@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
@@ -19,7 +20,7 @@ export const FeatureSection: React.FC = () => {
         <div className="absolute inset-0 z-5">
           <Meteors 
             number={40} 
-            className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]" 
+            className="before:from-gray-700 before:via-gray-600 bg-gray-700 shadow-[0_0_10px_2px_rgba(75,75,75,0.8)]" 
           />
         </div>
         

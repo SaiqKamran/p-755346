@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TestimonialCard } from "./TestimonialCard";
 
@@ -55,8 +54,8 @@ export const TestimonialSection: React.FC = () => {
           backgroundImage: 'url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80")'
         }}
       />
-      {/* Purple overlay */}
-      <div className="absolute inset-0 z-0 bg-indigo-900/50" />
+      {/* Black overlay */}
+      <div className="absolute inset-0 z-0 bg-gray-900/50" />
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center text-white mb-12">Student Testimonials</h2>

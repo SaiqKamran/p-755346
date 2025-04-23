@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Facebook, Instagram, Twitter, Github, MessageSquare } from "lucide-react";
 
@@ -6,6 +5,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/682f814612d1b649dbf855547e93b854fef6cc24?placeholderIfAbsent=true" className="absolute h-full w-full object-cover inset-0" alt="Footer background" />
+      
       <div className="relative flex flex-col md:flex-row max-w-[1200px] mx-auto w-full gap-10 justify-between">
         <div className="flex flex-col max-w-md">
           <div className="flex items-center gap-4">
