@@ -31,8 +31,8 @@ export const HeroSection: React.FC = () => {
           loop: true,
         }}
         ref={carouselRef}
-        onSelect={(api) => {
-          if (api) {
+        onSelect={(api: any) => {
+          if (api && typeof api.selectedScrollSnap === 'function') {
             const index = api.selectedScrollSnap();
             setCurrentSlide(index);
           }
