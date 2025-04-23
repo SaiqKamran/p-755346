@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { Target } from "lucide-react";
+import { Meteors } from "@/components/ui/meteors";
 
 export const Objectives = () => {
   const objectives = [
@@ -13,8 +14,11 @@ export const Objectives = () => {
   ];
 
   return (
-    <div className="py-24 px-4 bg-purple-900/20">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 overflow-hidden">
+      <div className="absolute inset-0">
+        <Meteors number={15} className="!from-yellow-200 !to-yellow-400" />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Objectives and Benefits
@@ -26,7 +30,7 @@ export const Objectives = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {objectives.map((objective, index) => (
-            <Card key={index} className="bg-white/5 border-purple-500/20">
+            <Card key={index} className="bg-black/40 backdrop-blur-sm border-yellow-500/20">
               <CardContent className="p-6">
                 <div className="flex gap-4">
                   <Target className="w-6 h-6 text-yellow-400 flex-shrink-0" />

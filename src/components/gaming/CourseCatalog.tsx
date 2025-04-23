@@ -7,6 +7,7 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import { Meteors } from "@/components/ui/meteors";
 
 interface CourseTermProps {
   title: string;
@@ -588,8 +589,11 @@ export const CourseCatalog = () => {
   const [openCourse, setOpenCourse] = useState<string | null>(null);
 
   return (
-    <div className="py-24 px-4 bg-gradient-to-b from-[#1b1240] to-[#2a1b63]">
-      <div className="max-w-7xl mx-auto">
+    <div className="relative py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 overflow-hidden">
+      <div className="absolute inset-0">
+        <Meteors number={20} className="!from-yellow-200 !to-yellow-400" />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -616,15 +620,15 @@ export const CourseCatalog = () => {
             >
               <AccordionItem 
                 value={course.id}
-                className="bg-white/[0.03] backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-colors duration-300"
+                className="bg-black/40 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden hover:border-yellow-500/50 transition-colors duration-300"
               >
                 <AccordionTrigger className="px-6 py-6 text-left hover:no-underline group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-purple-500/10 rounded-lg p-2 mt-1">
-                      <BookOpen className="text-purple-400 w-5 h-5" />
+                    <div className="bg-yellow-500/10 rounded-lg p-2 mt-1">
+                      <BookOpen className="text-yellow-400 w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
+                      <h3 className="text-xl font-semibold text-white group-hover:text-yellow-400 transition-colors">
                         {course.title}
                       </h3>
                       {course.description && (
@@ -636,16 +640,16 @@ export const CourseCatalog = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-2">
-                  <div className="bg-black/20 rounded-lg p-6 space-y-6">
+                  <div className="bg-black/60 rounded-lg p-6 space-y-6">
                     {course.terms && course.terms.map((term, idx) => (
                       <div key={idx} className="space-y-3">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           {term.title}
                         </h4>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {term.items.map((item, i) => (
                             <li key={i} className="flex items-center gap-2 text-white/80">
-                              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                              <Check className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -657,7 +661,7 @@ export const CourseCatalog = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         {course.content.map((item, i) => (
                           <div key={i} className="flex items-center gap-2 text-white/80">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                            <Check className="w-4 h-4 text-yellow-400 flex-shrink-0" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -666,7 +670,7 @@ export const CourseCatalog = () => {
 
                     {course.software && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Software & Tools
                         </h4>
                         <p className="text-white/80">{course.software}</p>
@@ -675,7 +679,7 @@ export const CourseCatalog = () => {
 
                     {course.careers && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Career Opportunities
                         </h4>
                         <p className="text-white/80">{course.careers}</p>
@@ -684,7 +688,7 @@ export const CourseCatalog = () => {
 
                     {course.salaryInfo && (
                       <div className="mt-6 space-y-2">
-                        <h4 className="text-lg font-semibold text-purple-400">
+                        <h4 className="text-lg font-semibold text-yellow-400">
                           Career Earnings Potential
                         </h4>
                         <p className="text-white/80 text-sm">{course.salaryInfo}</p>
