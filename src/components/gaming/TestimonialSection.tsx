@@ -1,3 +1,4 @@
+
 import React from "react";
 import { TestimonialCard } from "./TestimonialCard";
 
@@ -47,15 +48,15 @@ export const TestimonialSection: React.FC = () => {
 
   return (
     <section className="py-16 overflow-hidden relative">
-      {/* Gaming texture background */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-20"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80")'
-        }}
-      />
-      {/* Black overlay */}
-      <div className="absolute inset-0 z-0 bg-gray-900/50" />
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/cf192e44-3c14-4cd8-90cd-66b25a052134.png"
+          alt="Animation Studio"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80 backdrop-blur-[2px]" />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-4xl font-bold text-center text-white mb-12">Student Testimonials</h2>
