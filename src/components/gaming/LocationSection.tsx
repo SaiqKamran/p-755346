@@ -7,7 +7,7 @@ export const LocationSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="flex flex-col items-center px-4 py-12 bg-indigo-900/50" ref={sectionRef}>
+    <section className="flex flex-col items-center px-4 py-12 bg-black/50" ref={sectionRef}>
       <TextCursorProximity 
         label="Location and Parking"
         styles={{

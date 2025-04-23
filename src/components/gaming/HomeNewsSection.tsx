@@ -17,8 +17,8 @@ export const HomeNewsSection: React.FC = () => {
           backgroundImage: 'url("https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1920&q=80")'
         }}
       />
-      {/* Purple overlay */}
-      <div className="absolute inset-0 z-0 bg-indigo-900/30" />
+      {/* Black overlay */}
+      <div className="absolute inset-0 z-0 bg-black/50" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex justify-between items-center mb-12">
