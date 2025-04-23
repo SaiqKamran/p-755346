@@ -9,12 +9,10 @@ const courses = [
   { name: "ANIMATION", path: "/degree#animation" },
   { name: "VFX", path: "/degree#vfx" },
   { name: "GAME DEVELOPMENT", path: "/degree#gaming" },
-  // Duplicate items for seamless loop
-  { name: "REAL TIME 3D", path: "/degree#3d" },
-  { name: "ANIMATION", path: "/degree#animation" },
-  { name: "VFX", path: "/degree#vfx" },
-  { name: "GAME DEVELOPMENT", path: "/degree#gaming" },
 ];
+
+// Create a complete set that will be repeated three times to ensure seamless scrolling
+const allCourses = [...courses, ...courses, ...courses];
 
 export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,7 +23,7 @@ export const ScrollingCourseBar = () => {
         ref={containerRef}
         className="animate-scroll-x py-4 flex items-center gap-8"
       >
-        {courses.map((course, index) => (
+        {allCourses.map((course, index) => (
           <div key={index} className="flex items-center gap-4 shrink-0">
             <Link
               to={course.path}
