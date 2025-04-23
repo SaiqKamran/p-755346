@@ -1,6 +1,6 @@
-
 'use client';
 
+import React from "react";
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
@@ -24,7 +24,6 @@ export function SplineSceneDemo() {
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
       
       <div className="flex h-full flex-col md:flex-row">
-        {/* Left content */}
         <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
           <div className="text-white space-y-4">
             <h3 className="text-2xl font-bold text-yellow-400 mb-2">
@@ -56,7 +55,6 @@ export function SplineSceneDemo() {
           </div>
         </div>
 
-        {/* Right content */}
         <div className="flex-1 relative">
           <SplineScene 
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode" 
