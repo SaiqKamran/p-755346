@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -36,60 +37,38 @@ export const HomeNewsSection: React.FC = () => {
         </div>
         
         <div className="relative">
-          <div className="flex animate-scroll-x gap-6" style={{ animationDuration: '60s' }}>
-            {/* First set */}
-            {newsItems.map((item, index) => <div key={`first-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
-                <div className="flex items-center gap-2 text-purple-400 mb-2">
-                  <span className="text-sm">{item.date}</span>
-                </div>
-                <h3 className="text-white text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
-                e.stopPropagation();
-                navigate('/news');
-              }}>
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>)}
-            
-            {/* Second set for seamless loop */}
-            {newsItems.map((item, index) => <div key={`second-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
-                <div className="flex items-center gap-2 text-purple-400 mb-2">
-                  <span className="text-sm">{item.date}</span>
-                </div>
-                <h3 className="text-white text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
-                e.stopPropagation();
-                navigate('/news');
-              }}>
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>)}
-            
-            {/* Third set for extra buffer */}
-            {newsItems.map((item, index) => <div key={`third-${index}`} className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300" onClick={() => navigate('/news')}>
-                <div className="flex items-center gap-2 text-purple-400 mb-2">
-                  <span className="text-sm">{item.date}</span>
-                </div>
-                <h3 className="text-white text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-purple-400">{item.category}</span>
-                  <Button variant="link" className="text-purple-400 hover:text-purple-300 p-0" onClick={e => {
-                e.stopPropagation();
-                navigate('/news');
-              }}>
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>)}
+          <div className="flex animate-scroll-x">
+            {/* Create enough copies to ensure a seamless scroll */}
+            {[...Array(4)].map((_, groupIndex) => (
+              <React.Fragment key={`group-${groupIndex}`}>
+                {newsItems.map((item, index) => (
+                  <div 
+                    key={`news-${groupIndex}-${index}`} 
+                    className="min-w-[300px] bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300 mx-3" 
+                    onClick={() => navigate('/news')}
+                  >
+                    <div className="flex items-center gap-2 text-purple-400 mb-2">
+                      <span className="text-sm">{item.date}</span>
+                    </div>
+                    <h3 className="text-white text-xl font-semibold mb-3">{item.title}</h3>
+                    <p className="text-white/70 line-clamp-2 mb-4">{item.excerpt}</p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-purple-400">{item.category}</span>
+                      <Button 
+                        variant="link" 
+                        className="text-purple-400 hover:text-purple-300 p-0"
+                        onClick={e => {
+                          e.stopPropagation();
+                          navigate('/news');
+                        }}
+                      >
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
