@@ -5,8 +5,20 @@ import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button } from "@/components/gaming/Button";
+import { useNavigate } from "react-router-dom";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 export function SplineSceneDemo() {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/placements');
+  };
+
+  const handleContact = () => {
+    openWhatsAppChat("Training Area Inquiry");
+  };
+
   return (
     <Card className="w-full h-[500px] bg-transparent relative overflow-hidden">
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
@@ -22,9 +34,14 @@ export function SplineSceneDemo() {
               for careers in the entertainment industry
             </p>
             
-            <Button variant="primary" className="mt-4 w-fit">
-              Learn More
-            </Button>
+            <div className="flex gap-4">
+              <Button variant="primary" onClick={handleLearnMore} className="mt-4 w-fit">
+                Learn More
+              </Button>
+              <Button variant="secondary" onClick={handleContact} className="mt-4 w-fit">
+                Contact Now
+              </Button>
+            </div>
             
             <div className="mt-6 border-t border-white/20 pt-4">
               <p className="text-sm italic text-white/70">
