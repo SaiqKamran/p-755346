@@ -22,9 +22,7 @@ export const HeroSection: React.FC = () => {
     } else if (carouselRef.current) {
       // If the scrollTo method is not directly available, try to access it through the API
       const api = carouselRef.current as any;
-      if (api.scrollTo) {
-        api.scrollTo(index);
-      } else if (api.api && api.api.scrollTo) {
+      if (api.api && api.api.scrollTo) {
         api.api.scrollTo(index);
       }
     }
