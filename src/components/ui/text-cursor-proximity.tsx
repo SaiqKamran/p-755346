@@ -31,8 +31,8 @@ const TextCursorProximity = forwardRef<HTMLSpanElement, TextProps>(
       label,
       styles = {
         color: {
-          from: "#FFD700", // Gold/Yellow
-          to: "#FFC107"    // Amber Yellow
+          from: "#FFF700", // Bright Yellow
+          to: "#FFD700"    // Golden Yellow
         },
         transform: {
           from: "scale(0.95)",
