@@ -11,9 +11,9 @@ export const FeatureSection: React.FC = () => {
 
   return (
     <section className="relative" ref={sectionRef}>
-      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#1b1240] via-[rgba(27,18,64,0.7)] to-[#1b124000] z-0" />
+      <div className="absolute top-[-200px] left-0 right-0 h-[800px] bg-gradient-to-b from-[#0F0F0F] via-[rgba(0,0,0,0.7)] to-[#0F0F0F00] z-0" />
       
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#1b1240] z-0" />
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#0F0F0F] z-0" />
       
       <div className="flex flex-col items-center px-4 py-20 relative overflow-hidden">
         <div className="absolute inset-0 z-5">
