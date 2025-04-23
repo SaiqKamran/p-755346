@@ -110,10 +110,12 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
               <img 
-                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Gaming Setup"
+                src="/lovable-uploads/977f1b12-a4c6-4068-9878-e391fa59bf0f.png"
+                alt="Digital Art Student"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
             </div>
             
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
@@ -123,7 +125,7 @@ export const HeroSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                Professional VFX Training
+                Digital Art & Animation
               </motion.h2>
               <motion.div 
                 className="max-w-3xl mx-auto space-y-4 mb-8"
@@ -132,10 +134,10 @@ export const HeroSection: React.FC = () => {
                 transition={{ delay: 0.4 }}
               >
                 <p className="text-2xl font-semibold text-yellow-400">
-                  Learn Industry-Standard VFX Tools
+                  Master Digital Art Creation
                 </p>
-                <p className="text-xl">
-                  Master the art of visual effects with our comprehensive courses
+                <p className="text-xl bg-black/30 backdrop-blur-sm rounded-lg p-4 mx-auto max-w-2xl">
+                  Learn professional digital art and animation techniques using industry-standard software
                 </p>
               </motion.div>
               <motion.div
@@ -146,7 +148,7 @@ export const HeroSection: React.FC = () => {
                 <Button 
                   className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
                 >
-                  Explore VFX Courses <ChevronRight className="ml-2" />
+                  Start Creating <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
             </div>
