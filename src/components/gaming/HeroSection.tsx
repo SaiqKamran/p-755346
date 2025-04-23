@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useNavigate } from "react-router-dom";
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -49,7 +50,13 @@ export const HeroSection: React.FC = () => {
     setCurrentSlide(index);
     carouselRef.current?.scrollTo(index);
   };
-  
+
+  const navigate = useNavigate();
+
+  const handleExploreCourses = () => {
+    navigate('/degree#courses');
+  };
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
       <Carousel 
@@ -145,6 +152,7 @@ export const HeroSection: React.FC = () => {
               >
                 <Button 
                   className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
+                  onClick={handleExploreCourses}
                 >
                   Explore VFX Courses <ChevronRight className="ml-2" />
                 </Button>
