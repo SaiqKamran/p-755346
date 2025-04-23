@@ -1,10 +1,17 @@
+
 import React from "react";
 import { Facebook, Instagram, Twitter, Github, MessageSquare } from "lucide-react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/682f814612d1b649dbf855547e93b854fef6cc24?placeholderIfAbsent=true" className="absolute h-full w-full object-cover inset-0" alt="Footer background" />
+    <footer 
+      className="flex flex-col self-stretch relative min-h-[529px] w-full text-white pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]"
+      style={{
+        background: "linear-gradient(135deg, #1A1A1A 0%, #302b00 50%, #1A1A1A 100%)",
+        boxShadow: "inset 0 0 100px rgba(255, 217, 0, 0.1)"
+      }}
+    >
+      {/* Remove the background image */}
       
       <div className="relative flex flex-col md:flex-row max-w-[1200px] mx-auto w-full gap-10 justify-between">
         <div className="flex flex-col max-w-md">
