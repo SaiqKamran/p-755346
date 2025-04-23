@@ -16,7 +16,7 @@ export const AdmissionHero = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
       <Meteors number={20} />
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/50 to-[#1b1240]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-[#0F0F0F]" />
       
       <div className="relative z-10 container mx-auto px-4 text-center" ref={heroRef}>
         <div className="space-y-8">
@@ -28,14 +28,14 @@ export const AdmissionHero = () => {
                 to: "scale(1.2)"
               },
               color: {
-                from: "#FFFFFF",
-                to: "#FFD700"
+                from: "#FFC107", // Amber/Yellow
+                to: "#FFD700" // Gold
               }
             }}
             falloff="gaussian"
             radius={200}
             containerRef={heroRef}
-            className="text-4xl md:text-6xl font-bold text-white"
+            className="text-4xl md:text-6xl font-bold text-yellow-400"
           />
           
           <div className="mt-8">
@@ -58,7 +58,7 @@ export const AdmissionHero = () => {
               variant="secondary" 
               onClick={handleCall}
             >
-              <Phone className="mr-2 h-4 w-4" />
+              <Phone className="mr-2 h-4 w-4 text-yellow-400" />
               Call Us
             </Button>
           </div>
