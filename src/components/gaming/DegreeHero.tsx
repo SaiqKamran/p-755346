@@ -33,7 +33,7 @@ export const DegreeHero = () => {
               },
               color: {
                 from: "#9b87f5",
-                to: "#ffffff",
+                to: "#9b87f5",
               },
             }}
             falloff="gaussian"
