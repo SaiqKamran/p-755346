@@ -38,116 +38,118 @@ function VintageRobotModel() {
 
 export const RobotModel = () => (
   <div
-    className="w-full flex justify-center items-center py-12 bg-[#0F0F0F] rounded-2xl mt-12 shadow-2xl relative"
+    className="w-full py-12 bg-[#0F0F0F] rounded-2xl mt-12 shadow-2xl"
     style={{
       background: "linear-gradient(135deg, #0F0F0F 80%, #1A1A1A 100%)",
     }}
   >
-    {/* Left Side Stats */}
-    <div className="absolute left-8 top-1/2 -translate-y-1/2 space-y-8">
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        <Award className="w-8 h-8 text-yellow-400 mb-2" />
-        <h3 className="text-yellow-400 text-2xl font-bold">3 Decades</h3>
-        <p className="text-white/80">(29 Years) of Transformative Training</p>
-      </motion.div>
+    <div className="flex justify-between items-center">
+      {/* Left Side Stats */}
+      <div className="w-1/4 space-y-6 pl-8">
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Award className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">3 Decades</h3>
+          <p className="text-white/80 text-sm">(29 Years) of Transformative Training</p>
+        </motion.div>
 
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <Users className="w-8 h-8 text-yellow-400 mb-2" />
-        <h3 className="text-yellow-400 text-2xl font-bold">3 Lakh +</h3>
-        <p className="text-white/80">Placement Worldwide</p>
-      </motion.div>
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <Users className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">3 Lakh +</h3>
+          <p className="text-white/80 text-sm">Placement Worldwide</p>
+        </motion.div>
 
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <CircleDot className="w-8 h-8 text-yellow-400 mb-2" />
-        <h3 className="text-yellow-400 text-2xl font-bold">10</h3>
-        <p className="text-white/80">Average Class size</p>
-      </motion.div>
-    </div>
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <CircleDot className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">10</h3>
+          <p className="text-white/80 text-sm">Average Class size</p>
+        </motion.div>
+      </div>
 
-    {/* Robot Model in Center */}
-    <div style={{ width: "100%", height: "400px" }} className="mx-20">
-      <Canvas 
-        camera={{ position: [0, 0, 5], fov: 50 }} 
-        style={{ width: "100%", height: "100%" }}
-      >
-        <color attach="background" args={["#0F0F0F"]} />
-        <ambientLight intensity={0.95} />
-        <directionalLight intensity={1.2} position={[5, 8, 6]} />
-        <Suspense fallback={null}>
-          <VintageRobotModel />
-        </Suspense>
-        <OrbitControls
-          enablePan={false}
-          enableRotate={false}
-          minDistance={2.2}
-          maxDistance={8}
-        />
-      </Canvas>
-    </div>
+      {/* Robot Model in Center */}
+      <div className="w-2/4 h-[400px]">
+        <Canvas 
+          camera={{ position: [0, 0, 5], fov: 50 }} 
+          style={{ width: "100%", height: "100%" }}
+        >
+          <color attach="background" args={["#0F0F0F"]} />
+          <ambientLight intensity={0.95} />
+          <directionalLight intensity={1.2} position={[5, 8, 6]} />
+          <Suspense fallback={null}>
+            <VintageRobotModel />
+          </Suspense>
+          <OrbitControls
+            enablePan={false}
+            enableRotate={false}
+            minDistance={2.2}
+            maxDistance={8}
+          />
+        </Canvas>
+      </div>
 
-    {/* Right Side Stats */}
-    <div className="absolute right-8 top-1/2 -translate-y-1/2 space-y-8">
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        <Laptop className="w-8 h-8 text-yellow-400 mb-2" />
-        <h3 className="text-yellow-400 text-2xl font-bold">4</h3>
-        <p className="text-white/80">Computer Labs</p>
-      </motion.div>
+      {/* Right Side Stats */}
+      <div className="w-1/4 space-y-6 pr-8">
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Laptop className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">4</h3>
+          <p className="text-white/80 text-sm">Computer Labs</p>
+        </motion.div>
 
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3 }}
-      >
-        <Building className="w-8 h-8 text-yellow-400 mb-2" />
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-yellow-400 text-2xl font-bold">100%</h3>
-            <p className="text-white/80">Placement Assistance</p>
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          <Building className="w-6 h-6 text-yellow-400 mb-2" />
+          <div className="space-y-3">
+            <div>
+              <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
+              <p className="text-white/80 text-sm">Placement Assistance</p>
+            </div>
+            <div className="border-t border-yellow-400/20 pt-2">
+              <p className="text-white/80 text-sm">Cafeteria for Students</p>
+            </div>
           </div>
-          <div className="border-t border-yellow-400/20 pt-4">
-            <p className="text-white/80">Cafeteria for Students</p>
-          </div>
-        </div>
-      </motion.div>
+        </motion.div>
 
-      <motion.div 
-        className="bg-[#1A1A1A]/50 p-6 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <FileText className="w-8 h-8 text-yellow-400 mb-2" />
-        <div className="space-y-4">
-          <div>
-            <p className="text-white/80">2 years access to Onlinevarsity from the date of certification</p>
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 }}
+        >
+          <FileText className="w-6 h-6 text-yellow-400 mb-2" />
+          <div className="space-y-3">
+            <div>
+              <p className="text-white/80 text-sm">2 years access to Onlinevarsity from certification</p>
+            </div>
+            <div className="border-t border-yellow-400/20 pt-2">
+              <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
+              <p className="text-white/80 text-sm">Certificate Authentication for Employers & Authorities</p>
+            </div>
           </div>
-          <div className="border-t border-yellow-400/20 pt-4">
-            <h3 className="text-yellow-400 text-2xl font-bold">100%</h3>
-            <p className="text-white/80">Certificate Authentication available for Employers, Govt authorities, Embassies as & when required.</p>
-          </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   </div>
 );
