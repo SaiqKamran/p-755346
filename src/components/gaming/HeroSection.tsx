@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -7,8 +8,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
 
 export const HeroSection: React.FC = () => {
@@ -26,12 +25,12 @@ export const HeroSection: React.FC = () => {
     const moveToNextSlide = (currentIndex: number) => {
       if (currentIndex >= slideDurations.length) {
         // Stop at overview page after completing the cycle
-        carouselRef.current?.scrollTo(0);
+        carouselRef.current?.api?.scrollTo(0);
         return;
       }
       
       timeoutId = setTimeout(() => {
-        carouselRef.current?.scrollTo(currentIndex + 1);
+        carouselRef.current?.api?.scrollTo(currentIndex + 1);
         setCurrentSlide(currentIndex + 1);
         moveToNextSlide(currentIndex + 1);
       }, slideDurations[currentIndex]);
@@ -48,7 +47,7 @@ export const HeroSection: React.FC = () => {
 
   const handleSlideClick = (index: number) => {
     setCurrentSlide(index);
-    carouselRef.current?.scrollTo(index);
+    carouselRef.current?.api?.scrollTo(index);
   };
 
   const navigate = useNavigate();
@@ -155,6 +154,52 @@ export const HeroSection: React.FC = () => {
                   onClick={handleExploreCourses}
                 >
                   Discover Gaming Courses <ChevronRight className="ml-2" />
+                </Button>
+              </motion.div>
+            </div>
+          </CarouselItem>
+
+          <CarouselItem className="relative min-h-screen">
+            <div className="absolute inset-0">
+              <img 
+                src="https://images.unsplash.com/photo-1558174685-430919a96c8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                alt="Digital Arts Summer Camp"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+              <motion.h2 
+                className="text-4xl md:text-6xl font-bold mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Digital Arts Summer Camp
+              </motion.h2>
+              <motion.div 
+                className="max-w-3xl mx-auto space-y-4 mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <p className="text-2xl font-semibold text-yellow-400">
+                  Unleash Your Creativity This Summer
+                </p>
+                <p className="text-xl">
+                  Join our specialized program for students aged 8-18 to explore digital art, 3D modeling, and animation
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Button 
+                  className="bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 rounded-full"
+                  onClick={() => navigate('/admission')}
+                >
+                  Enroll Now <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
             </div>
