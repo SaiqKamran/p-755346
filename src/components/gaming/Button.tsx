@@ -1,11 +1,13 @@
 
 import React from "react";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 interface ButtonProps {
   variant?: "primary" | "secondary";
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  source?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -13,8 +15,16 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
   onClick,
+  source = "General Inquiry"
 }) => {
   const isPrimary = variant === "primary";
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+    openWhatsAppChat(source);
+  };
 
   return (
     <button
@@ -23,9 +33,10 @@ export const Button: React.FC<ButtonProps> = ({
           ? "bg-yellow-400 text-black hover:bg-yellow-500" 
           : "bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400/10"
       } ${className}`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {children}
     </button>
   );
 };
+
