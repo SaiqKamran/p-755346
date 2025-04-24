@@ -24,9 +24,7 @@ const News = () => {
       </div>
       
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">
-          News & Updates
-        </h1>
+        <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">News & Events</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {newsItems.map((item, index) => <Card key={index} className="bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer" style={{
