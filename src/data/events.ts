@@ -1,9 +1,8 @@
-
 export type Event = {
   id: string;
   title: string;
   date: string;
-  type: 'Creative Minds' | 'Cyber Ninja' | 'Perspectives' | 'Orbit Live' | 'Kalakari';
+  type: 'Creative Minds' | 'Cyber Ninja' | 'Perspectives' | 'Orbit Live' | 'Kalakari' | 'VFX Challenge' | 'Digital Arts Fest';
   image: string;
   description: string;
   videoUrl?: string;
@@ -67,5 +66,41 @@ export const events: Event[] = [
     videoUrl: "https://youtu.be/hve2A7-9b-U",
     location: "Arena Animation Chandigarh",
     isUpcoming: false
+  },
+  {
+    id: "6",
+    title: "VFX Masters Competition 2024",
+    date: "July 20, 2024",
+    type: "VFX Challenge",
+    image: "https://img.youtube.com/vi/F3apvNaT_Zs/maxresdefault.jpg",
+    description: "An exclusive VFX competition challenging participants to showcase their visual effects skills. Participants will create stunning visual sequences using advanced compositing and digital effects techniques, competing for industry recognition and exciting prizes.",
+    videoUrl: "https://youtu.be/F3apvNaT_Zs",
+    location: "Online & Arena Animation Chandigarh",
+    registrationLink: "https://example.com/vfx-masters-2024",
+    isUpcoming: true
+  },
+  {
+    id: "7",
+    title: "Digital Arts Transformation Summit 2024",
+    date: "August 15, 2024",
+    type: "Digital Arts Fest",
+    image: "https://img.youtube.com/vi/7sDY4m8-u5A/maxresdefault.jpg",
+    description: "A groundbreaking summit exploring the intersection of digital arts, technology, and creativity. Features workshops, panel discussions, and live demonstrations from industry leaders in animation, game design, and visual effects.",
+    videoUrl: "https://youtu.be/7sDY4m8-u5A",
+    location: "Arena Animation Chandigarh",
+    registrationLink: "https://example.com/digital-arts-summit-2024",
+    isUpcoming: true
+  },
+  {
+    id: "8",
+    title: "Global Game Design Challenge 2024",
+    date: "September 10, 2024",
+    type: "Cyber Ninja",
+    image: "https://img.youtube.com/vi/Qz_3blm6z_Q/maxresdefault.jpg",
+    description: "An international game design competition challenging participants to create innovative game concepts and prototypes. Participants will showcase their skills in game mechanics, storytelling, and interactive design.",
+    videoUrl: "https://youtu.be/Qz_3blm6z_Q",
+    location: "Online",
+    registrationLink: "https://example.com/game-design-challenge-2024",
+    isUpcoming: true
   }
 ];
