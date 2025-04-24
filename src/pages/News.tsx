@@ -6,13 +6,19 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 import { Button } from "@/components/ui/button";
 import { Calendar, FileText, ArrowRight, Eye, ThumbsUp, MessageCircle, Tag, MapPin, Play } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { newsItems } from "@/data/news";
 import { events, Event } from "@/data/events";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+
 const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<typeof newsItems[0] | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  
+  const upcomingEvents = events.filter(event => event.isUpcoming);
+  const pastEvents = events.filter(event => !event.isUpcoming);
+
   return <div className="min-h-screen bg-[#0F0F0F]">
       <SplashCursor BACK_COLOR={{
       r: 0.05,
@@ -24,81 +30,142 @@ const News = () => {
       </div>
       
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">News & Events</h1>
+        <div className="mb-8">
+          <Tabs defaultValue="news" className="w-full">
+            <TabsList className="grid w-full max-w-[400px] grid-cols-2 bg-yellow-500/10">
+              <TabsTrigger value="news" className="text-yellow-400 data-[state=active]:bg-yellow-500 data-[state=active]:text-black">
+                Latest News
+              </TabsTrigger>
+              <TabsTrigger value="upcoming" className="text-yellow-400 data-[state=active]:bg-yellow-500 data-[state=active]:text-black">
+                Upcoming Events
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="news">
+              <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">Latest News</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                {newsItems.map((item, index) => <Card key={index} className="bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer" style={{
+                  animationDelay: `${index * 100}ms`
+                }}>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 text-yellow-400 mb-2">
+                        <Calendar className="h-4 w-4" />
+                        <span className="text-sm">{item.date}</span>
+                      </div>
+                      <CardTitle className="text-white">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-white/70 mb-4">{item.excerpt}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {item.tags && item.tags.map((tag, tagIndex) => <span key={tagIndex} className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">
+                            <Tag className="h-3 w-3 mr-1" />
+                            {tag}
+                          </span>)}
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-yellow-400">{item.category}</span>
+                        <Button variant="link" className="text-yellow-400 hover:text-yellow-300" onClick={() => setSelectedArticle(item)}>
+                          Read More <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>)}
+              </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {newsItems.map((item, index) => <Card key={index} className="bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer" style={{
-          animationDelay: `${index * 100}ms`
-        }}>
-              <CardHeader>
-                <div className="flex items-center gap-2 text-yellow-400 mb-2">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm">{item.date}</span>
-                </div>
-                <CardTitle className="text-white">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-white/70 mb-4">{item.excerpt}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {item.tags && item.tags.map((tag, tagIndex) => <span key={tagIndex} className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">
-                      <Tag className="h-3 w-3 mr-1" />
-                      {tag}
-                    </span>)}
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-yellow-400">{item.category}</span>
-                  <Button variant="link" className="text-yellow-400 hover:text-yellow-300" onClick={() => setSelectedArticle(item)}>
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>)}
-        </div>
+              <h2 className="text-4xl font-bold text-white mb-8 animate-fade-in mt-16">Past Events</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {pastEvents.map((event, index) => <motion.div key={event.id} initial={{
+                  opacity: 0,
+                  y: 20
+                }} animate={{
+                  opacity: 1,
+                  y: 0
+                }} transition={{
+                  delay: index * 0.1
+                }}>
+                    <Card className={cn("bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer h-full", event.isUpcoming && "border-green-500/50 hover:border-green-500")} onClick={() => setSelectedEvent(event)}>
+                      <CardHeader>
+                        <div className="relative w-full h-64 mb-4 group">
+                          <img src={event.image} alt={event.title} className="w-full h-full object-cover rounded-lg" />
+                          {event.videoUrl && <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                            <Play className="w-16 h-16 text-white" />
+                          </div>}
+                          {event.isUpcoming && <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                            Upcoming
+                          </span>}
+                        </div>
+                        <div className="flex items-center gap-2 text-yellow-400 mb-2">
+                          <Calendar className="h-4 w-4" />
+                          <span className="text-sm">{event.date}</span>
+                        </div>
+                        <CardTitle className="text-white text-2xl">{event.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-white/70 line-clamp-3 mb-4">{event.description}</p>
+                        <div className="flex items-center gap-2 text-purple-400 mb-4">
+                          <MapPin className="h-4 w-4" />
+                          <span className="text-sm">{event.location}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-yellow-400">{event.type}</span>
+                          <Button variant="link" className="text-yellow-400 hover:text-yellow-300 p-0">
+                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>)}
+              </div>
+            </TabsContent>
 
-        <h2 className="text-4xl font-bold text-white mb-8 animate-fade-in mt-16">Past Events</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {events.map((event, index) => <motion.div key={event.id} initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          delay: index * 0.1
-        }}>
-              <Card className={cn("bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer h-full", event.isUpcoming && "border-green-500/50 hover:border-green-500")} onClick={() => setSelectedEvent(event)}>
-                <CardHeader>
-                  <div className="relative w-full h-64 mb-4 group">
-                    <img src={event.image} alt={event.title} className="w-full h-full object-cover rounded-lg" />
-                    {event.videoUrl && <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                        <Play className="w-16 h-16 text-white" />
-                      </div>}
-                    {event.isUpcoming && <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
-                        Upcoming
-                      </span>}
-                  </div>
-                  <div className="flex items-center gap-2 text-yellow-400 mb-2">
-                    <Calendar className="h-4 w-4" />
-                    <span className="text-sm">{event.date}</span>
-                  </div>
-                  <CardTitle className="text-white text-2xl">{event.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-white/70 line-clamp-3 mb-4">{event.description}</p>
-                  <div className="flex items-center gap-2 text-purple-400 mb-4">
-                    <MapPin className="h-4 w-4" />
-                    <span className="text-sm">{event.location}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-yellow-400">{event.type}</span>
-                    <Button variant="link" className="text-yellow-400 hover:text-yellow-300 p-0">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>)}
+            <TabsContent value="upcoming">
+              <h1 className="text-5xl font-bold text-white mb-8 animate-fade-in">Upcoming Events</h1>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {upcomingEvents.map((event, index) => (
+                  <motion.div key={event.id} initial={{
+                    opacity: 0,
+                    y: 20
+                  }} animate={{
+                    opacity: 1,
+                    y: 0
+                  }} transition={{
+                    delay: index * 0.1
+                  }}>
+                    <Card className="bg-black/40 backdrop-blur-sm border border-green-500/50 hover:border-green-500 transition-all duration-300 cursor-pointer h-full" onClick={() => setSelectedEvent(event)}>
+                      <CardHeader>
+                        <div className="relative w-full h-64 mb-4 group">
+                          <img src={event.image} alt={event.title} className="w-full h-full object-cover rounded-lg" />
+                          {event.videoUrl && <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                            <Play className="w-16 h-16 text-white" />
+                          </div>}
+                          <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                            Upcoming
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2 text-yellow-400 mb-2">
+                          <Calendar className="h-4 w-4" />
+                          <span className="text-sm">{event.date}</span>
+                        </div>
+                        <CardTitle className="text-white text-2xl">{event.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-white/70 line-clamp-3 mb-4">{event.description}</p>
+                        <div className="flex items-center gap-2 text-purple-400 mb-4">
+                          <MapPin className="h-4 w-4" />
+                          <span className="text-sm">{event.location}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-yellow-400">{event.type}</span>
+                          <Button variant="link" className="text-yellow-400 hover:text-yellow-300 p-0">
+                            Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
       
@@ -184,4 +251,5 @@ const News = () => {
       <Footer />
     </div>;
 };
+
 export default News;
