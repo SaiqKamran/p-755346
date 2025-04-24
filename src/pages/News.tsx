@@ -10,20 +10,15 @@ import { newsItems } from "@/data/news";
 import { events, Event } from "@/data/events";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
 const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<typeof newsItems[0] | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-
-  return (
-    <div className="min-h-screen bg-[#0F0F0F]">
-      <SplashCursor
-        BACK_COLOR={{ r: 0.05, g: 0.0, b: 0.1 }}
-        CURL={20}
-        COLOR_UPDATE_SPEED={5}
-        SPLAT_RADIUS={0.3}
-        SPLAT_FORCE={6000}
-      />
+  return <div className="min-h-screen bg-[#0F0F0F]">
+      <SplashCursor BACK_COLOR={{
+      r: 0.05,
+      g: 0.0,
+      b: 0.1
+    }} CURL={20} COLOR_UPDATE_SPEED={5} SPLAT_RADIUS={0.3} SPLAT_FORCE={6000} />
       <div className="max-w-[1400px] mx-auto">
         <Header />
       </div>
@@ -34,12 +29,9 @@ const News = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {newsItems.map((item, index) => (
-            <Card 
-              key={index}
-              className="bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+          {newsItems.map((item, index) => <Card key={index} className="bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer" style={{
+          animationDelay: `${index * 100}ms`
+        }}>
               <CardHeader>
                 <div className="flex items-center gap-2 text-yellow-400 mb-2">
                   <Calendar className="h-4 w-4" />
@@ -50,67 +42,43 @@ const News = () => {
               <CardContent>
                 <p className="text-white/70 mb-4">{item.excerpt}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {item.tags && item.tags.map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex} 
-                      className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full"
-                    >
+                  {item.tags && item.tags.map((tag, tagIndex) => <span key={tagIndex} className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">
                       <Tag className="h-3 w-3 mr-1" />
                       {tag}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-yellow-400">{item.category}</span>
-                  <Button 
-                    variant="link" 
-                    className="text-yellow-400 hover:text-yellow-300"
-                    onClick={() => setSelectedArticle(item)}
-                  >
+                  <Button variant="link" className="text-yellow-400 hover:text-yellow-300" onClick={() => setSelectedArticle(item)}>
                     Read More <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
-        <h2 className="text-4xl font-bold text-white mb-8 animate-fade-in mt-16">
-          Upcoming Events
-        </h2>
+        <h2 className="text-4xl font-bold text-white mb-8 animate-fade-in mt-16">Past Events</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {events.map((event, index) => (
-            <motion.div
-              key={event.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card 
-                className={cn(
-                  "bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer h-full",
-                  event.isUpcoming && "border-green-500/50 hover:border-green-500"
-                )}
-                onClick={() => setSelectedEvent(event)}
-              >
+          {events.map((event, index) => <motion.div key={event.id} initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: index * 0.1
+        }}>
+              <Card className={cn("bg-black/40 backdrop-blur-sm border border-yellow-500/20 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer h-full", event.isUpcoming && "border-green-500/50 hover:border-green-500")} onClick={() => setSelectedEvent(event)}>
                 <CardHeader>
                   <div className="relative w-full h-64 mb-4 group">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                    {event.videoUrl && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                    <img src={event.image} alt={event.title} className="w-full h-full object-cover rounded-lg" />
+                    {event.videoUrl && <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                         <Play className="w-16 h-16 text-white" />
-                      </div>
-                    )}
-                    {event.isUpcoming && (
-                      <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
+                      </div>}
+                    {event.isUpcoming && <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm">
                         Upcoming
-                      </span>
-                    )}
+                      </span>}
                   </div>
                   <div className="flex items-center gap-2 text-yellow-400 mb-2">
                     <Calendar className="h-4 w-4" />
@@ -132,8 +100,7 @@ const News = () => {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
-          ))}
+            </motion.div>)}
         </div>
       </div>
       
@@ -152,21 +119,15 @@ const News = () => {
           
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2 mb-4">
-              {selectedArticle?.tags && selectedArticle.tags.map((tag, tagIndex) => (
-                <span 
-                  key={tagIndex} 
-                  className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full"
-                >
+              {selectedArticle?.tags && selectedArticle.tags.map((tag, tagIndex) => <span key={tagIndex} className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">
                   <Tag className="h-3 w-3 mr-1" />
                   {tag}
-                </span>
-              ))}
+                </span>)}
             </div>
             
-            <div 
-              className="text-white/80 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: selectedArticle?.fullContent || "" }}
-            />
+            <div className="text-white/80 leading-relaxed" dangerouslySetInnerHTML={{
+            __html: selectedArticle?.fullContent || ""
+          }} />
             
             <div className="flex items-center gap-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-yellow-400">
@@ -188,8 +149,7 @@ const News = () => {
       
       <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>
         <DialogContent className="bg-[#1A1A1A] border-yellow-500/10 text-white max-w-4xl max-h-[90vh] overflow-y-auto">
-          {selectedEvent && (
-            <>
+          {selectedEvent && <>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold text-white mb-2">
                   {selectedEvent.title}
@@ -202,20 +162,9 @@ const News = () => {
               </DialogHeader>
               
               <div className="space-y-6">
-                {selectedEvent.videoUrl && (
-                  <div className="aspect-video w-full">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={selectedEvent.videoUrl.replace('youtu.be/', 'youtube.com/embed/')}
-                      title={selectedEvent.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg"
-                    />
-                  </div>
-                )}
+                {selectedEvent.videoUrl && <div className="aspect-video w-full">
+                    <iframe width="100%" height="100%" src={selectedEvent.videoUrl.replace('youtu.be/', 'youtube.com/embed/')} title={selectedEvent.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-lg" />
+                  </div>}
                 
                 <div className="flex items-center gap-2 text-purple-400">
                   <MapPin className="h-4 w-4" />
@@ -226,20 +175,15 @@ const News = () => {
                   {selectedEvent.description}
                 </p>
                 
-                {selectedEvent.registrationLink && (
-                  <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black">
+                {selectedEvent.registrationLink && <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black">
                     Register Now
-                  </Button>
-                )}
+                  </Button>}
               </div>
-            </>
-          )}
+            </>}
         </DialogContent>
       </Dialog>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default News;
