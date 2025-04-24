@@ -8,6 +8,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   source?: string;
+  phoneNumber?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -15,7 +16,8 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
   onClick,
-  source = "General Inquiry"
+  source = "General Inquiry",
+  phoneNumber
 }) => {
   const isPrimary = variant === "primary";
 
@@ -23,7 +25,11 @@ export const Button: React.FC<ButtonProps> = ({
     if (onClick) {
       onClick();
     }
-    openWhatsAppChat(source);
+    if (phoneNumber) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      openWhatsAppChat(source);
+    }
   };
 
   return (
@@ -39,4 +45,3 @@ export const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
