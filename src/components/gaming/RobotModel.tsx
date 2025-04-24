@@ -1,10 +1,9 @@
-
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
-import { Award, Building, Circle, CircleCheck, CircleDot, FileText, Laptop, Users } from "lucide-react";
+import { Award, Building, Circle, CircleCheck, CircleDot, FileText, Laptop, Users, Star, Globe, BookOpen } from "lucide-react";
 
 function VintageRobotModel() {
   const group = useRef<THREE.Group>(null);
@@ -47,21 +46,23 @@ export const RobotModel = () => (
       {/* Left Side Stats */}
       <div className="w-1/4 space-y-6 pl-8">
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <Award className="w-6 h-6 text-yellow-400 mb-2" />
           <h3 className="text-yellow-400 text-xl font-bold">3 Decades</h3>
-          <p className="text-white/80 text-sm">(29 Years) of Transformative Training</p>
+          <p className="text-white/80 text-sm">(29 Years) of Training</p>
         </motion.div>
 
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <Users className="w-6 h-6 text-yellow-400 mb-2" />
           <h3 className="text-yellow-400 text-xl font-bold">3 Lakh +</h3>
@@ -69,14 +70,27 @@ export const RobotModel = () => (
         </motion.div>
 
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <CircleDot className="w-6 h-6 text-yellow-400 mb-2" />
           <h3 className="text-yellow-400 text-xl font-bold">10</h3>
-          <p className="text-white/80 text-sm">Average Class size</p>
+          <p className="text-white/80 text-sm">Average Class Size</p>
+        </motion.div>
+
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
+        >
+          <Star className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">20+</h3>
+          <p className="text-white/80 text-sm">Years of Excellence</p>
         </motion.div>
       </div>
 
@@ -104,10 +118,11 @@ export const RobotModel = () => (
       {/* Right Side Stats */}
       <div className="w-1/4 space-y-6 pr-8">
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <Laptop className="w-6 h-6 text-yellow-400 mb-2" />
           <h3 className="text-yellow-400 text-xl font-bold">4</h3>
@@ -115,10 +130,11 @@ export const RobotModel = () => (
         </motion.div>
 
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <Building className="w-6 h-6 text-yellow-400 mb-2" />
           <div className="space-y-3">
@@ -133,21 +149,34 @@ export const RobotModel = () => (
         </motion.div>
 
         <motion.div 
-          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm"
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
         >
           <FileText className="w-6 h-6 text-yellow-400 mb-2" />
           <div className="space-y-3">
             <div>
-              <p className="text-white/80 text-sm">2 years access to Onlinevarsity from certification</p>
+              <p className="text-white/80 text-sm">2 years access to Onlinevarsity</p>
             </div>
             <div className="border-t border-yellow-400/20 pt-2">
               <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
-              <p className="text-white/80 text-sm">Certificate Authentication for Employers & Authorities</p>
+              <p className="text-white/80 text-sm">Certificate Authentication</p>
             </div>
           </div>
+        </motion.div>
+
+        <motion.div 
+          className="bg-[#1A1A1A]/50 p-4 rounded-xl border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 }}
+          whileHover={{ scale: 1.05, backgroundColor: "rgba(26, 26, 26, 0.7)" }}
+        >
+          <Globe className="w-6 h-6 text-yellow-400 mb-2" />
+          <h3 className="text-yellow-400 text-xl font-bold">20+</h3>
+          <p className="text-white/80 text-sm">Countries Network</p>
         </motion.div>
       </div>
     </div>
