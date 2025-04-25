@@ -4,11 +4,12 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 import { Award, Building, Circle, CircleCheck, CircleDot, FileText, Laptop, Users, Star, Globe, BookOpen } from "lucide-react";
-
 function VintageRobotModel() {
   const group = useRef<THREE.Group>(null);
-  const { scene, animations } = useGLTF("/vintage_robot_animated.glb") as any;
-
+  const {
+    scene,
+    animations
+  } = useGLTF("/vintage_robot_animated.glb") as any;
   React.useEffect(() => {
     if (!group.current || !animations || animations.length === 0) return;
     const mixer = new THREE.AnimationMixer(group.current);
@@ -27,16 +28,13 @@ function VintageRobotModel() {
       mixer.stopAllAction();
     };
   }, [animations]);
-
   return <group ref={group}>
       <primitive object={scene} scale={2.5} position={[0, -2.5, 0]} />
     </group>;
 }
-
-export const RobotModel = () => (
-  <div className="w-full py-12 bg-[#0F0F0F] rounded-2xl mt-12 shadow-2xl" style={{
-    background: "linear-gradient(135deg, #0F0F0F 80%, #1A1A1A 100%)"
-  }}>
+export const RobotModel = () => <div className="w-full py-12 bg-[#0F0F0F] rounded-2xl mt-12 shadow-2xl" style={{
+  background: "linear-gradient(135deg, #0F0F0F 80%, #1A1A1A 100%)"
+}}>
     <div className="flex justify-between items-stretch">
       {/* Left Side Stats */}
       <div className="w-1/4 space-y-6 pl-8 flex flex-col justify-between">
@@ -124,13 +122,7 @@ export const RobotModel = () => (
           <Suspense fallback={null}>
             <VintageRobotModel />
           </Suspense>
-          <OrbitControls 
-            enableZoom={false}
-            enablePan={false}
-            minPolarAngle={Math.PI / 2}
-            maxPolarAngle={Math.PI / 2}
-            rotateSpeed={0.5}
-          />
+          <OrbitControls enableZoom={false} enablePan={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} rotateSpeed={0.5} />
         </Canvas>
       </div>
 
@@ -172,7 +164,7 @@ export const RobotModel = () => (
               <p className="text-white/80 text-sm">Placement Assistance</p>
             </div>
             <div className="border-t border-yellow-400/20 pt-2">
-              <p className="text-white/80 text-sm">Cafeteria for Students</p>
+              
             </div>
           </div>
         </motion.div>
@@ -214,12 +206,10 @@ export const RobotModel = () => (
         backgroundColor: "rgba(26, 26, 26, 0.7)"
       }}>
           <Globe className="w-6 h-6 text-yellow-400 mb-2" />
-          <h3 className="text-yellow-400 text-xl font-bold">20+</h3>
+          <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
           <p className="text-white/80 text-sm">Countries Reached</p>
         </motion.div>
       </div>
     </div>
-  </div>
-);
-
+  </div>;
 useGLTF.preload("/vintage_robot_animated.glb");
