@@ -10,18 +10,36 @@ export const OverviewSection: React.FC = () => {
     // Check if video exists when component mounts
     const videoElement = document.createElement('video');
     videoElement.src = '/Overview.mp4';
+    videoElement.preload = 'auto';
+    
+    // Force video to start loading immediately
+    videoElement.load();
+    
+    // Set a timeout to check if video is loading properly
+    const timeoutId = setTimeout(() => {
+      if (isLoading) {
+        console.log("Video loading timeout reached, forcing state update");
+        setIsLoading(false);
+      }
+    }, 5000); // 5 second timeout
+    
     videoElement.onloadeddata = () => {
+      console.log("Video loaded successfully");
       setIsLoading(false);
+      clearTimeout(timeoutId);
     };
-    videoElement.onerror = () => {
+    
+    videoElement.onerror = (e) => {
+      console.error("Error loading video:", e);
       setHasError(true);
       setIsLoading(false);
-      console.error("Error loading video: Overview.mp4");
+      clearTimeout(timeoutId);
     };
 
     return () => {
       videoElement.onloadeddata = null;
       videoElement.onerror = null;
+      clearTimeout(timeoutId);
     };
   }, []);
 
@@ -48,11 +66,20 @@ export const OverviewSection: React.FC = () => {
             controls
             playsInline
             preload="auto"
-            onLoadedData={() => setIsLoading(false)}
-            onError={() => {
+            autoPlay={false}
+            muted={false}
+            onLoadedData={() => {
+              console.log("Video element loaded data");
+              setIsLoading(false);
+            }}
+            onCanPlay={() => {
+              console.log("Video can play now");
+              setIsLoading(false);
+            }}
+            onError={(e) => {
+              console.error("Error in video element:", e);
               setHasError(true);
               setIsLoading(false);
-              console.error("Error loading video in video element");
             }}
           />
         )}
