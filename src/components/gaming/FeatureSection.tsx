@@ -6,6 +6,7 @@ import { ImageCarousel } from "./ImageCarousel";
 import { Meteors } from "@/components/ui/meteors";
 import { ModelUploader } from "./ModelUploader";
 import { RobotModel } from "./RobotModel";
+import { OverviewSection } from "./OverviewSection";
 
 export const FeatureSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -90,6 +91,8 @@ export const FeatureSection: React.FC = () => {
           </div>
           <RobotModel />
         </div>
+
+        <OverviewSection />
       </div>
     </section>
   );
