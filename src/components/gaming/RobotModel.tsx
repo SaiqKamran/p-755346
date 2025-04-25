@@ -187,8 +187,8 @@ export const RobotModel = () => <div className="w-full py-12 bg-[#0F0F0F] rounde
               <p className="text-white/80 text-sm">2 years access to Onlinevarsity</p>
             </div>
             <div className="border-t border-yellow-400/20 pt-2">
-              <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
-              <p className="text-white/80 text-sm">Certificate Authentication</p>
+              
+              
             </div>
           </div>
         </motion.div>
@@ -207,7 +207,7 @@ export const RobotModel = () => <div className="w-full py-12 bg-[#0F0F0F] rounde
       }}>
           <Globe className="w-6 h-6 text-yellow-400 mb-2" />
           <h3 className="text-yellow-400 text-xl font-bold">100%</h3>
-          <p className="text-white/80 text-sm">Countries Reached</p>
+          <p className="text-white/80 text-sm">Certificate Authentication</p>
         </motion.div>
       </div>
     </div>
