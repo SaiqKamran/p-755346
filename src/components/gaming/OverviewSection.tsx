@@ -1,9 +1,29 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export const OverviewSection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    // Check if video exists when component mounts
+    const videoElement = document.createElement('video');
+    videoElement.src = '/Overview.mp4';
+    videoElement.onloadeddata = () => {
+      setIsLoading(false);
+    };
+    videoElement.onerror = () => {
+      setHasError(true);
+      setIsLoading(false);
+      console.error("Error loading video: Overview.mp4");
+    };
+
+    return () => {
+      videoElement.onloadeddata = null;
+      videoElement.onerror = null;
+    };
+  }, []);
 
   return (
     <div className="w-full max-w-[1240px] mt-32 relative z-10">
@@ -17,14 +37,25 @@ export const OverviewSection: React.FC = () => {
             <span className="absolute text-yellow-400 animate-pulse">Loading video...</span>
           </div>
         )}
-        <video
-          className="w-full h-full object-cover"
-          src="/Overview.mp4"
-          controls
-          playsInline
-          preload="metadata"
-          onLoadedData={() => setIsLoading(false)}
-        />
+        {hasError ? (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+            <p className="text-yellow-400 text-xl font-medium">Video could not be loaded</p>
+          </div>
+        ) : (
+          <video
+            className="w-full h-full object-cover"
+            src="/Overview.mp4"
+            controls
+            playsInline
+            preload="auto"
+            onLoadedData={() => setIsLoading(false)}
+            onError={() => {
+              setHasError(true);
+              setIsLoading(false);
+              console.error("Error loading video in video element");
+            }}
+          />
+        )}
       </div>
     </div>
   );
