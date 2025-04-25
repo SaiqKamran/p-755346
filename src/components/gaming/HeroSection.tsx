@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <div className="relative w-full h-full overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0"
+                  src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
