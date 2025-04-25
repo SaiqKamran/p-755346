@@ -1,4 +1,3 @@
-
 import React from "react";
 import { HeroSection } from "@/components/gaming/HeroSection";
 import { GameShowcase } from "@/components/gaming/GameShowcase";
@@ -9,6 +8,7 @@ import { SplashCursor } from "@/components/ui/splash-cursor";
 import { TextCursorProximityDemo } from "@/components/ui/text-cursor-proximity-demo";
 import { TestimonialSection } from "@/components/gaming/TestimonialSection";
 import { HomeNewsSection } from "@/components/gaming/HomeNewsSection";
+import { AcademicsSection } from "@/components/gaming/AcademicsSection";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -43,66 +43,35 @@ const Index = () => {
           <HeroSection />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <GameShowcase />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <FeatureSection />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
+          <AcademicsSection />
+        </motion.div>
+
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <TestimonialSection />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <HomeNewsSection />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <LocationSection />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <TextCursorProximityDemo />
         </motion.div>
 
-        <motion.div 
-          variants={fadeInUp} 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <Footer />
         </motion.div>
       </div>
