@@ -1,4 +1,3 @@
-
 import React from "react";
 import { 
   Carousel,
@@ -15,21 +14,21 @@ const academicSlides = [
     image: "/lovable-uploads/99adef6b-13c2-477a-89fc-495fcd461a51.png",
     title: "Character Design & Animation",
     description: "Master the art of creating compelling game characters through our comprehensive program. Learn industry-standard tools and techniques for character modeling, rigging, and animation. Our expert instructors will guide you through the entire pipeline from concept to final animation.",
-    courseLink: "/courses",
+    courseLink: "/degree",
     feeLink: "/fees"
   },
   {
     image: "/lovable-uploads/5ff4374d-165a-4148-9a4e-b8e3c71ccdfc.png",
     title: "Advanced 3D Modeling",
     description: "Dive deep into the world of 3D modeling with our advanced course. From architectural visualization to game asset creation, learn to create stunning 3D models using industry-leading software. Develop expertise in texturing, lighting, and rendering techniques.",
-    courseLink: "/courses",
+    courseLink: "/degree",
     feeLink: "/fees"
   },
   {
     image: "/lovable-uploads/e5dd82e2-9be9-403f-b9eb-3f23d2e08c41.png",
     title: "Game Development",
     description: "Build your career in game development with our comprehensive program. Learn game design principles, programming fundamentals, and engine development. Create engaging gameplay mechanics and interactive experiences using modern game development tools.",
-    courseLink: "/courses",
+    courseLink: "/degree",
     feeLink: "/fees"
   }
 ];
