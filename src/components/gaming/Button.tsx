@@ -1,14 +1,13 @@
 
 import React from "react";
-import { openWhatsAppChat } from "@/utils/whatsapp";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonProps {
   variant?: "primary" | "secondary";
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
-  source?: string;
-  phoneNumber?: string;
+  to?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -16,19 +15,17 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   className = "",
   onClick,
-  source = "General Inquiry",
-  phoneNumber
+  to
 }) => {
+  const navigate = useNavigate();
   const isPrimary = variant === "primary";
 
   const handleClick = () => {
     if (onClick) {
       onClick();
     }
-    if (phoneNumber) {
-      window.location.href = `tel:${phoneNumber}`;
-    } else {
-      openWhatsAppChat(source);
+    if (to) {
+      navigate(to);
     }
   };
 
