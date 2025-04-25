@@ -1,5 +1,4 @@
-
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
 import { motion } from "framer-motion";
@@ -13,51 +12,16 @@ import { useNavigate } from "react-router-dom";
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  const videoRef = useRef<HTMLVideoElement>(null);
   const carouselRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [videoLoaded, setVideoLoaded] = React.useState(false);
   
   const slideDurations = [47000, 10000, 10000]; // Duration for each slide in milliseconds
-  
-  // Handle video loading
-  useEffect(() => {
-    if (videoRef.current) {
-      // Set video attributes programmatically
-      videoRef.current.autoplay = true;
-      videoRef.current.muted = true;
-      videoRef.current.loop = true;
-      videoRef.current.playsInline = true;
-      
-      // Force load the video
-      videoRef.current.load();
-      
-      // Try to play the video
-      const playPromise = videoRef.current.play();
-      
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log("Hero video playing successfully");
-            setVideoLoaded(true);
-          })
-          .catch(error => {
-            console.error("Error playing hero video:", error);
-            // Try again with user interaction
-            document.addEventListener('click', () => {
-              videoRef.current?.play();
-            }, { once: true });
-          });
-      }
-    }
-  }, []);
   
   React.useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     
     const moveToNextSlide = (currentIndex: number) => {
       if (currentIndex >= slideDurations.length) {
-        // Stop at overview page after completing the cycle
         carouselRef.current?.api?.scrollTo(0);
         return;
       }
@@ -103,35 +67,13 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <div className="relative w-full h-full overflow-hidden">
-                <video
-                  ref={videoRef}
-                  src="/Herosection (1).mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] object-cover scale-150"
-                  onLoadedData={() => {
-                    console.log("Hero video loaded data");
-                    setVideoLoaded(true);
-                  }}
-                  onCanPlay={() => {
-                    console.log("Hero video can play now");
-                    if (videoRef.current) {
-                      videoRef.current.play()
-                        .catch(e => console.error("Failed to play hero video:", e));
-                    }
-                  }}
-                  onError={(e) => {
-                    console.error("Error loading hero video:", e);
-                  }}
+                <iframe
+                  src="https://www.youtube.com/embed/videoseries?list=PLbVHz4urQBZkJiAWdG8HWoJTdgEysigIO&autoplay=1&mute=1&loop=1&playlist=videoseries&controls=0&showinfo=0&rel=0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
+                  style={{ border: 'none' }}
                 />
-                {!videoLoaded && (
-                  <div className="absolute inset-0 bg-black flex items-center justify-center">
-                    <span className="loader"></span>
-                  </div>
-                )}
               </div>
             </div>
             
