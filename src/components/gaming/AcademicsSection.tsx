@@ -14,21 +14,21 @@ const academicSlides = [
   {
     image: "/lovable-uploads/99adef6b-13c2-477a-89fc-495fcd461a51.png",
     title: "Character Design & Animation",
-    description: "Master the art of creating compelling game characters",
+    description: "Master the art of creating compelling game characters through our comprehensive program. Learn industry-standard tools and techniques for character modeling, rigging, and animation. Our expert instructors will guide you through the entire pipeline from concept to final animation.",
     courseLink: "/courses",
     feeLink: "/fees"
   },
   {
     image: "/lovable-uploads/5ff4374d-165a-4148-9a4e-b8e3c71ccdfc.png",
     title: "Advanced 3D Modeling",
-    description: "Learn professional 3D modeling techniques",
+    description: "Dive deep into the world of 3D modeling with our advanced course. From architectural visualization to game asset creation, learn to create stunning 3D models using industry-leading software. Develop expertise in texturing, lighting, and rendering techniques.",
     courseLink: "/courses",
     feeLink: "/fees"
   },
   {
     image: "/lovable-uploads/e5dd82e2-9be9-403f-b9eb-3f23d2e08c41.png",
     title: "Game Development",
-    description: "Create immersive gaming experiences",
+    description: "Build your career in game development with our comprehensive program. Learn game design principles, programming fundamentals, and engine development. Create engaging gameplay mechanics and interactive experiences using modern game development tools.",
     courseLink: "/courses",
     feeLink: "/fees"
   }
@@ -44,17 +44,15 @@ export const AcademicsSection = () => {
           <CarouselContent>
             {academicSlides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="flex gap-8 items-center">
-                  <div className="w-1/2">
-                    <img 
-                      src={slide.image} 
-                      alt={slide.title}
-                      className="w-full h-[500px] object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="w-1/2 p-6">
-                    <h3 className="text-3xl font-bold text-white mb-4">{slide.title}</h3>
-                    <p className="text-white/80 text-lg mb-8">{slide.description}</p>
+                <div className="relative">
+                  <img 
+                    src={slide.image} 
+                    alt={slide.title}
+                    className="w-full h-[600px] object-cover rounded-lg"
+                  />
+                  <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/90 to-transparent p-12 flex flex-col justify-center">
+                    <h3 className="text-4xl font-bold text-white mb-6">{slide.title}</h3>
+                    <p className="text-white/90 text-lg mb-8 leading-relaxed">{slide.description}</p>
                     <div className="flex gap-4">
                       <Link to={slide.courseLink}>
                         <Button variant="primary">View Course</Button>
