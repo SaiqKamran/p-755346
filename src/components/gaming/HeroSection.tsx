@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -13,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
-  const videoRef = useRef<HTMLIFrameElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const carouselRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = React.useState(0);
   
@@ -70,21 +69,14 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <div className="relative w-full h-full overflow-hidden">
-                <iframe
+                <video
                   ref={videoRef}
-                  src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0"
-                  className="absolute top-0 left-0 w-full h-full"
-                  allow="autoplay; encrypted-media"
-                  style={{ 
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%) scale(1.5)',
-                    width: '100vw',
-                    height: '100vh',
-                    objectFit: 'cover',
-                    zIndex: -1
-                  }}
+                  src="/Herosection (1).mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] object-cover scale-150"
                 />
               </div>
             </div>
