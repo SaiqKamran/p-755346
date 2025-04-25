@@ -1,5 +1,4 @@
-
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
 import { motion } from "framer-motion";
@@ -16,41 +15,8 @@ export const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const carouselRef = useRef<any>(null);
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [videoLoaded, setVideoLoaded] = React.useState(false);
   
   const slideDurations = [47000, 10000, 10000]; // Duration for each slide in milliseconds
-  
-  // Handle video loading
-  useEffect(() => {
-    if (videoRef.current) {
-      // Set video attributes programmatically
-      videoRef.current.autoplay = true;
-      videoRef.current.muted = true;
-      videoRef.current.loop = true;
-      videoRef.current.playsInline = true;
-      
-      // Force load the video
-      videoRef.current.load();
-      
-      // Try to play the video
-      const playPromise = videoRef.current.play();
-      
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log("Hero video playing successfully");
-            setVideoLoaded(true);
-          })
-          .catch(error => {
-            console.error("Error playing hero video:", error);
-            // Try again with user interaction
-            document.addEventListener('click', () => {
-              videoRef.current?.play();
-            }, { once: true });
-          });
-      }
-    }
-  }, []);
   
   React.useEffect(() => {
     let timeoutId: NodeJS.Timeout;
@@ -110,28 +76,8 @@ export const HeroSection: React.FC = () => {
                   muted
                   loop
                   playsInline
-                  preload="auto"
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] object-cover scale-150"
-                  onLoadedData={() => {
-                    console.log("Hero video loaded data");
-                    setVideoLoaded(true);
-                  }}
-                  onCanPlay={() => {
-                    console.log("Hero video can play now");
-                    if (videoRef.current) {
-                      videoRef.current.play()
-                        .catch(e => console.error("Failed to play hero video:", e));
-                    }
-                  }}
-                  onError={(e) => {
-                    console.error("Error loading hero video:", e);
-                  }}
                 />
-                {!videoLoaded && (
-                  <div className="absolute inset-0 bg-black flex items-center justify-center">
-                    <span className="loader"></span>
-                  </div>
-                )}
               </div>
             </div>
             
