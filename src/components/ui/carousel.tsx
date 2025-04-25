@@ -98,51 +98,19 @@ const Carousel = React.forwardRef<
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
           
-          <div className="absolute bottom-16 left-0 right-0 flex justify-center items-center gap-8 z-50">
-            {[
-              { name: "Overview", index: 0 },
-              { name: "Sign Up for Courses", index: 1 },
-              { name: "Digital Arts Summer Camp", index: 2 }
-            ].map(({ name, index }) => (
-              <div key={index} className="flex flex-col items-center space-y-2">
-                <div className="flex items-center space-x-2">
-                  <div 
-                    className={cn(
-                      "h-1 w-8 transition-all",
-                      current === index 
-                        ? "bg-yellow-400" 
-                        : "bg-white/30"
-                    )}
-                  />
-                  <button
-                    className={cn(
-                      "w-4 h-4 rounded-full transition-all",
-                      current === index 
-                        ? "bg-yellow-400 scale-125" 
-                        : "bg-white/50 hover:bg-white/75"
-                    )}
-                    onClick={() => api?.scrollTo(index)}
-                    aria-label={`Go to ${name} slide`}
-                  />
-                  <div 
-                    className={cn(
-                      "h-1 w-8 transition-all",
-                      current === index 
-                        ? "bg-yellow-400" 
-                        : "bg-white/30"
-                    )}
-                  />
-                </div>
-                <span 
+          <div className="absolute -bottom-10 left-0 right-0 flex justify-center items-center gap-4">
+            {[0, 1, 2].map((index) => (
+              <div key={index} className="flex items-center">
+                <button
                   className={cn(
-                    "text-sm font-medium transition-colors text-center",
+                    "h-1 w-16 rounded-full transition-all",
                     current === index 
-                      ? "text-white" 
-                      : "text-white/50"
+                      ? "bg-yellow-400" 
+                      : "bg-white/30 hover:bg-white/50"
                   )}
-                >
-                  {name}
-                </span>
+                  onClick={() => api?.scrollTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
               </div>
             ))}
           </div>

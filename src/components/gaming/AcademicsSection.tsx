@@ -40,28 +40,28 @@ export const AcademicsSection = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-white text-center mb-12">Our Academics</h2>
         
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <Carousel className="w-full max-w-6xl mx-auto">
           <CarouselContent>
             {academicSlides.map((slide, index) => (
               <CarouselItem key={index}>
-                <div className="relative group">
-                  <img 
-                    src={slide.image} 
-                    alt={slide.title}
-                    className="w-full h-[600px] object-cover rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-lg">
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <h3 className="text-2xl font-bold text-white mb-2">{slide.title}</h3>
-                      <p className="text-white/80 mb-6">{slide.description}</p>
-                      <div className="flex gap-4">
-                        <Link to={slide.courseLink}>
-                          <Button variant="primary">View Course</Button>
-                        </Link>
-                        <Link to={slide.feeLink}>
-                          <Button variant="secondary">View Fees</Button>
-                        </Link>
-                      </div>
+                <div className="flex gap-8 items-center">
+                  <div className="w-1/2">
+                    <img 
+                      src={slide.image} 
+                      alt={slide.title}
+                      className="w-full h-[500px] object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="w-1/2 p-6">
+                    <h3 className="text-3xl font-bold text-white mb-4">{slide.title}</h3>
+                    <p className="text-white/80 text-lg mb-8">{slide.description}</p>
+                    <div className="flex gap-4">
+                      <Link to={slide.courseLink}>
+                        <Button variant="primary">View Course</Button>
+                      </Link>
+                      <Link to={slide.feeLink}>
+                        <Button variant="secondary">View Fees</Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
