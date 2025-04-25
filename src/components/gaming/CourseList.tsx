@@ -79,7 +79,7 @@ export const CourseList = () => {
           {courses.map((course, index) => (
             <Card key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-500/50 transition-all duration-300">
               <CardContent className="p-6">
-                <course.icon className="w-12 h-12 text-purple-400 mb-4" />
+                <course.icon className="w-12 h-12 text-yellow-400 mb-4" />
                 <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
                 <p className="text-white/80 mb-6 text-sm leading-relaxed">{course.description}</p>
                 <Button 
