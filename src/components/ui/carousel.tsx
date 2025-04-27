@@ -68,17 +68,22 @@ const Carousel = React.forwardRef<
     
     React.useEffect(() => {
       if (!api) return
-      if (setApi) setApi(api)
+      
+      if (setApi) {
+        setApi(api)
+      }
       
       const onSelect = () => {
-        const currentIndex = api.selectedScrollSnap()
         if (onSlideChange) {
-          onSlideChange(currentIndex)
+          onSlideChange(api.selectedScrollSnap())
         }
       }
       
       api.on("select", onSelect)
-      return () => api.off("select", onSelect)
+      
+      return () => {
+        api.off("select", onSelect)
+      }
     }, [api, setApi, onSlideChange])
 
     return (
