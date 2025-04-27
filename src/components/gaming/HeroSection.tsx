@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -78,22 +79,6 @@ export const HeroSection: React.FC = () => {
 
   const handleCallClick = () => {
     window.location.href = "tel:+918264900999";
-  };
-
-  const handlePrevious = () => {
-    const newIndex = (currentSlide - 1 + slideDurations.length) % slideDurations.length;
-    if (carouselRef.current?.api) {
-      carouselRef.current.api.scrollTo(newIndex);
-      setCurrentSlide(newIndex);
-    }
-  };
-
-  const handleNext = () => {
-    const newIndex = (currentSlide + 1) % slideDurations.length;
-    if (carouselRef.current?.api) {
-      carouselRef.current.api.scrollTo(newIndex);
-      setCurrentSlide(newIndex);
-    }
   };
 
   return (
@@ -283,23 +268,8 @@ export const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-50">
-          <button 
-            onClick={handlePrevious}
-            className="bg-white/10 hover:bg-white/20 border-none text-white h-8 w-8 rounded-full flex items-center justify-center"
-          >
-            <CarouselPrevious className="h-8 w-8" />
-          </button>
-        </div>
-        
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-50">
-          <button 
-            onClick={handleNext}
-            className="bg-white/10 hover:bg-white/20 border-none text-white h-8 w-8 rounded-full flex items-center justify-center"
-          >
-            <CarouselNext className="h-8 w-8" />
-          </button>
-        </div>
+        <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+        <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
       </Carousel>
     </section>
   );
