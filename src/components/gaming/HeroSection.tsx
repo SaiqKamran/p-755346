@@ -60,6 +60,7 @@ export const HeroSection: React.FC = () => {
     };
   }, []);
 
+  // Updated to ensure the carousel moves and indicator updates
   const handleSlideClick = (index: number) => {
     if (carouselRef.current?.api) {
       carouselRef.current.api.scrollTo(index);
@@ -268,8 +269,26 @@ export const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-        <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+        <CarouselPrevious 
+          className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" 
+          onClick={() => {
+            if (carouselRef.current?.api) {
+              const newIndex = (currentSlide - 1 + 3) % 3; // Ensure it wraps around
+              carouselRef.current.api.scrollTo(newIndex);
+              setCurrentSlide(newIndex);
+            }
+          }}
+        />
+        <CarouselNext 
+          className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" 
+          onClick={() => {
+            if (carouselRef.current?.api) {
+              const newIndex = (currentSlide + 1) % 3;
+              carouselRef.current.api.scrollTo(newIndex);
+              setCurrentSlide(newIndex);
+            }
+          }}
+        />
       </Carousel>
     </section>
   );
