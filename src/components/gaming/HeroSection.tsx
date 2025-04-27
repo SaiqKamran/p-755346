@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -82,6 +83,21 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
+      {/* Video Background - Single video for all slides */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          onLoadedData={() => setVideoLoaded(true)}
+        >
+          <source src="/Herosection (1).mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+      
       <Carousel 
         className="w-full"
         opts={{
@@ -92,20 +108,6 @@ export const HeroSection: React.FC = () => {
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">
-            <div className="absolute inset-0">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                onLoadedData={() => setVideoLoaded(true)}
-              >
-                <source src="/Herosection (1).mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-black/50" />
-            </div>
-            
             <div className="relative self-center flex w-full max-w-[1239px] flex-col max-md:max-w-full z-20 pt-14">
               <Header />
               <div className="flex flex-col md:flex-row justify-between items-start mt-16 md:mt-20 px-4">
@@ -131,17 +133,6 @@ export const HeroSection: React.FC = () => {
           </CarouselItem>
 
           <CarouselItem className="relative min-h-screen">
-            <div className="absolute inset-0">
-              <iframe
-                src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
-                style={{ border: 'none', opacity: 0.8 }}
-              />
-              <div className="absolute inset-0 bg-black/50"></div>
-            </div>
-            
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
               <motion.h2 
                 className="text-4xl md:text-6xl font-bold mb-8"
@@ -202,17 +193,6 @@ export const HeroSection: React.FC = () => {
           </CarouselItem>
 
           <CarouselItem className="relative min-h-screen">
-            <div className="absolute inset-0">
-              <iframe
-                src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
-                style={{ border: 'none', opacity: 0.8 }}
-              />
-              <div className="absolute inset-0 bg-black/50"></div>
-            </div>
-            
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
               <motion.h2 
                 className="text-4xl md:text-6xl font-bold mb-8"
