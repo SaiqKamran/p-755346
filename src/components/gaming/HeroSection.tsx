@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -7,8 +6,9 @@ import { HeroContent } from "./HeroContent";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Phone, MessageSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { openWhatsAppChat } from "@/utils/whatsapp";
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -71,6 +71,14 @@ export const HeroSection: React.FC = () => {
     navigate('/degree#courses');
   };
 
+  const handleWhatsAppClick = (context: string) => {
+    openWhatsAppChat(context);
+  };
+
+  const handleCallClick = () => {
+    window.location.href = "tel:+918264900999";
+  };
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
       <Carousel 
@@ -116,6 +124,15 @@ export const HeroSection: React.FC = () => {
                 <StatItem count="450,000+" label="STUDENTS" highlighted />
                 <StatItem count="20+" label="COUNTRIES" />
               </motion.div>
+              
+              <div className="absolute bottom-8 right-8 flex gap-4">
+                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("General Inquiry")}>
+                  <MessageSquare className="h-5 w-5" /> WhatsApp
+                </Button>
+                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
+                  <Phone className="h-5 w-5" /> Call Us
+                </Button>
+              </div>
             </div>
           </CarouselItem>
 
@@ -166,8 +183,12 @@ export const HeroSection: React.FC = () => {
                 </Button>
               </motion.div>
               <div className="absolute bottom-8 right-8 flex gap-4">
-                <Button variant="whatsapp" className="h-12 w-auto" onClick={() => window.location.href = "https://wa.me/+918264900999?text=Hi%20Arena%20Animation%20Chandigarh%20Sector%209,%20I%20want%20to%20inquire%20about%20Game%20Development%20courses"} />
-                <Button variant="call" className="h-12 w-auto" onClick={() => window.location.href = "tel:+918264900999"} />
+                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("Game Development Inquiry")}>
+                  <MessageSquare className="h-5 w-5" /> WhatsApp
+                </Button>
+                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
+                  <Phone className="h-5 w-5" /> Call Us
+                </Button>
               </div>
             </div>
           </CarouselItem>
@@ -219,8 +240,12 @@ export const HeroSection: React.FC = () => {
                 </Button>
               </motion.div>
               <div className="absolute bottom-8 right-8 flex gap-4">
-                <Button variant="whatsapp" className="h-12 w-auto" onClick={() => window.location.href = "https://wa.me/+918264900999?text=Hi%20Arena%20Animation%20Chandigarh%20Sector%209,%20I%20want%20to%20inquire%20about%20Summer%20Camp"} />
-                <Button variant="call" className="h-12 w-auto" onClick={() => window.location.href = "tel:+918264900999"} />
+                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("Summer Camp Inquiry")}>
+                  <MessageSquare className="h-5 w-5" /> WhatsApp
+                </Button>
+                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
+                  <Phone className="h-5 w-5" /> Call Us
+                </Button>
               </div>
             </div>
           </CarouselItem>
