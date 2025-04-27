@@ -1,3 +1,4 @@
+
 import React from "react";
 import { 
   Carousel,
@@ -47,7 +48,7 @@ export const AcademicsSection = () => {
                   <img 
                     src={slide.image} 
                     alt={slide.title}
-                    className="w-full h-[600px] object-cover rounded-lg"
+                    className="w-full h-[800px] object-contain rounded-lg bg-black/40"
                   />
                   <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/90 to-transparent p-12 flex flex-col justify-center">
                     <h3 className="text-4xl font-bold text-white mb-6">{slide.title}</h3>
