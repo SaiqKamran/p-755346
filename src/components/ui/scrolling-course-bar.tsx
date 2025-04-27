@@ -11,8 +11,8 @@ const courses = [
   { name: "GAME DEVELOPMENT", path: "/degree#gaming" },
 ];
 
-// Create a complete set that will be repeated three times to ensure seamless scrolling
-const allCourses = [...courses, ...courses, ...courses];
+// Create multiple sets to ensure seamless scrolling
+const allCourses = [...courses, ...courses, ...courses, ...courses, ...courses, ...courses];
 
 export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,18 +21,18 @@ export const ScrollingCourseBar = () => {
     <div className="w-full overflow-hidden bg-black/30 backdrop-blur-sm border-y border-yellow-400/20">
       <div 
         ref={containerRef}
-        className="animate-scroll-x py-4 flex items-center gap-8"
+        className="animate-scroll-x py-8 flex items-center gap-12"
       >
         {allCourses.map((course, index) => (
-          <div key={index} className="flex items-center gap-4 shrink-0">
+          <div key={index} className="flex items-center gap-6 shrink-0">
             <Link
               to={course.path}
-              className="text-xl font-bold text-white hover:text-yellow-400 transition-colors whitespace-nowrap"
+              className="text-4xl font-black text-white hover:text-yellow-400 transition-colors whitespace-nowrap tracking-wider"
             >
               {course.name}
             </Link>
-            <div className="w-4 h-4 border border-yellow-400/50 rounded-full flex items-center justify-center">
-              <div className="w-1 h-1 bg-yellow-400/50 rounded-full" />
+            <div className="w-6 h-6 border-2 border-yellow-400/50 rounded-full flex items-center justify-center">
+              <div className="w-2 h-2 bg-yellow-400/50 rounded-full" />
             </div>
           </div>
         ))}
