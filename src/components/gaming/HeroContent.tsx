@@ -22,34 +22,20 @@ export function HeroContent({ title, description }: HeroContentProps) {
 
   return (
     <div className="flex flex-col space-y-4" ref={containerRef}>
-      <motion.div
-        className="flex flex-col sm:flex-row items-stretch text-xl font-extrabold uppercase tracking-[0.8px] leading-none mb-8 gap-4"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 1.2, ease }}
-      >
-        <Button variant="whatsapp" onClick={() => openWhatsAppChat("General Inquiry")}>
-          WhatsApp Us
-        </Button>
-        <Button variant="call" onClick={handleCall}>
-          Call Us
-        </Button>
-      </motion.div>
-      
       <TextCursorProximity
         label={title}
         styles={{
           transform: {
             from: "scale(1)",
-            to: "scale(1.3)"
+            to: "scale(1.3)"  // Increased scale effect dramatically
           },
           color: {
             from: "#FFFFFF",
-            to: "#FFD700"
+            to: "#FFD700"  // Gold color with more visibility
           }
         }}
         falloff="gaussian"
-        radius={200}
+        radius={200}  // Increased radius for broader interaction
         containerRef={containerRef}
         className="text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
       />
@@ -61,6 +47,20 @@ export function HeroContent({ title, description }: HeroContentProps) {
       >
         {description}
       </motion.p>
+      <motion.div
+        className="flex flex-col sm:flex-row items-stretch text-xl font-extrabold uppercase tracking-[0.8px] leading-none mt-8 gap-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 1.2, ease }}
+      >
+        <Button variant="primary" onClick={() => openWhatsAppChat("General Inquiry")}>
+          WhatsApp Us
+        </Button>
+        <Button variant="secondary" onClick={handleCall}>
+          <Phone className="mr-2 h-4 w-4" />
+          Call Us
+        </Button>
+      </motion.div>
     </div>
   );
 }
