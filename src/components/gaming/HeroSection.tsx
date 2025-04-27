@@ -6,7 +6,7 @@ import { HeroContent } from "./HeroContent";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Phone, MessageSquare } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { openWhatsAppChat } from "@/utils/whatsapp";
 
@@ -124,15 +124,6 @@ export const HeroSection: React.FC = () => {
                 <StatItem count="450,000+" label="STUDENTS" highlighted />
                 <StatItem count="20+" label="COUNTRIES" />
               </motion.div>
-              
-              <div className="absolute bottom-8 right-8 flex gap-4">
-                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("General Inquiry")}>
-                  <MessageSquare className="h-5 w-5" /> WhatsApp
-                </Button>
-                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
-                  <Phone className="h-5 w-5" /> Call Us
-                </Button>
-              </div>
             </div>
           </CarouselItem>
 
@@ -182,13 +173,27 @@ export const HeroSection: React.FC = () => {
                   Discover Gaming Courses <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
-              <div className="absolute bottom-8 right-8 flex gap-4">
-                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("Game Development Inquiry")}>
-                  <MessageSquare className="h-5 w-5" /> WhatsApp
-                </Button>
-                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
-                  <Phone className="h-5 w-5" /> Call Us
-                </Button>
+              <div className="flex justify-center gap-4 mt-8">
+                <button
+                  onClick={() => handleWhatsAppClick("Game Development Inquiry")}
+                  className="transition-transform hover:scale-105"
+                >
+                  <img 
+                    src="/lovable-uploads/739454b0-09d6-4f09-a59b-1ea6e3a564bc.png"
+                    alt="WhatsApp Us"
+                    className="h-12 w-auto"
+                  />
+                </button>
+                <button
+                  onClick={handleCallClick}
+                  className="transition-transform hover:scale-105"
+                >
+                  <img 
+                    src="/lovable-uploads/d4086534-2cf9-4d90-b767-9eedd451d4d9.png"
+                    alt="Call Us"
+                    className="h-12 w-auto"
+                  />
+                </button>
               </div>
             </div>
           </CarouselItem>
@@ -239,13 +244,27 @@ export const HeroSection: React.FC = () => {
                   Enroll Now <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
-              <div className="absolute bottom-8 right-8 flex gap-4">
-                <Button variant="outline" className="h-12 w-auto bg-green-600 hover:bg-green-700 text-white border-none flex items-center gap-2" onClick={() => handleWhatsAppClick("Summer Camp Inquiry")}>
-                  <MessageSquare className="h-5 w-5" /> WhatsApp
-                </Button>
-                <Button variant="outline" className="h-12 w-auto bg-blue-600 hover:bg-blue-700 text-white border-none flex items-center gap-2" onClick={handleCallClick}>
-                  <Phone className="h-5 w-5" /> Call Us
-                </Button>
+              <div className="flex justify-center gap-4 mt-8">
+                <button
+                  onClick={() => handleWhatsAppClick("Summer Camp Inquiry")}
+                  className="transition-transform hover:scale-105"
+                >
+                  <img 
+                    src="/lovable-uploads/739454b0-09d6-4f09-a59b-1ea6e3a564bc.png"
+                    alt="WhatsApp Us"
+                    className="h-12 w-auto"
+                  />
+                </button>
+                <button
+                  onClick={handleCallClick}
+                  className="transition-transform hover:scale-105"
+                >
+                  <img 
+                    src="/lovable-uploads/d4086534-2cf9-4d90-b767-9eedd451d4d9.png"
+                    alt="Call Us"
+                    className="h-12 w-auto"
+                  />
+                </button>
               </div>
             </div>
           </CarouselItem>
