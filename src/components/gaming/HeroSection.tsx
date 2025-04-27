@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -105,6 +104,7 @@ export const HeroSection: React.FC = () => {
           loop: true,
         }}
         ref={carouselRef}
+        onSlideChange={(index) => setCurrentSlide(index)}
       >
         <CarouselContent>
           <CarouselItem className="relative min-h-screen">

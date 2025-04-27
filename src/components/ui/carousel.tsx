@@ -17,6 +17,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  onSlideChange?: (index: number) => void
 }
 
 type CarouselContextProps = {
@@ -52,6 +53,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      onSlideChange,
       ...props
     },
     ref
@@ -63,24 +65,21 @@ const Carousel = React.forwardRef<
       },
       plugins
     )
-    const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
-
-    React.useEffect(() => {
-      if (!api) return
-
-      setCount(api.scrollSnapList().length)
-      setCurrent(api.selectedScrollSnap())
-
-      api.on("select", () => {
-        setCurrent(api.selectedScrollSnap())
-      })
-    }, [api])
-
+    
     React.useEffect(() => {
       if (!api) return
       if (setApi) setApi(api)
-    }, [api, setApi])
+      
+      const onSelect = () => {
+        const currentIndex = api.selectedScrollSnap()
+        if (onSlideChange) {
+          onSlideChange(currentIndex)
+        }
+      }
+      
+      api.on("select", onSelect)
+      return () => api.off("select", onSelect)
+    }, [api, setApi, onSlideChange])
 
     return (
       <CarouselContext.Provider
@@ -97,23 +96,6 @@ const Carousel = React.forwardRef<
       >
         <div ref={ref} className={cn("relative", className)} {...props}>
           {children}
-          
-          <div className="absolute -bottom-10 left-0 right-0 flex justify-center items-center gap-4">
-            {[0, 1, 2].map((index) => (
-              <div key={index} className="flex items-center">
-                <button
-                  className={cn(
-                    "h-1 w-16 rounded-full transition-all",
-                    current === index 
-                      ? "bg-yellow-400" 
-                      : "bg-white/30 hover:bg-white/50"
-                  )}
-                  onClick={() => api?.scrollTo(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </CarouselContext.Provider>
     )
