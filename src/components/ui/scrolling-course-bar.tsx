@@ -16,7 +16,7 @@ export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full overflow-hidden bg-black/30 backdrop-blur-sm border-y border-yellow-400/20">
+    <div className="w-full overflow-hidden bg-black/30 backdrop-blur-sm">
       <div 
         ref={containerRef}
         className="animate-scroll-x py-12 flex items-center gap-24"
