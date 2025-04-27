@@ -81,6 +81,22 @@ export const HeroSection: React.FC = () => {
     window.location.href = "tel:+918264900999";
   };
 
+  const handlePrevious = () => {
+    const newIndex = (currentSlide - 1 + slideDurations.length) % slideDurations.length;
+    if (carouselRef.current?.api) {
+      carouselRef.current.api.scrollTo(newIndex);
+      setCurrentSlide(newIndex);
+    }
+  };
+
+  const handleNext = () => {
+    const newIndex = (currentSlide + 1) % slideDurations.length;
+    if (carouselRef.current?.api) {
+      carouselRef.current.api.scrollTo(newIndex);
+      setCurrentSlide(newIndex);
+    }
+  };
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
       {/* Video Background - Single video for all slides */}
@@ -268,8 +284,13 @@ export const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-        <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+        <div onClick={handlePrevious} className="absolute left-4 top-1/2 -translate-y-1/2 z-50">
+          <CarouselPrevious className="bg-white/10 hover:bg-white/20 border-none text-white" />
+        </div>
+        
+        <div onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 z-50">
+          <CarouselNext className="bg-white/10 hover:bg-white/20 border-none text-white" />
+        </div>
       </Carousel>
     </section>
   );
