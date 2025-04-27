@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -123,32 +124,36 @@
 
   @keyframes scroll {
     0% {
-      transform: translateX(0);
+      transform: translateX(0) translateZ(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-50%) translateZ(0);
     }
   }
 
   @keyframes scroll-x-reverse {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(-100%) translateZ(0);
     }
     100% {
-      transform: translateX(0%);
+      transform: translateX(0%) translateZ(0);
     }
   }
 
   .animate-scroll-x {
-    animation: scroll 30s linear infinite;
+    animation: scroll 40s linear infinite;
     display: flex;
     width: max-content;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     &:hover {
       animation-play-state: paused;
     }
   }
 
   .animate-scroll-x-reverse {
-    animation: scroll-x-reverse 30s linear infinite reverse;
+    animation: scroll-x-reverse 40s linear infinite reverse;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 }

@@ -11,8 +11,8 @@ const courses = [
   { name: "GAME DEVELOPMENT", path: "/degree#gaming" },
 ];
 
-// Create multiple sets to ensure seamless scrolling
-const allCourses = [...courses, ...courses, ...courses, ...courses, ...courses, ...courses];
+// Create multiple sets to ensure seamless scrolling but reduce total number for performance
+const allCourses = [...courses, ...courses, ...courses];
 
 export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ export const ScrollingCourseBar = () => {
     <div className="w-full overflow-hidden bg-black/30 backdrop-blur-sm border-y border-yellow-400/20">
       <div 
         ref={containerRef}
-        className="animate-scroll-x py-8 flex items-center gap-12"
+        className="animate-scroll-x py-8 flex items-center gap-12 will-change-transform transform-gpu"
       >
         {allCourses.map((course, index) => (
           <div key={index} className="flex items-center gap-6 shrink-0">
