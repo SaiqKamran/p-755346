@@ -194,6 +194,21 @@ export const HeroSection: React.FC = () => {
           </CarouselItem>
         </CarouselContent>
         
+        <div className="absolute bottom-8 left-0 right-0 z-50 flex justify-center gap-4">
+          {[0, 1, 2].map((index) => (
+            <button
+              key={index}
+              onClick={() => handleSlideClick(index)}
+              className={`h-2 w-16 rounded-full transition-all duration-300 ${
+                currentSlide === index 
+                  ? "bg-yellow-400" 
+                  : "bg-white/30 hover:bg-white/50"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
         <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
         <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
       </Carousel>
