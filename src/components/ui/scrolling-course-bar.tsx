@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Link } from "react-router-dom";
@@ -16,16 +17,10 @@ export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="w-full overflow-hidden bg-black/30 backdrop-blur-sm">
+    <div className="w-full overflow-hidden">
       <div 
         ref={containerRef}
-        className="animate-scroll-x py-12 flex items-center gap-24"
-        style={{
-          willChange: "transform",
-          transform: "translateZ(0)",
-          backfaceVisibility: "hidden",
-          perspective: "1000px"
-        }}
+        className="py-12 flex items-center gap-24"
       >
         {allCourses.map((course, index) => (
           <div key={index} className="flex items-center gap-8 shrink-0">
@@ -35,7 +30,7 @@ export const ScrollingCourseBar = () => {
             >
               {course.name}
             </Link>
-            <div className="w-8 h-8 border-2 border-yellow-400/50 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
               <div className="w-3 h-3 bg-yellow-400/50 rounded-full" />
             </div>
           </div>
