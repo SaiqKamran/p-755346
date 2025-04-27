@@ -65,6 +65,8 @@ const Carousel = React.forwardRef<
       },
       plugins
     )
+    const [hasCompletedLoop, setHasCompletedLoop] = React.useState(false)
+    const [currentIndex, setCurrentIndex] = React.useState(0)
     
     React.useEffect(() => {
       if (!api) return
@@ -74,8 +76,10 @@ const Carousel = React.forwardRef<
       }
       
       const onSelect = () => {
+        const index = api.selectedScrollSnap()
+        setCurrentIndex(index)
         if (onSlideChange) {
-          onSlideChange(api.selectedScrollSnap())
+          onSlideChange(index)
         }
       }
       
@@ -85,6 +89,27 @@ const Carousel = React.forwardRef<
         api.off("select", onSelect)
       }
     }, [api, setApi, onSlideChange])
+
+    // Auto-scroll functionality
+    React.useEffect(() => {
+      if (!api || hasCompletedLoop) return
+
+      const interval = setInterval(() => {
+        const currentSlide = api.selectedScrollSnap()
+        const totalSlides = api.scrollSnapList().length
+        
+        if (currentSlide === totalSlides - 1) {
+          // If we're on the last slide
+          api.scrollTo(0) // Go back to first slide
+          setHasCompletedLoop(true) // Stop auto-scroll
+          clearInterval(interval)
+        } else {
+          api.scrollNext()
+        }
+      }, 8000)
+
+      return () => clearInterval(interval)
+    }, [api, hasCompletedLoop])
 
     return (
       <CarouselContext.Provider
