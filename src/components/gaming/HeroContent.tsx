@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { useRef } from "react";
@@ -22,6 +21,11 @@ export function HeroContent({ title, description }: HeroContentProps) {
 
   return (
     <div className="flex flex-col space-y-4" ref={containerRef}>
+      <div className="flex gap-4 mb-8">
+        <Button variant="whatsapp" onClick={() => openWhatsAppChat("General Inquiry")} />
+        <Button variant="call" onClick={handleCall} />
+      </div>
+      
       <TextCursorProximity
         label={title}
         styles={{
@@ -47,20 +51,6 @@ export function HeroContent({ title, description }: HeroContentProps) {
       >
         {description}
       </motion.p>
-      <motion.div
-        className="flex flex-col sm:flex-row items-stretch text-xl font-extrabold uppercase tracking-[0.8px] leading-none mt-8 gap-4"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1.2, ease }}
-      >
-        <Button variant="primary" onClick={() => openWhatsAppChat("General Inquiry")}>
-          WhatsApp Us
-        </Button>
-        <Button variant="secondary" onClick={handleCall}>
-          <Phone className="mr-2 h-4 w-4" />
-          Call Us
-        </Button>
-      </motion.div>
     </div>
   );
 }

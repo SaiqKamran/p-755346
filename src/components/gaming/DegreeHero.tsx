@@ -1,9 +1,7 @@
-
 import React from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "../ui/text-cursor-proximity";
 import { openWhatsAppChat } from "@/utils/whatsapp";
-import { Phone } from "lucide-react";
 import { Meteors } from "@/components/ui/meteors";
 
 export const DegreeHero = () => {
@@ -23,6 +21,11 @@ export const DegreeHero = () => {
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
+          <div className="flex justify-center gap-4 mb-8">
+            <Button variant="whatsapp" onClick={() => openWhatsAppChat("B.Voc Degree Inquiry")} />
+            <Button variant="call" onClick={handleCall} />
+          </div>
+          
           <TextCursorProximity
             containerRef={containerRef}
             label="Bachelor of Vocational Studies"
@@ -46,21 +49,6 @@ export const DegreeHero = () => {
               recognized by UGC under Section 22(3) of UGC Act, 1956. Equivalent to any conventional degree 
               and eligible for government positions.
             </p>
-          </div>
-          <div className="flex gap-4 justify-center">
-            <Button 
-              variant="primary" 
-              onClick={() => {
-                console.log("B.Voc Degree Inquiry - Opening WhatsApp");
-                openWhatsAppChat("B.Voc Degree Inquiry");
-              }}
-            >
-              WhatsApp Us
-            </Button>
-            <Button variant="secondary" onClick={handleCall}>
-              <Phone className="mr-2 h-4 w-4" />
-              Call Us
-            </Button>
           </div>
         </div>
       </div>

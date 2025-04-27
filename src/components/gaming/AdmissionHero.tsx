@@ -1,10 +1,8 @@
-
 import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { Button } from "./Button";
 import { Meteors } from "@/components/ui/meteors";
 import { openWhatsAppChat } from "@/utils/whatsapp";
-import { Phone } from "lucide-react";
 
 export const AdmissionHero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -20,6 +18,11 @@ export const AdmissionHero = () => {
       
       <div className="relative z-10 container mx-auto px-4 text-center" ref={heroRef}>
         <div className="space-y-8">
+          <div className="flex justify-center gap-4 mb-8">
+            <Button variant="whatsapp" onClick={() => openWhatsAppChat("Admission Inquiry")} />
+            <Button variant="call" onClick={handleCall} />
+          </div>
+          
           <TextCursorProximity
             label="Admission Open 2025"
             styles={{
@@ -42,25 +45,6 @@ export const AdmissionHero = () => {
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto">
               Employment Driven Education - Transform your creative passion into a successful career
             </p>
-          </div>
-          
-          <div className="flex flex-wrap gap-4 justify-center mt-8">
-            <Button 
-              variant="primary"
-              onClick={() => {
-                console.log("Admission Inquiry - Opening WhatsApp");
-                openWhatsAppChat("Admission Inquiry");
-              }}
-            >
-              WhatsApp Us
-            </Button>
-            <Button 
-              variant="secondary" 
-              onClick={handleCall}
-            >
-              <Phone className="mr-2 h-4 w-4 text-yellow-400" />
-              Call Us
-            </Button>
           </div>
         </div>
       </div>
