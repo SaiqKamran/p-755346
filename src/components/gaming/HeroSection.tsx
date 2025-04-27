@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -284,12 +283,22 @@ export const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <div onClick={handlePrevious} className="absolute left-4 top-1/2 -translate-y-1/2 z-50">
-          <CarouselPrevious className="bg-white/10 hover:bg-white/20 border-none text-white" />
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-50">
+          <button 
+            onClick={handlePrevious}
+            className="bg-white/10 hover:bg-white/20 border-none text-white h-8 w-8 rounded-full flex items-center justify-center"
+          >
+            <CarouselPrevious className="h-8 w-8" />
+          </button>
         </div>
         
-        <div onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 z-50">
-          <CarouselNext className="bg-white/10 hover:bg-white/20 border-none text-white" />
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-50">
+          <button 
+            onClick={handleNext}
+            className="bg-white/10 hover:bg-white/20 border-none text-white h-8 w-8 rounded-full flex items-center justify-center"
+          >
+            <CarouselNext className="h-8 w-8" />
+          </button>
         </div>
       </Carousel>
     </section>
