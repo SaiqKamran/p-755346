@@ -141,19 +141,29 @@
   }
 
   .animate-scroll-x {
-    animation: scroll 40s linear infinite;
+    animation: scroll 60s linear infinite;
     display: flex;
     width: max-content;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    perspective: 1000;
+    -webkit-perspective: 1000;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
     &:hover {
       animation-play-state: paused;
     }
   }
 
   .animate-scroll-x-reverse {
-    animation: scroll-x-reverse 40s linear infinite reverse;
+    animation: scroll-x-reverse 60s linear infinite reverse;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    perspective: 1000;
+    -webkit-perspective: 1000;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
   }
 }
