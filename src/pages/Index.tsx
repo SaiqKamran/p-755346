@@ -1,3 +1,4 @@
+
 import React from "react";
 import { HeroSection } from "@/components/gaming/HeroSection";
 import { GameShowcase } from "@/components/gaming/GameShowcase";
@@ -10,6 +11,7 @@ import { TestimonialSection } from "@/components/gaming/TestimonialSection";
 import { HomeNewsSection } from "@/components/gaming/HomeNewsSection";
 import { AcademicsSection } from "@/components/gaming/AcademicsSection";
 import { motion } from "framer-motion";
+import { ScrollingCourseBar } from "@/components/ui/scrolling-course-bar";
 
 const Index = () => {
   const fadeInUp = {
@@ -39,6 +41,8 @@ const Index = () => {
         SPLAT_FORCE={6000}
       />
       <div className="relative w-full">
+        <ScrollingCourseBar />
+        
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
           <HeroSection />
         </motion.div>
