@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+
+import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
 import { motion } from "framer-motion";
@@ -13,38 +14,55 @@ export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   const carouselRef = useRef<any>(null);
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   
-  const slideDurations = [47000, 10000, 10000]; // Duration for each slide in milliseconds
+  const slideDurations = [8000, 8000, 8000]; // 8 seconds for each slide
   
-  React.useEffect(() => {
+  useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     
     const moveToNextSlide = (currentIndex: number) => {
-      if (currentIndex >= slideDurations.length) {
-        carouselRef.current?.api?.scrollTo(0);
-        return;
-      }
+      const nextIndex = (currentIndex + 1) % slideDurations.length;
       
       timeoutId = setTimeout(() => {
-        carouselRef.current?.api?.scrollTo(currentIndex + 1);
-        setCurrentSlide(currentIndex + 1);
-        moveToNextSlide(currentIndex + 1);
+        if (carouselRef.current?.api) {
+          carouselRef.current.api.scrollTo(nextIndex);
+          setCurrentSlide(nextIndex);
+        }
+        moveToNextSlide(nextIndex);
       }, slideDurations[currentIndex]);
     };
     
-    moveToNextSlide(0);
+    moveToNextSlide(currentSlide);
     
     return () => {
       if (timeoutId) {
         clearTimeout(timeoutId);
       }
     };
+  }, [currentSlide]);
+
+  useEffect(() => {
+    const api = carouselRef.current?.api;
+    
+    if (!api) return;
+    
+    const onSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    
+    return () => {
+      api.off("select", onSelect);
+    };
   }, []);
 
   const handleSlideClick = (index: number) => {
-    setCurrentSlide(index);
-    carouselRef.current?.api?.scrollTo(index);
+    if (carouselRef.current?.api) {
+      carouselRef.current.api.scrollTo(index);
+      setCurrentSlide(index);
+    }
   };
 
   const navigate = useNavigate();
@@ -59,7 +77,7 @@ export const HeroSection: React.FC = () => {
         className="w-full"
         opts={{
           align: "start",
-          loop: false,
+          loop: true,
         }}
         ref={carouselRef}
       >
@@ -103,11 +121,14 @@ export const HeroSection: React.FC = () => {
 
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <img 
-                src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Gaming Character"
-                className="w-full h-full object-cover"
+              <iframe
+                src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
+                style={{ border: 'none', opacity: 0.8 }}
               />
+              <div className="absolute inset-0 bg-black/50"></div>
             </div>
             
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
@@ -144,16 +165,23 @@ export const HeroSection: React.FC = () => {
                   Discover Gaming Courses <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
+              <div className="absolute bottom-8 right-8 flex gap-4">
+                <Button variant="whatsapp" className="h-12 w-auto" onClick={() => window.location.href = "https://wa.me/+918264900999?text=Hi%20Arena%20Animation%20Chandigarh%20Sector%209,%20I%20want%20to%20inquire%20about%20Game%20Development%20courses"} />
+                <Button variant="call" className="h-12 w-auto" onClick={() => window.location.href = "tel:+918264900999"} />
+              </div>
             </div>
           </CarouselItem>
 
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <img 
-                src="https://images.unsplash.com/photo-1558174685-430919a96c8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
-                alt="Digital Arts Summer Camp"
-                className="w-full h-full object-cover"
+              <iframe
+                src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
+                style={{ border: 'none', opacity: 0.8 }}
               />
+              <div className="absolute inset-0 bg-black/50"></div>
             </div>
             
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
@@ -190,6 +218,10 @@ export const HeroSection: React.FC = () => {
                   Enroll Now <ChevronRight className="ml-2" />
                 </Button>
               </motion.div>
+              <div className="absolute bottom-8 right-8 flex gap-4">
+                <Button variant="whatsapp" className="h-12 w-auto" onClick={() => window.location.href = "https://wa.me/+918264900999?text=Hi%20Arena%20Animation%20Chandigarh%20Sector%209,%20I%20want%20to%20inquire%20about%20Summer%20Camp"} />
+                <Button variant="call" className="h-12 w-auto" onClick={() => window.location.href = "tel:+918264900999"} />
+              </div>
             </div>
           </CarouselItem>
         </CarouselContent>
@@ -199,7 +231,7 @@ export const HeroSection: React.FC = () => {
             <button
               key={index}
               onClick={() => handleSlideClick(index)}
-              className={`h-2 w-16 rounded-full transition-all duration-300 ${
+              className={`h-3 w-20 rounded-full transition-all duration-300 ${
                 currentSlide === index 
                   ? "bg-yellow-400" 
                   : "bg-white/30 hover:bg-white/50"
