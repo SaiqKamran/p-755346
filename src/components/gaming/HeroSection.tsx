@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -64,6 +63,22 @@ export const HeroSection: React.FC = () => {
     if (carouselRef.current?.api) {
       carouselRef.current.api.scrollTo(index);
       setCurrentSlide(index);
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (carouselRef.current?.api) {
+      const prevIndex = (currentSlide - 1 + slideDurations.length) % slideDurations.length;
+      carouselRef.current.api.scrollTo(prevIndex);
+      setCurrentSlide(prevIndex);
+    }
+  };
+
+  const handleNextSlide = () => {
+    if (carouselRef.current?.api) {
+      const nextIndex = (currentSlide + 1) % slideDurations.length;
+      carouselRef.current.api.scrollTo(nextIndex);
+      setCurrentSlide(nextIndex);
     }
   };
 
@@ -268,8 +283,14 @@ export const HeroSection: React.FC = () => {
           ))}
         </div>
 
-        <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-        <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+        <CarouselPrevious 
+          onClick={handlePrevSlide}
+          className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" 
+        />
+        <CarouselNext 
+          onClick={handleNextSlide}
+          className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" 
+        />
       </Carousel>
     </section>
   );
