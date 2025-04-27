@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import { StatItem } from "./StatItem";
 import { Header } from "./Header";
@@ -94,10 +93,12 @@ export const HeroSection: React.FC = () => {
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0 before:absolute before:inset-0 before:bg-gradient-to-b before:from-black/50 before:to-transparent before:z-10">
               <div className="relative w-full h-full overflow-hidden">
-                <img
-                  src="/lovable-uploads/78a59bf9-ce65-4301-8e47-b7c985b45318.png"
-                  alt="Arena Animation Background"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover"
+                <iframe
+                  src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
+                  style={{ border: 'none' }}
                 />
               </div>
             </div>
@@ -128,11 +129,12 @@ export const HeroSection: React.FC = () => {
 
           <CarouselItem className="relative min-h-screen">
             <div className="absolute inset-0">
-              <img
-                src="/lovable-uploads/5db5f36c-5a6c-438a-aa00-5728e5650b72.png"
-                alt="Game Development Background"
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                style={{ opacity: 0.8 }}
+              <iframe
+                src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&loop=1&playlist=2DYRcyuL-Us&controls=0&showinfo=0&rel=0&vq=hd1080&modestbranding=1&playsinline=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-full h-full object-cover scale-150"
+                style={{ border: 'none', opacity: 0.8 }}
               />
               <div className="absolute inset-0 bg-black/50"></div>
             </div>
