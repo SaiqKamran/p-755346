@@ -23,6 +23,21 @@ export const DegreeHero = () => {
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
+          <div className="flex gap-4 justify-center mb-8">
+            <Button 
+              variant="whatsapp" 
+              onClick={() => {
+                console.log("B.Voc Degree Inquiry - Opening WhatsApp");
+                openWhatsAppChat("B.Voc Degree Inquiry");
+              }}
+            >
+              WhatsApp Us
+            </Button>
+            <Button variant="call" onClick={handleCall}>
+              Call Us
+            </Button>
+          </div>
+          
           <TextCursorProximity
             containerRef={containerRef}
             label="Bachelor of Vocational Studies"
@@ -47,23 +62,8 @@ export const DegreeHero = () => {
               and eligible for government positions.
             </p>
           </div>
-          <div className="flex gap-4 justify-center">
-            <Button 
-              variant="primary" 
-              onClick={() => {
-                console.log("B.Voc Degree Inquiry - Opening WhatsApp");
-                openWhatsAppChat("B.Voc Degree Inquiry");
-              }}
-            >
-              WhatsApp Us
-            </Button>
-            <Button variant="secondary" onClick={handleCall}>
-              <Phone className="mr-2 h-4 w-4" />
-              Call Us
-            </Button>
-          </div>
         </div>
       </div>
     </div>
   );
-};
+}
