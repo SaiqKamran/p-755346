@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { useRef } from "react";
@@ -27,15 +26,15 @@ export function HeroContent({ title, description }: HeroContentProps) {
         styles={{
           transform: {
             from: "scale(1)",
-            to: "scale(1.3)"  // Increased scale effect dramatically
+            to: "scale(1.3)"
           },
           color: {
             from: "#FFFFFF",
-            to: "#FFD700"  // Gold color with more visibility
+            to: "#FFD700"
           }
         }}
         falloff="gaussian"
-        radius={200}  // Increased radius for broader interaction
+        radius={200}
         containerRef={containerRef}
         className="text-white text-5xl md:text-[69px] font-extrabold leading-tight tracking-[2.76px] uppercase max-w-[579px] max-md:max-w-full max-md:text-4xl max-md:leading-tight"
       />
@@ -53,11 +52,10 @@ export function HeroContent({ title, description }: HeroContentProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 1.2, ease }}
       >
-        <Button variant="primary" onClick={() => openWhatsAppChat("General Inquiry")}>
+        <Button variant="whatsapp" onClick={() => openWhatsAppChat("General Inquiry")}>
           WhatsApp Us
         </Button>
-        <Button variant="secondary" onClick={handleCall}>
-          <Phone className="mr-2 h-4 w-4" />
+        <Button variant="call" onClick={handleCall}>
           Call Us
         </Button>
       </motion.div>
