@@ -1,25 +1,9 @@
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { Building, Globe, Users, Trophy } from "lucide-react";
 
 export const PlacementInfo = () => {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  
-  // Set up a small animation effect to make the background appear moving
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (iframeRef.current) {
-        const currentScale = iframeRef.current.style.transform;
-        // Toggle between two scale values to create subtle movement
-        const newScale = currentScale.includes("scale(1.52)") ? "scale(1.5)" : "scale(1.52)";
-        iframeRef.current.style.transform = newScale;
-      }
-    }, 2000); // Every 2 seconds
-    
-    return () => clearInterval(interval);
-  }, []);
-
   const reasons = [
     {
       icon: Users,
@@ -45,17 +29,15 @@ export const PlacementInfo = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
         <iframe 
-          ref={iframeRef}
           src="https://assets.pinterest.com/ext/embed.html?id=631278072773947314" 
-          height="130%" 
-          width="130%" 
+          height="100%" 
+          width="100%" 
           frameBorder="0" 
           scrolling="no"
           title="Pinterest background"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 transition-transform duration-2000"
-          style={{ transform: "scale(1.5)" }}
+          className="scale-150"
         ></iframe>
       </div>
       
