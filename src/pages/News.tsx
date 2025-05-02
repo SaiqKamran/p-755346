@@ -1,23 +1,33 @@
+
 import React, { useState } from "react";
 import { Header } from "@/components/gaming/Header";
 import { Footer } from "@/components/gaming/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, ArrowRight, Eye, ThumbsUp, MessageCircle, Tag, MapPin, Play } from "lucide-react";
+import { Calendar, FileText, ArrowRight, Eye, ThumbsUp, MessageCircle, Tag, MapPin, Play, ChevronDown } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { newsItems } from "@/data/news";
 import { events, Event } from "@/data/events";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<typeof newsItems[0] | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [openCollapsibles, setOpenCollapsibles] = useState<{[key: number]: boolean}>({});
   
   const upcomingEvents = events.filter(event => event.isUpcoming);
   const pastEvents = events.filter(event => !event.isUpcoming);
+
+  const toggleCollapsible = (index: number) => {
+    setOpenCollapsibles(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   return <div className="min-h-screen bg-[#0F0F0F]">
       <SplashCursor BACK_COLOR={{
@@ -54,7 +64,24 @@ const News = () => {
                       <CardTitle className="text-white">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-white/70 mb-4">{item.excerpt}</p>
+                      <Collapsible
+                        open={openCollapsibles[index]}
+                        onOpenChange={() => toggleCollapsible(index)}
+                        className="mb-4"
+                      >
+                        <CollapsibleTrigger 
+                          className="w-full text-left flex items-center justify-between cursor-pointer"
+                        >
+                          <div className="text-white/70">{item.excerpt.split('...')[0].trim()}...</div>
+                          <ChevronDown className={cn(
+                            "h-4 w-4 text-yellow-400 transition-transform duration-200",
+                            openCollapsibles[index] ? "transform rotate-180" : ""
+                          )} />
+                        </CollapsibleTrigger>
+                        <CollapsibleContent className="pt-2 text-white/70">
+                          {item.excerpt}
+                        </CollapsibleContent>
+                      </Collapsible>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {item.tags && item.tags.map((tag, tagIndex) => <span key={tagIndex} className="inline-flex items-center text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded-full">
                             <Tag className="h-3 w-3 mr-1" />
