@@ -11,7 +11,8 @@ const courses = [
   { name: "GAME DEVELOPMENT", path: "/degree#gaming" },
 ];
 
-const allCourses = [...courses, ...courses];
+// Duplicate courses to create a continuous scroll effect
+const allCourses = [...courses, ...courses, ...courses];
 
 export const ScrollingCourseBar = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +21,7 @@ export const ScrollingCourseBar = () => {
     <div className="w-full overflow-hidden">
       <div 
         ref={containerRef}
-        className="py-12 flex items-center gap-24"
+        className="py-12 flex items-center gap-24 animate-scroll-x"
       >
         {allCourses.map((course, index) => (
           <div key={index} className="flex items-center gap-8 shrink-0">
