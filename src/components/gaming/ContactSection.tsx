@@ -4,8 +4,19 @@ import { ContactForm } from "./ContactForm";
 
 export const ContactSection = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90">
-      <div className="container mx-auto">
+    <section className="py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 relative">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <iframe 
+          src="https://assets.pinterest.com/ext/embed.html?id=15199717489953425" 
+          className="w-full h-full opacity-30"
+          frameBorder="0" 
+          scrolling="no"
+          title="Pinterest Animation Background"
+          allow="autoplay"
+        ></iframe>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center justify-center">
           <ContactForm />
         </div>
