@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
     { name: "Fees", url: "/fees", icon: DollarSign },
     { name: "News&Events", url: "/news", icon: Newspaper },
     { name: "Contact", url: "/contact", icon: Mail },
-    { name: "Hire From Us", url: "/hirefromus", icon: BriefcaseBusiness },
+    { name: "HireFromUs", url: "/hirefromus", icon: BriefcaseBusiness },
     { name: "FAQ", url: "/faq", icon: FileText },
   ];
 
