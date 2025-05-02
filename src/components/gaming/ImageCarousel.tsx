@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const images = [
   "/lovable-uploads/5db5f36c-5a6c-438a-aa00-5728e5650b72.png",
@@ -14,8 +15,13 @@ export const ImageCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="border-4 border-yellow-400 rounded-lg overflow-hidden">
-        <div className="overflow-hidden" ref={emblaRef}>
+      <motion.div 
+        className="rounded-lg overflow-hidden shadow-[0_15px_40px_rgba(8,112,184,0.6)]"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="overflow-hidden bg-gradient-to-br from-black to-gray-900 p-0.5 rounded-lg" ref={emblaRef}>
           <div className="flex">
             {images.map((src, index) => (
               <div 
@@ -25,13 +31,17 @@ export const ImageCarousel = () => {
                 <img
                   src={src}
                   alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                 />
+                <div className="absolute inset-0 pointer-events-none rounded-lg" style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0) 100%)",
+                  boxShadow: "inset 0 0 20px rgba(0,0,0,0.5)"
+                }} />
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
       
       <Button
         variant="outline"
