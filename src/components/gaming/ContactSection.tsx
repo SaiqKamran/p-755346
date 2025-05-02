@@ -12,7 +12,16 @@ export const ContactSection = () => {
           frameBorder="0" 
           scrolling="no"
           title="Pinterest Animation Background"
-          allow="autoplay"
+          allow="autoplay; encrypted-media"
+          style={{
+            position: 'absolute',
+            top: '-5%',
+            left: '-5%',
+            width: '110%',
+            height: '110%',
+            border: 'none',
+            pointerEvents: 'none'
+          }}
         ></iframe>
       </div>
       
