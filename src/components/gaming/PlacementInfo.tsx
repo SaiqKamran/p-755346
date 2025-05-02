@@ -28,12 +28,12 @@ export const PlacementInfo = () => {
   ];
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
+    <section className="py-20 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img 
           src="/placement (2).gif" 
           alt="Animation industry background"
-          className="w-full h-full object-contain opacity-20"
+          className="w-full h-full object-cover opacity-20"
         />
       </div>
       
