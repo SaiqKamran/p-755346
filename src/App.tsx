@@ -13,6 +13,7 @@ import Admission from "./pages/Admission";
 import FAQ from "./pages/FAQ";
 import Fees from "./pages/Fees";
 import News from "./pages/News";
+import HireFromUs from "./pages/HireFromUs";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/fees" element={<Fees />} />
+          <Route path="/hirefromus" element={<HireFromUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

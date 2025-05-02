@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Home, FileText, User, Mail, DollarSign, Newspaper } from "lucide-react";
+import { Home, FileText, User, Mail, DollarSign, Newspaper, BriefcaseBusiness } from "lucide-react";
 import { NavBar } from "../ui/tubelight-navbar";
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,7 @@ export const Header: React.FC = () => {
     { name: "Fees", url: "/fees", icon: DollarSign },
     { name: "News&Events", url: "/news", icon: Newspaper },
     { name: "Contact", url: "/contact", icon: Mail },
+    { name: "Hire From Us", url: "/hirefromus", icon: BriefcaseBusiness },
     { name: "FAQ", url: "/faq", icon: FileText },
   ];
 
