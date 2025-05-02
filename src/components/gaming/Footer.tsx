@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Facebook, Instagram, Twitter, Github, MessageSquare } from "lucide-react";
 
@@ -12,11 +11,11 @@ export const Footer: React.FC = () => {
         overflow: "hidden"
       }}
     >
-      <div className="absolute right-0 top-0 h-full w-1/3 opacity-40">
+      <div className="absolute right-0 top-[-50px] h-[120%] w-2/5 opacity-60">
         <img 
           src="/lovable-uploads/fe564422-ef53-496f-8e73-32a540b69ae4.png"
           alt="Decorative character"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
           style={{
             maskImage: "linear-gradient(to left, black, transparent)"
           }}
