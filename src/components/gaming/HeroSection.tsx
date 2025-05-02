@@ -82,19 +82,21 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden" ref={heroRef}>
-      {/* Video Background - Single video for all slides */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          onLoadedData={() => setVideoLoaded(true)}
-        >
-          <source src="/Herosection (1).mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50" />
+      {/* YouTube Video Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">
+        <iframe
+          src="https://www.youtube.com/embed/2DYRcyuL-Us?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=2DYRcyuL-Us&modestbranding=1&iv_load_policy=3&enablejsapi=1&vq=hd1080"
+          className="absolute w-[100%] h-[100%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[1.5]"
+          style={{ 
+            minWidth: "125%",
+            minHeight: "125%",
+          }}
+          title="Background Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <div className="absolute inset-0 bg-black/60" /> {/* Overlay to make content readable */}
       </div>
       
       <Carousel 
