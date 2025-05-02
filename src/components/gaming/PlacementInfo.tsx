@@ -28,8 +28,20 @@ export const PlacementInfo = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-[1200px] mx-auto">
+    <section className="py-20 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
+        <iframe 
+          src="https://assets.pinterest.com/ext/embed.html?id=631278072773947314" 
+          height="100%" 
+          width="100%" 
+          frameBorder="0" 
+          scrolling="no"
+          title="Pinterest background"
+          className="scale-150"
+        ></iframe>
+      </div>
+      
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">Animation Industry Jobs</h2>
           <p className="text-white/80 leading-relaxed mb-8">
