@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Header } from "@/components/gaming/Header";
 import { Footer } from "@/components/gaming/Footer";
@@ -72,14 +71,24 @@ const News = () => {
                         <CollapsibleTrigger 
                           className="w-full text-left flex items-center justify-between cursor-pointer"
                         >
-                          <div className="text-white/70">{item.excerpt.split('...')[0].trim()}...</div>
+                          <div 
+                            className="text-white/70 cursor-pointer"
+                            onClick={() => setSelectedArticle(item)}
+                          >
+                            {item.excerpt.split('...')[0].trim()}...
+                          </div>
                           <ChevronDown className={cn(
                             "h-4 w-4 text-yellow-400 transition-transform duration-200",
                             openCollapsibles[index] ? "transform rotate-180" : ""
                           )} />
                         </CollapsibleTrigger>
                         <CollapsibleContent className="pt-2 text-white/70">
-                          {item.excerpt}
+                          <div 
+                            className="cursor-pointer hover:text-yellow-100 transition-colors"
+                            onClick={() => setSelectedArticle(item)}
+                          >
+                            {item.excerpt}
+                          </div>
                         </CollapsibleContent>
                       </Collapsible>
                       <div className="flex flex-wrap gap-2 mb-4">
