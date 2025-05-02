@@ -29,16 +29,12 @@ export const PlacementInfo = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none overflow-hidden">
-        <iframe 
-          src="https://assets.pinterest.com/ext/embed.html?id=631278072773947314" 
-          height="100%" 
-          width="100%" 
-          frameBorder="0" 
-          scrolling="no"
-          title="Pinterest background"
-          className="scale-150"
-        ></iframe>
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="/placement (2).gif" 
+          alt="Animation industry background"
+          className="w-full h-full object-cover opacity-20"
+        />
       </div>
       
       <div className="max-w-[1200px] mx-auto relative z-10">
