@@ -1,11 +1,9 @@
 
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Card } from "@/components/ui/card";
 import { Building, Globe, Users, Trophy } from "lucide-react";
 
 export const PlacementInfo = () => {
-  const videoRef = useRef<HTMLIFrameElement>(null);
-
   const reasons = [
     {
       icon: Users,
@@ -32,30 +30,22 @@ export const PlacementInfo = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
       <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          backgroundImage: "url('/lovable-uploads/774fde8c-b15b-4e2c-abff-cff9e38d9e83.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.9,
+        }}
+      />
+      
+      <div 
         className="absolute inset-0 z-0 pointer-events-none bg-black"
         style={{
-          opacity: 0.7,
+          opacity: 0.6,
         }}
-      >
-        <iframe
-          ref={videoRef}
-          src="https://www.youtube.com/embed/xBfPqtzZ1sw?autoplay=1&mute=1&loop=1&playlist=xBfPqtzZ1sw&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1"
-          allow="autoplay; encrypted-media"
-          className="w-full h-full object-cover absolute inset-0"
-          frameBorder="0"
-          title="Animation Industry Video"
-          style={{
-            width: "100%",
-            height: "100%", 
-            objectFit: "cover",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            pointerEvents: "none",
-            zIndex: -1
-          }}
-        />
-      </div>
+      />
       
       <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="mb-16">
