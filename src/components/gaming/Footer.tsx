@@ -39,41 +39,41 @@ export const Footer: React.FC = () => {
               href="https://www.facebook.com/ArenaChandigarh9/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-yellow-400 hover:text-yellow-300"
+              className="text-yellow-300 hover:text-yellow-400"
             >
-              <Facebook />
+              <Facebook color="#FEF7CD" />
             </a>
             <a 
               href="https://www.instagram.com/explore/locations/110003443885902/arena-animation/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-yellow-400 hover:text-yellow-300"
+              className="text-yellow-300 hover:text-yellow-400"
             >
-              <Instagram />
+              <Instagram color="#FEF7CD" />
             </a>
             <a 
               href="https://twitter.com/Animation_Arena" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-yellow-400 hover:text-yellow-300"
+              className="text-yellow-300 hover:text-yellow-400"
             >
-              <Twitter />
+              <Twitter color="#FEF7CD" />
             </a>
             <a 
               href="https://github.com/CourtKowaluk/ARENA-Animation" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-yellow-400 hover:text-yellow-300"
+              className="text-yellow-300 hover:text-yellow-400"
             >
-              <Github />
+              <Github color="#FEF7CD" />
             </a>
             <a 
               href="https://api.whatsapp.com/send?phone=918264900999" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-yellow-400 hover:text-yellow-300"
+              className="text-yellow-300 hover:text-yellow-400"
             >
-              <MessageSquare />
+              <MessageSquare color="#FEF7CD" />
             </a>
           </div>
         </div>
