@@ -8,7 +8,23 @@ export const PlacementHero = () => {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/video4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80 z-[1]" />
+      </div>
+      
+      <div className="absolute inset-0 z-[2]">
         <Meteors 
           number={40}
           className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]"
