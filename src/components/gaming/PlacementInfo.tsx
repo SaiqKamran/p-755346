@@ -29,13 +29,17 @@ export const PlacementInfo = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-        <img 
-          src="/placement (2).gif" 
-          alt="Animation industry background"
-          className="w-full h-full object-contain opacity-20"
-        />
-      </div>
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none bg-black"
+        style={{
+          backgroundImage: `url('/placement (2).gif')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.4,
+          mixBlendMode: 'screen'
+        }}
+      />
       
       <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="mb-16">
