@@ -5,6 +5,7 @@ import { Footer } from "@/components/gaming/Footer";
 import { PlacementHero } from "@/components/gaming/PlacementHero";
 import { CompanyGrid } from "@/components/gaming/CompanyGrid";
 import { PlacementInfo } from "@/components/gaming/PlacementInfo";
+import { PlacementVideo } from "@/components/gaming/PlacementVideo";
 import { ContactSection } from "@/components/gaming/ContactSection";
 import { SplashCursor } from "@/components/ui/splash-cursor";
 
@@ -23,6 +24,7 @@ const Placements = () => {
       </div>
       <PlacementHero />
       <PlacementInfo />
+      <PlacementVideo />
       <CompanyGrid />
       <ContactSection />
       <Footer />
