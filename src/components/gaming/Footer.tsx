@@ -1,78 +1,39 @@
 import React from "react";
 import { Facebook, Instagram, Twitter, Github, MessageSquare } from "lucide-react";
-
 export const Footer: React.FC = () => {
-  return (
-    <footer 
-      className="flex flex-col self-stretch relative min-h-[529px] w-full text-yellow-400 pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]"
-      style={{
-        background: "#000000",
-        position: "relative",
-        overflow: "hidden"
-      }}
-    >
+  return <footer className="flex flex-col self-stretch relative min-h-[529px] w-full text-yellow-400 pt-[139px] pb-[43px] px-4 md:px-20 max-md:max-w-full max-md:pt-[100px]" style={{
+    background: "#000000",
+    position: "relative",
+    overflow: "hidden"
+  }}>
       <div className="absolute right-0 top-[-50px] h-[120%] w-2/5 opacity-60">
-        <img 
-          src="/lovable-uploads/fe564422-ef53-496f-8e73-32a540b69ae4.png"
-          alt="Decorative character"
-          className="h-full w-full object-contain"
-          style={{
-            maskImage: "linear-gradient(to left, black, transparent)"
-          }}
-        />
+        <img src="/lovable-uploads/fe564422-ef53-496f-8e73-32a540b69ae4.png" alt="Decorative character" className="h-full w-full object-contain" style={{
+        maskImage: "linear-gradient(to left, black, transparent)"
+      }} />
       </div>
       
       <div className="relative flex flex-col md:flex-row max-w-[1200px] mx-auto w-full gap-10 justify-between z-10">
         <div className="flex flex-col max-w-md">
           <div className="flex items-center gap-4">
-            <img 
-              src="/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png" 
-              alt="Arena Animation Logo" 
-              className="h-24 w-auto object-contain"
-            />
+            <img src="/lovable-uploads/0cf36f02-c02f-4f45-89ce-ba7b3da769c3.png" alt="Arena Animation Logo" className="h-24 w-auto object-contain" />
           </div>
           <div className="text-base font-normal leading-[30px] tracking-[0.64px] mt-6 text-yellow-400/90">
             Arena Animation Chandigarh Sector 9 is the city's leading institute for Animation and Visual Effects (VFx) education and training. The best animation institute in Chandigarh.
           </div>
           <div className="flex gap-4 mt-6">
-            <a 
-              href="https://www.facebook.com/ArenaChandigarh9/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-yellow-300 hover:text-yellow-400"
-            >
+            <a href="https://www.facebook.com/ArenaChandigarh9/" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-yellow-400">
               <Facebook color="#FEF7CD" />
             </a>
-            <a 
-              href="https://www.instagram.com/explore/locations/110003443885902/arena-animation/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-yellow-300 hover:text-yellow-400"
-            >
+            <a href="https://www.instagram.com/explore/locations/110003443885902/arena-animation/" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-yellow-400">
               <Instagram color="#FEF7CD" />
             </a>
-            <a 
-              href="https://twitter.com/Animation_Arena" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-yellow-300 hover:text-yellow-400"
-            >
+            <a href="https://twitter.com/Animation_Arena" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-yellow-400">
               <Twitter color="#FEF7CD" />
             </a>
-            <a 
-              href="https://github.com/CourtKowaluk/ARENA-Animation" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-yellow-300 hover:text-yellow-400"
-            >
+            <a href="https://github.com/CourtKowaluk/ARENA-Animation" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-yellow-400">
               <Github color="#FEF7CD" />
             </a>
-            <a 
-              href="https://api.whatsapp.com/send?phone=918264900999" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-yellow-300 hover:text-yellow-400"
-            >
+            <a href="https://api.whatsapp.com/send?phone=918264900999" target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-yellow-400">
               <MessageSquare color="#FEF7CD" />
             </a>
           </div>
@@ -131,12 +92,11 @@ export const Footer: React.FC = () => {
 
       <div className="relative flex flex-wrap items-center justify-between gap-4 text-sm font-normal tracking-[0.91px] leading-6 mt-16 max-w-[1200px] mx-auto w-full border-t border-yellow-400/20 pt-6 z-10">
         <div>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b4eceb5dbc302db944dca672230a16542574486d?placeholderIfAbsent=true" className="aspect-[5.29] object-contain h-8" alt="Security badges" />
+          
         </div>
         <div className="text-yellow-400/90">
           © Copyright 2025, All Rights Reserved by Arena Animation Chandigarh 9
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
