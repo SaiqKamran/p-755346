@@ -1,6 +1,5 @@
 
 import React, { useRef } from "react";
-import { Meteors } from "@/components/ui/meteors";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 
 export const PlacementHero = () => {
@@ -22,13 +21,6 @@ export const PlacementHero = () => {
         </video>
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80 z-[1]" />
-      </div>
-      
-      <div className="absolute inset-0 z-[2]">
-        <Meteors 
-          number={40}
-          className="before:from-purple-500 before:via-purple-400 bg-purple-400 shadow-[0_0_10px_2px_rgba(139,92,246,0.8)]"
-        />
       </div>
       
       <div ref={containerRef} className="max-w-[1200px] mx-auto px-4 relative z-10">
