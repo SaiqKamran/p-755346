@@ -14,7 +14,7 @@ export const ImageCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   return (
-    <div className="relative space-y-8">
+    <div className="relative">
       <motion.div 
         className="rounded-lg overflow-hidden shadow-[0_15px_40px_rgba(8,112,184,0.6)]"
         initial={{ opacity: 0, y: 10 }}
@@ -60,24 +60,6 @@ export const ImageCarousel = () => {
       >
         <ArrowRight className="h-4 w-4" />
       </Button>
-
-      {/* Featured Video Section */}
-      <motion.div
-        className="rounded-lg overflow-hidden shadow-[0_15px_40px_rgba(8,112,184,0.6)] mt-12"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        <div className="relative aspect-video w-full bg-black">
-          <iframe
-            className="absolute inset-0 w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/xBfPqtzZ1sw?autoplay=1&loop=1&playlist=xBfPqtzZ1sw&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&hd=1"
-            title="Arena Animation Featured Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </motion.div>
     </div>
   );
 };
