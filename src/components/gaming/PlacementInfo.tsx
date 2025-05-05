@@ -29,6 +29,7 @@ export const PlacementInfo = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
+      {/* Background image with full opacity */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -36,14 +37,15 @@ export const PlacementInfo = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0.9,
+          opacity: 1, // Changed from 0.9 to 1 for better visibility
         }}
       />
       
+      {/* Darker overlay to ensure text readability */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none bg-black"
         style={{
-          opacity: 0.6,
+          opacity: 0.7, // Increased from 0.6 to 0.7 for better contrast
         }}
       />
       
