@@ -1,8 +1,8 @@
+
 import React from "react";
 import { Button } from "./Button";
 import TextCursorProximity from "../ui/text-cursor-proximity";
 import { openWhatsAppChat } from "@/utils/whatsapp";
-import { Meteors } from "@/components/ui/meteors";
 
 export const DegreeHero = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -16,9 +16,22 @@ export const DegreeHero = () => {
       ref={containerRef}
       className="relative overflow-hidden py-24 md:py-32 px-4 bg-gradient-to-r from-black/90 to-black/95 backdrop-blur-sm"
     >
-      <div className="absolute inset-0">
-        <Meteors number={20} className="!from-yellow-200 !to-yellow-400" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/video 2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80 z-[1]" />
       </div>
+      
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center">
           <div className="flex justify-center gap-4 mb-8">
