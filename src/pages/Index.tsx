@@ -1,3 +1,4 @@
+
 import React from "react";
 import { HeroSection } from "@/components/gaming/HeroSection";
 import { GameShowcase } from "@/components/gaming/GameShowcase";
@@ -9,6 +10,7 @@ import { TextCursorProximityDemo } from "@/components/ui/text-cursor-proximity-d
 import { TestimonialSection } from "@/components/gaming/TestimonialSection";
 import { HomeNewsSection } from "@/components/gaming/HomeNewsSection";
 import { AcademicsSection } from "@/components/gaming/AcademicsSection";
+import { CareerShowcase } from "@/components/gaming/CareerShowcase";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -53,6 +55,10 @@ const Index = () => {
 
         <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
           <AcademicsSection />
+        </motion.div>
+        
+        <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
+          <CareerShowcase />
         </motion.div>
 
         <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
