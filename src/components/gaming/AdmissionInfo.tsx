@@ -5,8 +5,19 @@ import { BadgeIndianRupee, GraduationCap, Users } from "lucide-react";
 
 export const AdmissionInfo = () => {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-black/20 to-[#0F0F0F]">
-      <div className="container mx-auto">
+    <section className="py-24 px-4 relative overflow-hidden">
+      {/* Background GIF with overlay for text readability */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="/placement (2).gif" 
+          alt="Career animation" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/70 z-[1]"></div>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-white text-center mb-16">Admission Information</h2>
         
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -20,7 +31,7 @@ export const AdmissionInfo = () => {
           </div>
           
           <div className="grid gap-6">
-            <Card className="bg-black/10 border-white/10">
+            <Card className="bg-black/30 backdrop-blur-sm border-white/10">
               <CardContent className="p-6 flex gap-4">
                 <BadgeIndianRupee className="w-8 h-8 text-yellow-400" />
                 <div>
@@ -30,7 +41,7 @@ export const AdmissionInfo = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-black/10 border-white/10">
+            <Card className="bg-black/30 backdrop-blur-sm border-white/10">
               <CardContent className="p-6 flex gap-4">
                 <GraduationCap className="w-8 h-8 text-yellow-400" />
                 <div>
