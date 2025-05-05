@@ -33,11 +33,11 @@ export const PlacementInfo = () => {
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: "url('/lovable-uploads/774fde8c-b15b-4e2c-abff-cff9e38d9e83.png')",
+          backgroundImage: "url('/lovable-uploads/06e9f8e9-6acb-4530-9cb8-186dc98315b0.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "right center",
           backgroundRepeat: "no-repeat",
-          opacity: 1, // Changed from 0.9 to 1 for better visibility
+          opacity: 1,
         }}
       />
       
@@ -45,7 +45,7 @@ export const PlacementInfo = () => {
       <div 
         className="absolute inset-0 z-0 pointer-events-none bg-black"
         style={{
-          opacity: 0.7, // Increased from 0.6 to 0.7 for better contrast
+          opacity: 0.6,
         }}
       />
       
