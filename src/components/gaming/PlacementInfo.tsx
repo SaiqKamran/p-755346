@@ -39,7 +39,7 @@ export const PlacementInfo = () => {
       >
         <iframe
           ref={videoRef}
-          src="https://www.youtube.com/embed/T8dk1mor0Nw?autoplay=1&mute=1&loop=1&playlist=T8dk1mor0Nw&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&start=1"
+          src="https://www.youtube.com/embed/xBfPqtzZ1sw?autoplay=1&mute=1&loop=1&playlist=xBfPqtzZ1sw&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1"
           allow="autoplay; encrypted-media"
           className="w-full h-full object-cover absolute inset-0"
           frameBorder="0"
