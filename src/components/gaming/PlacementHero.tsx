@@ -32,7 +32,7 @@ export const PlacementHero = () => {
             }}
             falloff="gaussian"
             radius={200}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-8"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-12"
           />
           <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
             Arena Animation Chandigarh 9 strives to provide job-oriented animation education to its students. Our research teams spend countless hours analyzing trends and requirements of the animation job market to ensure our courses prepare you for the right jobs.
