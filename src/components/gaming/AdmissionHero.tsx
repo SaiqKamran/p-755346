@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import TextCursorProximity from "@/components/ui/text-cursor-proximity";
 import { Button } from "./Button";
@@ -14,7 +15,22 @@ export const AdmissionHero = () => {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
       <Meteors number={20} />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-[#0F0F0F]" />
+      
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute w-full h-full object-cover"
+        >
+          <source src="/video 3.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80 z-[1]" />
+      </div>
       
       <div className="relative z-10 container mx-auto px-4 text-center" ref={heroRef}>
         <div className="space-y-8">
