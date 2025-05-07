@@ -5,7 +5,8 @@ import { Footer } from "@/components/gaming/Footer";
 import { ContactForm } from "@/components/gaming/ContactForm";
 import { LocationSection } from "@/components/gaming/LocationSection";
 import { SplashCursor } from "@/components/ui/splash-cursor";
-import Spline from '@splinetool/react-spline';
+import { ShrekModel } from "@/components/gaming/ShrekModel";
+import { ContactHero } from "@/components/gaming/ContactHero";
 
 const Contact = () => {
   return (
@@ -20,15 +21,11 @@ const Contact = () => {
       <div className="max-w-[1400px] mx-auto">
         <Header />
       </div>
+      <ContactHero />
       <div className="relative min-h-[80vh] bg-gradient-to-b from-[#1A1A1A] to-[#0F0F0F] px-4 py-12">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <ContactForm />
-          <div className="relative h-[600px] w-full">
-            <Spline
-              scene="https://prod.spline.design/JzRiRqqnSQDSHQnx/scene.splinecode"
-              className="w-full h-full"
-            />
-          </div>
+          <ShrekModel />
         </div>
       </div>
       <LocationSection />
