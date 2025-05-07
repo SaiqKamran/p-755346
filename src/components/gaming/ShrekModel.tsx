@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, OrbitControls } from "@react-three/drei";
@@ -15,12 +14,24 @@ function ShrekModelScene() {
     }
   });
 
+  // Apply the original scene materials to keep Shrek's original colors
+  React.useEffect(() => {
+    if (scene) {
+      scene.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          // Preserve original materials to keep Shrek's colors
+          child.material = child.material.clone();
+        }
+      });
+    }
+  }, [scene]);
+
   return (
     <group ref={modelRef}>
       <primitive 
         object={scene} 
-        scale={1.8} 
-        position={[0, -1.5, 0]} 
+        scale={2.5} 
+        position={[0, -2.8, 0]} 
       />
     </group>
   );
@@ -37,10 +48,11 @@ export const ShrekModel = () => {
           background: "transparent",
         }}
       >
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0.8} />
         <directionalLight 
-          intensity={1} 
+          intensity={1.5} 
           position={[5, 5, 5]} 
+          color="#ffffff"
         />
         <ShrekModelScene />
         <OrbitControls 
