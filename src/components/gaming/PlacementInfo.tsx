@@ -2,6 +2,7 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Building, Globe, Users, Trophy } from "lucide-react";
+import { SplineScene } from "@/components/ui/splite";
 
 export const PlacementInfo = () => {
   const reasons = [
@@ -29,27 +30,20 @@ export const PlacementInfo = () => {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
-      {/* Background image with full opacity */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/lovable-uploads/06e9f8e9-6acb-4530-9cb8-186dc98315b0.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "right center",
-          backgroundRepeat: "no-repeat",
-          opacity: 1,
-        }}
-      />
+      {/* Spline 3D background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <SplineScene 
+          scene="https://prod.spline.design/A3E2sL2EswWb9Kn4/scene.splinecode"
+          className="w-full h-full"
+        />
+        
+        {/* Darker overlay to ensure text readability */}
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none bg-black bg-opacity-60"
+        />
+      </div>
       
-      {/* Darker overlay to ensure text readability */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none bg-black"
-        style={{
-          opacity: 0.6,
-        }}
-      />
-      
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-20">
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">Animation Industry Jobs</h2>
           <p className="text-white/80 leading-relaxed mb-8">
