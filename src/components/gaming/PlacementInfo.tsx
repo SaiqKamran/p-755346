@@ -29,9 +29,9 @@ export const PlacementInfo = () => {
   ];
 
   return (
-    <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "700px"}}>
+    <section className="py-20 px-4 relative overflow-hidden" style={{minHeight: "800px"}}>
       {/* Spline 3D background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{transform: "scale(1.5)", overflow: "hidden"}}>
         <SplineScene 
           scene="https://prod.spline.design/A3E2sL2EswWb9Kn4/scene.splinecode"
           className="w-full h-full"
