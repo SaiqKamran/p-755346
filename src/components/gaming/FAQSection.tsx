@@ -118,29 +118,29 @@ export const FAQSection = () => {
   ];
 
   return (
-    <div className="py-24 px-4">
+    <div className="py-24 px-4 relative">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto text-center mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
           Frequently Asked Questions
         </h1>
-        <p className="text-white/80 text-lg">
+        <p className="text-white text-lg font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
           Everything you ever wanted to know about Arena Animation, from course fees to batch timings are here.
         </p>
       </motion.div>
 
       <div className="max-w-4xl mx-auto">
         <Tabs defaultValue="education" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 bg-white/10">
+          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 bg-white/20 backdrop-blur-sm">
             {tabs.map((tab) => (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-black"
+                className="data-[state=active]:bg-yellow-400 data-[state=active]:text-black font-medium"
               >
                 {tab.label}
               </TabsTrigger>
@@ -151,19 +151,19 @@ export const FAQSection = () => {
             <TabsContent
               key={tab.value}
               value={tab.value}
-              className="mt-6 bg-white/5 rounded-lg p-6"
+              className="mt-6 bg-black/60 backdrop-blur-sm rounded-lg p-6"
             >
               <Accordion type="single" collapsible className="w-full">
                 {tab.questions.map((item, index) => (
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="border-b border-white/10"
+                    className="border-b border-white/20"
                   >
-                    <AccordionTrigger className="text-white hover:text-yellow-400">
+                    <AccordionTrigger className="text-white hover:text-yellow-400 font-medium">
                       {item.q}
                     </AccordionTrigger>
-                    <AccordionContent className="text-white/80 whitespace-pre-line">
+                    <AccordionContent className="text-white whitespace-pre-line">
                       {item.a}
                     </AccordionContent>
                   </AccordionItem>
