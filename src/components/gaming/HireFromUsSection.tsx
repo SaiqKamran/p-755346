@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { openWhatsAppChat } from "@/utils/whatsapp";
+import { SplineScene } from "@/components/ui/splite";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -67,17 +68,16 @@ Company Website: ${values.website}`;
 
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-10">
-        <iframe 
-          src="https://assets.pinterest.com/ext/embed.html?id=15199717489953425" 
-          height="100%" 
-          width="100%" 
-          style={{ position: 'absolute', top: '-5%', left: '-5%', width: '110%', height: '110%', border: 'none' }}
-          frameBorder="0" 
-          scrolling="no"
-          allow="autoplay; encrypted-media"
-          className="pointer-events-none"
-        ></iframe>
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{transform: "scale(2)", transformOrigin: "center center", overflow: "hidden"}}>
+        <SplineScene 
+          scene="https://prod.spline.design/A3E2sL2EswWb9Kn4/scene.splinecode"
+          className="w-full h-full"
+        />
+        
+        {/* Darker overlay to ensure text readability */}
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none bg-black bg-opacity-60"
+        />
       </div>
       
       <div className="container mx-auto relative z-10">
