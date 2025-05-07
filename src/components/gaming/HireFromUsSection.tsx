@@ -70,7 +70,7 @@ Company Website: ${values.website}`;
     <section className="py-24 px-4 bg-gradient-to-b from-black via-black/95 to-black/90 relative overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none" style={{transform: "scale(2)", transformOrigin: "center center", overflow: "hidden"}}>
         <SplineScene 
-          scene="https://prod.spline.design/A3E2sL2EswWb9Kn4/scene.splinecode"
+          scene="https://prod.spline.design/HqSGZFV9KlsJIHn2/scene.splinecode"
           className="w-full h-full"
         />
         
