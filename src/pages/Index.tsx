@@ -1,5 +1,6 @@
+
 import React from "react";
-import { ImprovedHeroSection } from "@/components/gaming/ImprovedHeroSection";
+import { HeroSection } from "@/components/gaming/HeroSection";
 import { GameShowcase } from "@/components/gaming/GameShowcase";
 import { FeatureSection } from "@/components/gaming/FeatureSection";
 import { LocationSection } from "@/components/gaming/LocationSection";
@@ -41,7 +42,7 @@ const Index = () => {
       />
       <div className="relative w-full">
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true }}>
-          <ImprovedHeroSection />
+          <HeroSection />
         </motion.div>
 
         <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }}>
