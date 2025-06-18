@@ -36,13 +36,13 @@ export function NavBar({
   return (
     <nav className={cn("w-full bg-black/90 backdrop-blur-lg border-b border-white/10 px-8 py-6", className)}>
       <div className="max-w-7xl mx-auto flex flex-col items-center space-y-6">
-        {/* Logo Section - Moved down and made bigger */}
-        <div className="flex flex-col items-center space-y-2">
+        {/* Logo Section - Above text */}
+        <div className="flex flex-col items-center space-y-3">
           <Link to="/" className="flex flex-col items-center space-y-3">
             <img 
               src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
               alt="Arena Animation Chandigarh Sector 9" 
-              className="h-24 w-auto object-contain" 
+              className="h-20 w-auto object-contain" 
             />
             <div className="flex flex-col items-center">
               <span className="text-white font-bold text-3xl">ARENA ANIMATION</span>
@@ -51,8 +51,8 @@ export function NavBar({
           </Link>
         </div>
 
-        {/* Navigation Items */}
-        <div className="flex items-center space-x-1 bg-white/5 rounded-2xl p-2 border border-white/10">
+        {/* Navigation Items - Modern flat design */}
+        <div className="flex items-center space-x-8">
           {items.map(item => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
@@ -62,9 +62,9 @@ export function NavBar({
                 to={item.url}
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
-                  "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300",
+                  "relative px-4 py-2 text-sm font-medium transition-all duration-300",
                   "text-white/70 hover:text-white",
-                  isActive && "text-white bg-yellow-400/20"
+                  isActive && "text-yellow-400"
                 )}
               >
                 <span className="relative z-10 flex items-center space-x-2">
@@ -74,7 +74,7 @@ export function NavBar({
                 {isActive && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-yellow-400/10 rounded-xl border border-yellow-400/30"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
                     initial={false}
                     transition={{
                       type: "spring",
