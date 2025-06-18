@@ -42,7 +42,7 @@ export function NavBar({
             <img 
               src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
               alt="Arena Animation Chandigarh Sector 9" 
-              className="h-32 w-auto object-contain" 
+              className="h-24 w-auto object-contain" 
             />
             <div className="flex flex-col items-center">
               <span className="text-white font-bold text-3xl">ARENA ANIMATION</span>
