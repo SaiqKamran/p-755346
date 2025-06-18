@@ -1,27 +1,25 @@
+"use client";
 
-"use client"
-
-import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { Link, useLocation } from "react-router-dom"
-import { LucideIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
-
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 interface NavItem {
-  name: string
-  url: string
-  icon: LucideIcon
+  name: string;
+  url: string;
+  icon: LucideIcon;
 }
-
 interface NavBarProps {
-  items: NavItem[]
-  className?: string
+  items: NavItem[];
+  className?: string;
 }
-
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({
+  items,
+  className
+}: NavBarProps) {
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState(items[0].name)
-
+  const [activeTab, setActiveTab] = useState(items[0].name);
   useEffect(() => {
     // Set active tab based on current location
     const matchingItem = items.find(item => item.url === location.pathname);
@@ -29,61 +27,36 @@ export function NavBar({ items, className }: NavBarProps) {
       setActiveTab(matchingItem.name);
     }
   }, [location.pathname, items]);
-
-  return (
-    <nav className={cn("w-full bg-black/90 backdrop-blur-lg border-b border-white/10 px-8 py-4", className)}>
+  return <nav className={cn("w-full bg-black/90 backdrop-blur-lg border-b border-white/10 px-8 py-4", className)}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center space-x-4">
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" 
-              alt="Arena Animation Chandigarh Sector 9" 
-              className="h-20 w-auto object-contain" 
-            />
+            <img src="/lovable-uploads/d891d9bc-0f17-4b86-bfe0-873b6291dc74.png" alt="Arena Animation Chandigarh Sector 9" className="h-20 w-auto object-contain" />
             <div className="flex flex-col">
-              <span className="text-white font-bold text-xl">Arena Animation</span>
-              <span className="text-yellow-400 text-sm font-medium">Sector 9 Chandigarh</span>
+              <span className="text-white font-bold text-xl">a Animation</span>
+              <span className="text-yellow-400 text-sm font-medium"></span>
             </div>
           </Link>
         </div>
 
         {/* Navigation Items */}
         <div className="hidden lg:flex items-center space-x-1 bg-white/5 rounded-2xl p-2 border border-white/10">
-          {items.map((item) => {
-            const Icon = item.icon
-            const isActive = activeTab === item.name
-
-            return (
-              <Link
-                key={item.name}
-                to={item.url}
-                onClick={() => setActiveTab(item.name)}
-                className={cn(
-                  "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300",
-                  "text-white/70 hover:text-white",
-                  isActive && "text-white bg-yellow-400/20"
-                )}
-              >
+          {items.map(item => {
+          const Icon = item.icon;
+          const isActive = activeTab === item.name;
+          return <Link key={item.name} to={item.url} onClick={() => setActiveTab(item.name)} className={cn("relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300", "text-white/70 hover:text-white", isActive && "text-white bg-yellow-400/20")}>
                 <span className="relative z-10 flex items-center space-x-2">
                   <Icon size={16} />
                   <span>{item.name}</span>
                 </span>
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-yellow-400/10 rounded-xl border border-yellow-400/30"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 30,
-                    }}
-                  />
-                )}
-              </Link>
-            )
-          })}
+                {isActive && <motion.div layoutId="activeTab" className="absolute inset-0 bg-yellow-400/10 rounded-xl border border-yellow-400/30" initial={false} transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 30
+            }} />}
+              </Link>;
+        })}
         </div>
 
         {/* Mobile Menu Button */}
@@ -97,6 +70,5 @@ export function NavBar({ items, className }: NavBarProps) {
           </button>
         </div>
       </div>
-    </nav>
-  )
+    </nav>;
 }
